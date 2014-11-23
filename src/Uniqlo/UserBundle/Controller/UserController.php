@@ -2,18 +2,19 @@
 
 namespace Uniqlo\UserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
 use FOS\RestBundle\Controller\FOSRestController;
 
+use FOS\RestBundle\Controller\Annotations\RouteResource;
+
+use Uniqlo\UserBundle\Entity\User;
+
+/**
+ * @RouteResource("User")
+ */
 class UserController extends FOSRestController
 {
-    /**
-     * @Route("/")
-     * @Template()
-     */
-    public function indexAction()
-    {}
+    public function getAction(User $user)
+    {
+        return $user;
+    }
 }

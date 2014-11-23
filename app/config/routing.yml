@@ -1,5 +1,3 @@
-uniqlo_user:
-    resource: "@UniqloUserBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
+user:
+    type:     rest
+    resource: Uniqlo\UserBundle\Controller\UserController
