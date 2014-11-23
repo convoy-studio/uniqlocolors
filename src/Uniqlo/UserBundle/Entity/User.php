@@ -60,7 +60,6 @@ class User
      * @var boolean
      *
      * @ORM\Column(name="reminder", type="boolean")
-     * @Assert\NotBlank()
      * @Assert\NotNull()
      */
     private $reminder;
@@ -69,7 +68,6 @@ class User
      * @var boolean
      *
      * @ORM\Column(name="newsletter", type="boolean")
-     * @Assert\NotBlank()
      * @Assert\NotNull()
      */
     private $newsletter;
