@@ -11,6 +11,10 @@ REST API
 ````
     npm install
     php composer.phar install
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:update --force
+    sudo chmod -R 777 app/cache
+    sudo chmod -R 777 app/logs
 ````
 
 At the end of the installation, you'll be prompted your parameters, such as MySQL port etc.
