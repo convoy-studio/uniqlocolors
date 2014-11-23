@@ -1,3 +1,4 @@
 user:
     type:     rest
+    prefix:   /api
     resource: Uniqlo\UserBundle\Controller\UserController

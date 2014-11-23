@@ -2,6 +2,8 @@
 
 namespace Uniqlo\UserBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +27,8 @@ class User
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
@@ -32,6 +36,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="firstName", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $firstName;
 
@@ -39,6 +44,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="lastName", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $lastName;
 
@@ -46,6 +52,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="gender", type="string", length=6)
+     * @Assert\Regex("/^male|female$/", message="Gender can only be male or female")
      */
     private $gender;
 
@@ -53,6 +60,8 @@ class User
      * @var boolean
      *
      * @ORM\Column(name="reminder", type="boolean")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
      */
     private $reminder;
 
@@ -60,13 +69,24 @@ class User
      * @var boolean
      *
      * @ORM\Column(name="newsletter", type="boolean")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
      */
     private $newsletter;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     */
+    private $locale;
+
+    /**
      * @var boolean
      *
-     * @ORM\Column(name="createdAt", type="boolean")
+     * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
 
@@ -222,6 +242,18 @@ class User
     public function getNewsletter()
     {
         return $this->newsletter;
+    }
+
+    public function setLocale($locale)
+    {
+        $this->locale = $locale;
+
+        return $this;
+    }
+
+    public function getLocale()
+    {
+        return $this->locale;
     }
 
     public function setCreatedAt($createdAt)

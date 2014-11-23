@@ -2,9 +2,15 @@
 
 namespace Uniqlo\UserBundle\Controller;
 
-use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Request;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
+use FOS\RestBundle\Controller\Annotations;
+use FOS\RestBundle\View\View;
+use FOS\RestBundle\Util\Codes;
+
+use Uniqlo\UserBundle\Exception\InvalidFormException;
 
 use Uniqlo\UserBundle\Entity\User;
 
@@ -16,5 +22,28 @@ class UserController extends FOSRestController
     public function getAction(User $user)
     {
         return $user;
+    }
+
+    /**
+     * @Annotations\View(
+     *  template = "UniqloUserBundle:User:newUser.html.twig",
+     *  statusCode = Codes::HTTP_BAD_REQUEST,
+     *  templateVar = "form"
+     * )
+     */
+    public function postAction(Request $request)
+    {
+       try {
+            $user = $this->container->get('uniqlo.user')->post($request->request->all());
+
+            $routeOptions = [
+                'user'    => $user->getId(),
+                '_format' => $request->get('_format')
+            ];
+
+            return $this->routeRedirectView('get_user', $routeOptions, Codes::HTTP_CREATED);
+       } catch (InvalidFormException $exception) {
+           return $exception->getForm();
+       }
     }
 }
