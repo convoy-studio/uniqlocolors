@@ -1,0 +1,267 @@
+.home {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:$bg-color;
+	z-index:3;
+
+	.carousel {
+		height:100%;
+		width:50%;
+		float:left;
+		overflow:hidden;
+	}
+
+	.content {
+		height:100%;
+		width:50%;
+		float:left;
+		overflow:hidden;
+	}
+
+	.mask {
+		height:100%;
+		width:100%;
+		position:relative;
+		overflow:hidden;
+	}
+
+	.inner {
+		max-width:600px;
+		width:80%;
+		margin:0 auto;
+		position:relative;
+		top:50%;
+		@include translate(0, -50%);
+	}
+
+	.play-button {
+		margin:40px 0 55px;
+
+		span {
+			font:500 60px/60px $font-family;
+			padding:25px 34px 12px 31px;
+			color:$white;
+			display:inline-block;
+			cursor:pointer;
+		}
+	}
+
+	.sub-play-text {
+		font:500 35px/20px $font-family;
+		text-transform:uppercase;
+		margin-bottom:50px;
+
+		strong {
+			display:inline-block;
+			border-bottom:2px solid $white;
+			line-height:25px;
+		}
+	}
+
+	.carousel {
+		position:relative;
+		overflow:hidden;
+
+		p {
+			color:$white;
+			text-transform:uppercase;
+		}
+
+		header,
+		footer {
+			position:absolute;
+			left:0;
+			width:100%;
+			padding:0 20px;
+			box-sizing:border-box;
+		}
+
+		header {
+			top:20px;
+			text-align:center;
+
+			p {
+				font:500 25px/40px $font-family;
+
+				strong {
+					font-size:35px;
+					display:block;
+				}
+
+				span {
+					display:inline-block;
+					color:$white;
+					border-bottom:2px solid $white;
+					line-height:25px;
+				}
+			}
+		}
+
+		footer {
+			bottom:20px;
+			font:300 15px/20px $font-family;
+
+			.left,
+			.right {
+				position:absolute;
+				bottom:0;
+			}
+
+			.left {
+				left:20px;
+				text-align:left;
+			}
+
+			.right {
+				right:20px;
+				text-align:right;
+			}
+		}
+
+		.name {
+			font:500 25px/25px $font-family;
+		}
+
+		.description {
+			text-transform:none;
+		}
+
+		.price {
+			text-decoration:line-through;
+		}
+
+		.offer {
+			font:500 25px/25px $font-family;
+			color:$red;
+		}
+
+
+
+		.slides {
+			li {
+				position:absolute;
+				top:0;
+				left:0;
+				height:100%;
+				width:100%;
+				overflow:hidden;
+			}
+
+			img {
+				position:absolute;
+				display:block;
+				
+				&.hidden {
+					opacity:0;
+				}
+			}
+
+			.front {
+				position:absolute;
+				top:0;
+				left:0;
+				height:100%;
+				width:100%;
+
+				img {
+					max-width:90%;
+					max-height:70%;
+					position:absolute;
+					top:50%;
+					left:50%;
+					@include translate(-50%, -50%);
+				}
+			}
+		}
+	}
+
+
+	// -------------------------------------o Animation
+
+	h1,
+	.sub-play-text {
+		@include transition(color 1000ms $easeOutQuad 0ms);
+	}
+
+	.play-button span {
+		@include transition(background-color 1000ms $easeOutQuad 0ms);
+	}
+
+	.sub-play-text strong {
+		@include transition(border-color 1000ms $easeOutQuad 0ms);
+	}
+
+	.carousel {
+
+		.slides {
+			li {
+
+				img, .front {
+					@include transition(all 1500ms $easeOutExpo 0ms);
+				}
+
+				&.right,
+				&.left {
+					.background
+					 {
+						opacity:0;
+					}
+				}
+
+				&.left {
+
+					.front {
+						@include translate3d(-100%, 0, 0);
+					}
+				}
+				&.right {
+
+					.front {
+						@include translate3d(100%, 0, 0);
+					}
+				}
+			}
+		}
+	}
+
+
+
+	&.hidden {
+
+		.content,
+		.mask,
+		.carousel {
+			@include transition(all 500ms $easeOutExpo 0ms);
+		}
+
+		.content {
+			@include translate3d(-100%, 0, 0);
+			.mask {
+				@include translate3d(103%, 0, 0);
+			}
+		}
+
+		
+
+		.carousel {
+			@include translate3d(100%, 0, 0);
+			.mask {
+				@include translate3d(-103%, 0, 0);
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

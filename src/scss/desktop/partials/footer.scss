@@ -1,0 +1,46 @@
+.main-footer {
+	position:absolute;
+	bottom:-6px;
+	right:-3px;
+	z-index:10;
+	color:$grey;
+
+	a {
+		color:$grey;
+	}
+
+	li {
+		font:300 11px/17px $font-family;
+		letter-spacing:1px;
+		margin:10px;
+		float:left;
+	}
+
+	i {
+		display:block;
+	}
+
+	.facebook-link {
+		i {
+			@include sprite('facebook-logo');
+		}
+	}
+
+	.twitter-link {
+		i {
+			@include sprite('twitter-logo');
+		}
+	}
+
+	.instagram-link {
+		i {
+			@include sprite('instagram-logo');
+		}
+	}
+
+	.google-link {
+		i {
+			@include sprite('google-logo');
+		}
+	}
+}

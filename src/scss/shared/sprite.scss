@@ -1,0 +1,104 @@
+$values: (
+  enveloppe: (
+    src: '/img/sprite.png',
+    x: 0px,
+    y: 0px,
+    width: 330px,
+    height: 233px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  facebook-logo: (
+    src: '/img/sprite.png',
+    x: -206px,
+    y: -234px,
+    width: 15px,
+    height: 15px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  form-v: (
+    src: '/img/sprite.png',
+    x: -270px,
+    y: -234px,
+    width: 11px,
+    height: 10px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  google-logo: (
+    src: '/img/sprite.png',
+    x: -222px,
+    y: -234px,
+    width: 15px,
+    height: 15px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  instagram-logo: (
+    src: '/img/sprite.png',
+    x: -238px,
+    y: -234px,
+    width: 15px,
+    height: 15px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  share-facebook: (
+    src: '/img/sprite.png',
+    x: -71px,
+    y: -234px,
+    width: 44px,
+    height: 44px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  share-google: (
+    src: '/img/sprite.png',
+    x: -116px,
+    y: -234px,
+    width: 44px,
+    height: 44px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  share-twitter: (
+    src: '/img/sprite.png',
+    x: -161px,
+    y: -234px,
+    width: 44px,
+    height: 44px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  twitter-logo: (
+    src: '/img/sprite.png',
+    x: -254px,
+    y: -234px,
+    width: 15px,
+    height: 15px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+  uniqlo-logo: (
+    src: '/img/sprite.png',
+    x: 0px,
+    y: -234px,
+    width: 70px,
+    height: 70px,
+    spriteWidth: 330px,
+    spriteHeight: 304px
+  ),
+);
+
+@mixin sprite($img, $pixel-ratio: 1) {
+  background-image:url(map-get(map-get($values, $img), src));
+  background-position:map-get(map-get($values, $img), x) map-get(map-get($values, $img), y);
+  width:map-get(map-get($values, $img), width);
+  height:map-get(map-get($values, $img), height);
+  background-size:map-get(map-get($values, $img), spriteWidth) / $pixel-ratio map-get(map-get($values, $img), spriteHeight) / $pixel-ratio;
+}
+
+
+
+

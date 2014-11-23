@@ -1,0 +1,28 @@
+.try-again {
+
+	.content {
+		width:400px;
+	}
+
+	.status {
+		font:500 80px/80px $font-family;
+		margin:30px 0 40px;
+		@include clearfix();
+
+		& > p {
+			width:50%;
+			float:left;
+			padding:20px 0;
+
+			&:nth-child(1){
+				border-right:1px solid $red;
+				box-sizing:border-box;
+			}
+		}
+
+		sub {
+			display:block;
+			font:300 15px/15px $font-family;
+		}
+	}
+}

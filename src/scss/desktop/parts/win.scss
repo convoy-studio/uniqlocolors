@@ -1,0 +1,45 @@
+.win {
+
+	.title {
+		font-size:100px;
+		line-height:100px;
+		margin-bottom:20px;
+	}
+
+	.letter {
+		position:relative;
+		float:left;
+		margin-right:25px;
+	}
+
+	.push {
+		height:350px;
+		width:300px;
+		background:$white;
+		margin:0 15px 48px;
+		padding-top:40px;
+
+		strong {
+			display:block;
+			font-size:30px;
+			margin-top:8px;
+		}
+
+		img {
+			display:block;
+			margin-top:40px;
+			margin:30px auto 0;
+		}
+	}
+
+	.enveloppe {
+		@include sprite('enveloppe');
+		position:absolute;
+		bottom:0;
+		left:0;
+	}
+
+	form {
+		float:left;
+	}
+}

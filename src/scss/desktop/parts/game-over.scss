@@ -1,0 +1,46 @@
+.game-over {
+
+	.text {
+		margin:40px 0 0;
+	}
+
+	ul {
+		margin:30px 0 55px;
+	}
+
+	li {
+		display:inline-block;
+		margin:0 5px;
+
+		a {
+			cursor:pointer;
+			display:block;
+			height:100%;
+		}
+	}
+
+	.facebook {
+		@include sprite('share-facebook');
+	}
+
+	.twitter {
+		@include sprite('share-twitter');
+	}
+
+	.google {
+		@include sprite('share-google');
+	}
+
+	.get-notified {
+		font:500 25px/20px $font-family;
+		text-transform:uppercase;
+		cursor:pointer;
+		
+		span {
+			display:inline-block;
+			border-bottom:1px solid $black;
+			margin-bottom:10px;
+		}
+	}
+
+}

@@ -1,0 +1,33 @@
+// -------------------------o Imports fonts
+
+$fontPath : 'fonts/';
+
+@include importFont('Uniqlo', 'UniqloLight', 300, normal, $fontPath);
+@include importFont('Uniqlo', 'UniqloRegular', 400, normal, $fontPath);
+@include importFont('Uniqlo', 'UniqloBold', 500, $fontPath);
+
+$font-family: 'Uniqlo', 'Helvetica', sans-serif;
+
+
+// -------------------------o Imports colors
+
+$white 				: #FFFFFF;
+$black 				: #000000;
+$grey 				: #858585;
+
+$blue				: #7cceda;
+$red 				: #FF0000;
+
+$bg-color 			: $white;
+
+
+
+// -------------------------o Others
+
+.no-transition {
+	@include transition(all 0ms $linear 0ms !important);
+
+	* {
+		@include transition(all 0ms $linear 0ms !important);
+	}
+}
