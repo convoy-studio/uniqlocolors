@@ -61,7 +61,7 @@ gulp.task 'js:dev', ->
 		for j in [0...config.js[i].src.length]
 			src.push(config.src + config.js[i].src[j])
 
-		dest = config.js[i].dest
+		dest = config.dev + config.js[i].dest
 		filename = config.js[i].filename
 
 		gulp
@@ -79,7 +79,7 @@ gulp.task 'js:dist', ->
 		for j in [0...config.js[i].src.length]
 			src.push(config.src + config.js[i].src[j])
 
-		dest = config.js[i].dest
+		dest = config.dist + config.js[i].dest
 		filename = config.js[i].filename
 
 		gulp
@@ -100,9 +100,7 @@ gulp.task 'sass:dev', ->
 		for j in [0...config.sass[i].src.length]
 			src.push(config.src + config.sass[i].src[j])
 
-		dest = config.sass[i].dest
-
-
+		dest = config.dev + config.sass[i].dest
 
 		gulp
 			.src( src )
@@ -120,7 +118,7 @@ gulp.task 'sass:dist', ->
 		for j in [0...config.sass[i].src.length]
 			src.push(config.src + config.sass[i].src[j])
 
-		dest = config.dest + config.sass[i].dest
+		dest = config.dist + config.sass[i].dest
 
 		gulp
 			.src( src )
