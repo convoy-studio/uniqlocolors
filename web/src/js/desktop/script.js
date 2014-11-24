@@ -1504,7 +1504,6 @@ SocialSharing = (function() {
 App = (function() {
   function App() {
     this.update = __bind(this.update, this);
-    this._onTutoHidden = __bind(this._onTutoHidden, this);
     this._onHomeHidden = __bind(this._onHomeHidden, this);
     this._onWindowBlur = __bind(this._onWindowBlur, this);
     this._onWindowFocus = __bind(this._onWindowFocus, this);
@@ -1527,14 +1526,12 @@ App = (function() {
       old: +new Date()
     };
     this.home = new Home();
-    this.screens = new Screens();
     return this._isWindowFocused = true;
   };
 
   App.prototype._initEvents = function() {
     W.window.on('resize', this._onResize).on('focus', this._onWindowFocus).on('blur', this._onWindowBlur);
-    $(this.home).on(Home.HIDDEN, this._onHomeHidden);
-    return $(this.screens).on(Screens.TUTO_HIDDEN, this._onTutoHidden);
+    return $(this.home).on(Home.HIDDEN, this._onHomeHidden);
   };
 
   App.prototype._initLang = function() {
@@ -1566,10 +1563,17 @@ App = (function() {
     W.sh = screen.height;
     W.ww = W.window.width();
     W.wh = W.window.height();
-    W.body.css({
-      'height': W.wh,
-      'width': W.ww
-    });
+    if (W.sw > 600) {
+      W.body.css({
+        'height': W.wh,
+        'width': W.ww
+      });
+    } else {
+      W.body.css({
+        'height': 'auto',
+        'width': '100%'
+      });
+    }
     if (this.home) {
       this.home.resize();
     }
@@ -1588,22 +1592,15 @@ App = (function() {
 
   App.prototype._onHomeHidden = function() {
     this.home.container.remove();
-    this.screens = new Screens();
     return this.game = new Game();
-  };
-
-  App.prototype._onTutoHidden = function() {
-    return this.game.launch();
   };
 
   App.prototype.update = function() {
     W.time.now = +new Date();
     W.time.delta = (W.time.now - W.time.old) / 1000;
     W.time.old = W.time.now;
-    if (this._isWindowFocused === true) {
-      if (this.game) {
-        return this.game.update();
-      }
+    if (this.game) {
+      return this.game.update();
     }
   };
 
@@ -1627,10 +1624,14 @@ Game = (function() {
     this.levelUp = __bind(this.levelUp, this);
     this.resize = __bind(this.resize, this);
     this.launch = __bind(this.launch, this);
+    this._onGameOverHidden = __bind(this._onGameOverHidden, this);
+    this._onTutoHidden = __bind(this._onTutoHidden, this);
     this._onGridWrongAnswer = __bind(this._onGridWrongAnswer, this);
     this._onGridGoodAnswer = __bind(this._onGridGoodAnswer, this);
     this._onCountDownEnd = __bind(this._onCountDownEnd, this);
+    this._onTryAgainClick = __bind(this._onTryAgainClick, this);
     this._onGameClick = __bind(this._onGameClick, this);
+    this._updateVals = __bind(this._updateVals, this);
     this._stopGame = __bind(this._stopGame, this);
     this._playGame = __bind(this._playGame, this);
     this._pauseGame = __bind(this._pauseGame, this);
@@ -1648,13 +1649,17 @@ Game = (function() {
       level: -1,
       lives: Parameters.lives,
       paused: false,
+      stopped: false,
+      loading: true,
       launched: false,
-      initialized: true
+      initialized: true,
+      shared: false
     };
     this.gameParameters = Parameters;
     this._gameLaunched = false;
     this.canvas = this.container.find('canvas')[0];
     this.ctx = this.canvas.getContext('2d');
+    this.screens = new Screens();
     this.snow = new Snow({
       ctx: this.ctx
     });
@@ -1668,14 +1673,19 @@ Game = (function() {
     this.grid = new Grid({
       ctx: this.ctx
     });
-    return this._loadPictures();
+    this.livesVal = $('.lives span');
+    this.levelVal = $('.level span');
+    this.levelVal.siblings('sup').text('/' + Parameters.levels.length);
+    this._loadPictures();
+    return this.resize();
   };
 
   Game.prototype._initEvents = function() {
     this.container.on(Event.CLICK, this._onGameClick);
     $(this.countDown).on(CountDown.END, this._onCountDownEnd);
     $(this.grid).on(Grid.GOOD_ANSWER, this._onGridGoodAnswer).on(Grid.WRONG_ANSWER, this._onGridWrongAnswer);
-    return $('.try-again').on(Event.CLICK, this._playGame);
+    $('.button.try-again').on(Event.CLICK, this._onTryAgainClick);
+    return $(this.screens).on(Screens.TUTO_HIDDEN, this._onTutoHidden).on(Screens.GAMEOVER_HIDDEN, this._onGameOverHidden);
   };
 
   Game.prototype._loadPictures = function() {
@@ -1706,51 +1716,98 @@ Game = (function() {
   };
 
   Game.prototype._pauseGame = function() {
+    W.body.removeClass('playing');
     W.status.paused = true;
     if (W.status.lives === 0) {
-      return this._stopGame();
+      this._stopGame();
     } else {
       $('.try-again').css('display', 'block');
-      return W.status.lives--;
+      W.status.lives--;
     }
+    this.snow.setColors([]);
+    this.container.addClass('hidden');
+    return this._updateVals();
   };
 
   Game.prototype._playGame = function() {
+    W.body.addClass('playing');
     W.status.paused = false;
+    W.status.stopped = false;
     $('.try-again').css('display', 'none');
     this.countDown.reset();
-    return this.grid.reset();
+    this.grid.reset();
+    return this.container.removeClass('hidden');
   };
 
   Game.prototype._stopGame = function() {
-    return $('.game-over').css('display', 'block');
+    W.body.removeClass('playing');
+    W.status.stopped = true;
+    this.snow.setColors(['#FFFFFF']);
+    return this.container.addClass('hidden');
+  };
+
+  Game.prototype._updateVals = function() {
+    this.livesVal.text(W.status.lives);
+    return this.levelVal.text(W.status.level + 1);
   };
 
   Game.prototype._onGameClick = function(e) {
     if (W.status.paused === false && e.target.nodeName === 'CANVAS') {
-      console.log('click');
       return this.grid.click(e);
     }
   };
 
+  Game.prototype._onTryAgainClick = function() {
+    this.snow.setColors(this.grid.getColors());
+    return this._playGame();
+  };
+
   Game.prototype._onCountDownEnd = function() {
-    return this._pauseGame();
+    return this._onGridWrongAnswer();
   };
 
   Game.prototype._onGridGoodAnswer = function() {
-    this.levelUp();
-    return console.log('good');
+    if (W.status.level < Parameters.levels.length - 1) {
+      return this.levelUp();
+    } else {
+      this._stopGame();
+      this.container.css('display', 'none');
+      return this.screens.displayWin();
+    }
   };
 
   Game.prototype._onGridWrongAnswer = function() {
-    this._pauseGame();
-    return console.log('wrong');
+    if (W.status.lives > 1) {
+      this._pauseGame();
+      this.screens.displayTryAgain();
+    } else {
+      if (W.status.shared === false) {
+        this.screens.displayGameOver();
+      } else {
+        this.screens.displayLoose();
+        this.container.css('display', 'none');
+      }
+      this._stopGame();
+    }
+    return this._updateVals();
+  };
+
+  Game.prototype._onTutoHidden = function() {
+    return this.launch();
+  };
+
+  Game.prototype._onGameOverHidden = function() {
+    W.status.lives = Parameters.lives;
+    W.status.level = -1;
+    this.launch();
+    return this._updateVals();
   };
 
   Game.prototype.launch = function() {
     W.status.launched = true;
     this._gameLaunched = true;
-    return this.levelUp();
+    this.levelUp();
+    return this._playGame();
   };
 
   Game.prototype.resize = function() {
@@ -1759,7 +1816,7 @@ Game = (function() {
     W.grid.radius = (Math.min(W.ww, W.wh) - W.grid.padding * 2) * 0.5;
     W.grid.size = 2 * (Math.sin(Math.PI * 0.25) * W.grid.radius);
     W.grid.clockRadius = W.grid.radius + 10;
-    W.grid.bottomSpace = Math.asin(20 / W.grid.clockRadius);
+    W.grid.bottomSpace = 0;
     W.grid.gap = Math.max(5, W.grid.size * 0.05 / W.grid.lines);
     if (W.ww > W.wh) {
       W.grid.top = W.grid.padding + W.grid.radius - W.grid.size * 0.5;
@@ -1769,8 +1826,9 @@ Game = (function() {
       W.grid.left = W.ww * 0.5 - W.grid.radius + (W.grid.radius - W.grid.size * 0.5);
     }
     if (this._gameLaunched === true) {
-      return this.render(true);
+      this.render(true);
     }
+    return this.snow.resize();
   };
 
   Game.prototype.levelUp = function() {
@@ -1780,7 +1838,8 @@ Game = (function() {
     this.countDown.levelUp();
     this.grid.levelUp();
     this.snow.setColors(this.grid.getColors());
-    return this.snow.levelUp();
+    this.snow.levelUp();
+    return this._updateVals();
   };
 
   Game.prototype.render = function(resized) {
@@ -1789,7 +1848,7 @@ Game = (function() {
       this.snow.render();
       this.countDown.render(resized);
     }
-    if (W.status.launched === true) {
+    if (W.status.launched === true && W.status.paused !== true && W.status.stopped !== true) {
       return this.grid.render(resized);
     }
   };
@@ -1808,9 +1867,9 @@ Parameters = {
   levels: [
     {
       difficulty: {
-        colors: 1,
+        colors: 2,
         subColors: 1,
-        pics: 4
+        pics: 1
       },
       picsLength: 9,
       moving: false
@@ -1830,78 +1889,6 @@ Parameters = {
       },
       picsLength: 9,
       moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: true
     }
   ]
 };
@@ -2142,34 +2129,13 @@ Home = (function() {
   };
 
   Home.prototype._onPlayButtonClick = function() {
-    var logo, tween;
     this.container.addClass('hidden');
-    logo = $('.uniqlo-logo');
-    tween = {
-      perc: 0
-    };
-    TweenLite.to(tween, 2, {
-      perc: 1,
-      ease: Expo.easeOut,
-      onUpdate: (function(_this) {
-        return function() {
-          return Normalize.transform(logo[0], 'translate3d(0, ' + ((W.wh * 0.5 - 70) * tween.perc) + 'px, 0)');
-        };
-      })(this),
-      onComplete: (function(_this) {
-        return function() {
-          Normalize.transform(logo[0], 'translate3d(0, 0, 0)');
-          return logo.css({
-            'bottom': 70
-          });
-        };
-      })(this)
-    });
+    $('.uniqlo-logo.main').addClass('displayed');
     return setTimeout((function(_this) {
       return function() {
         return $(_this).trigger(Home.HIDDEN);
       };
-    })(this), 500);
+    })(this), 1000);
   };
 
   Home.prototype.resize = function() {
@@ -2188,13 +2154,21 @@ Home = (function() {
 })();
 
 Screens = (function() {
-  Screens.HIDDEN = 'hidden';
+  Screens.TUTO_HIDDEN = 'tuto_hidden';
+
+  Screens.GAMEOVER_HIDDEN = 'gameover_hidden';
 
   function Screens() {
-    this._pageShared = __bind(this._pageShared, this);
+    this.displayLoose = __bind(this.displayLoose, this);
+    this.displayGameOver = __bind(this.displayGameOver, this);
+    this.displayWin = __bind(this.displayWin, this);
+    this.displayTryAgain = __bind(this.displayTryAgain, this);
+    this.displayTuto = __bind(this.displayTuto, this);
+    this._onGetNotifiedButtonClick = __bind(this._onGetNotifiedButtonClick, this);
     this._onFacebookButtonClick = __bind(this._onFacebookButtonClick, this);
+    this._onReplayButtonClick = __bind(this._onReplayButtonClick, this);
     this._onStartButtonClick = __bind(this._onStartButtonClick, this);
-    this._display = __bind(this._display, this);
+    this._pageShared = __bind(this._pageShared, this);
     this._initEvents = __bind(this._initEvents, this);
     this._initContent = __bind(this._initContent, this);
     this.container = $('.screen');
@@ -2206,27 +2180,42 @@ Screens = (function() {
     this.gameOverScreen = this.container.filter('.game-over');
     this.tutoScreen = this.container.filter('.tuto');
     this.tryAgainScreen = this.container.filter('.try-again');
+    this.winScreen = this.container.filter('.win');
+    this.looseScreen = this.container.filter('.loose');
     this.startButton = this.tutoScreen.find('.start-button');
+    this.replayButton = this.gameOverScreen.find('.replay-button');
+    this.getNotifiedButton = this.gameOverScreen.find('.get-notified');
     this.sharesLinks = this.gameOverScreen.find('li');
-    return twttr.ready((function(_this) {
+    twttr.ready((function(_this) {
       return function() {
         return twttr.events.bind('tweet', function() {
           return _this._pageShared('twitter');
         });
       };
     })(this));
+    return this.displayTuto();
   };
 
   Screens.prototype._initEvents = function() {
     this.startButton.on(Event.CLICK, this._onStartButtonClick);
-    return this.sharesLinks.filter('.facebook').on(Event.CLICK, this._onFacebookButtonClick);
+    this.replayButton.on(Event.CLICK, this._onReplayButtonClick);
+    this.sharesLinks.filter('.facebook').on(Event.CLICK, this._onFacebookButtonClick);
+    return this.getNotifiedButton.on(Event.CLICK, this._onGetNotifiedButtonClick);
   };
 
-  Screens.prototype._display = function() {};
+  Screens.prototype._pageShared = function(type) {
+    return console.log(type);
+  };
 
   Screens.prototype._onStartButtonClick = function() {
-    this.container.remove();
-    return $(this).trigger(Tuto.HIDDEN);
+    this.tutoScreen.remove();
+    return $(this).trigger(Screens.TUTO_HIDDEN);
+  };
+
+  Screens.prototype._onReplayButtonClick = function() {
+    W.status.shared = true;
+    this.gameOverScreen.remove();
+    return $(this).trigger(Screens.GAMEOVER_HIDDEN);
   };
 
   Screens.prototype._onFacebookButtonClick = function() {
@@ -2240,8 +2229,44 @@ Screens = (function() {
     })(this));
   };
 
-  Screens.prototype._pageShared = function(type) {
-    return console.log(type);
+  Screens.prototype._onGetNotifiedButtonClick = function() {
+    console.log('ok');
+    this.gameOverScreen.css('display', 'none');
+    return this.displayLoose();
+  };
+
+  Screens.prototype.displayTuto = function() {
+    return setTimeout((function(_this) {
+      return function() {
+        _this.tutoScreen.css('display', 'block');
+        _this.tutoScreen[0].offsetHeight;
+        return _this.tutoScreen.addClass('displayed');
+      };
+    })(this), 1000);
+  };
+
+  Screens.prototype.displayTryAgain = function() {
+    this.tryAgainScreen.css('display', 'block');
+    this.tryAgainScreen[0].offsetHeight;
+    return this.tryAgainScreen.addClass('displayed');
+  };
+
+  Screens.prototype.displayWin = function() {
+    this.winScreen.css('display', 'block');
+    this.winScreen[0].offsetHeight;
+    return this.winScreen.addClass('displayed');
+  };
+
+  Screens.prototype.displayGameOver = function() {
+    this.gameOverScreen.css('display', 'block');
+    this.gameOverScreen[0].offsetHeight;
+    return this.gameOverScreen.addClass('displayed');
+  };
+
+  Screens.prototype.displayLoose = function() {
+    this.looseScreen.css('display', 'block');
+    this.looseScreen[0].offsetHeight;
+    return this.looseScreen.addClass('displayed');
   };
 
   return Screens;
@@ -2306,7 +2331,8 @@ CountDown = (function() {
     TweenLite.to(this.tweens, 2, {
       clockPerc: 1,
       delay: 0,
-      ease: Expo.easeOut
+      ease: Quint.easeOut,
+      delay: 0.5
     });
     _results = [];
     for (i = _i = 0; _i < 60; i = ++_i) {
@@ -2315,8 +2341,8 @@ CountDown = (function() {
       });
       _results.push(TweenLite.to(this.tweens.dash[i], 2, {
         perc: 1,
-        delay: 0 + 1 * i / 60,
-        ease: Expo.easeOut
+        delay: 0 + 1 * i / 60 + 1,
+        ease: Quint.easeOut
       }));
     }
     return _results;
@@ -2324,18 +2350,18 @@ CountDown = (function() {
 
   CountDown.prototype._drawProgressCircle = function() {
     var pos, speed;
-    if (this._timeOut === false && W.status.paused === false) {
+    if (this._timeOut === false && W.status.paused !== true && W.status.stopped !== true) {
       speed = Math.PI * 2 / Parameters.time;
       this.currentTimeDeg += speed * W.time.delta;
       this._progressPerc = (this.currentTimeDeg + Math.PI * 0.5) / (Math.PI * 2);
+      this.ctx.beginPath();
+      this.ctx.fillStyle = this.red;
+      this.ctx.globalAlpha = 0.2;
+      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 10, this.arcZero, this.currentTimeDeg, false);
+      this.ctx.lineTo(W.ww * 0.5, W.wh * 0.5);
+      this.ctx.fill();
+      this.ctx.globalAlpha = 1;
     }
-    this.ctx.beginPath();
-    this.ctx.fillStyle = this.red;
-    this.ctx.globalAlpha = 0.2;
-    this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 10, this.arcZero, this.currentTimeDeg, false);
-    this.ctx.lineTo(W.ww * 0.5, W.wh * 0.5);
-    this.ctx.fill();
-    this.ctx.globalAlpha = 1;
     this.ctx.lineWidth = 2;
     pos = this.arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2;
     this.ctx.beginPath();
@@ -2362,7 +2388,7 @@ CountDown = (function() {
     if (this.tweens.clockPerc === 1) {
       this.ctx.beginPath();
       this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * 2, true);
-      this.ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      this.ctx.fillStyle = 'rgba(230, 230, 230, 0.5)';
       this.ctx.fill();
     }
     this.ctx.beginPath();
@@ -2450,6 +2476,7 @@ Grid = (function() {
     this.ctx = options.ctx;
     this.randomPics = [];
     this._initContent();
+    this.singleton = this;
     this.scale = 1;
   }
 
@@ -2462,14 +2489,12 @@ Grid = (function() {
   };
 
   Grid.prototype._drawPictures = function() {
-    var i, speed, textX, textY, _i, _ref, _results;
+    var i, speed, _i, _ref, _results;
     this.picSize = (W.grid.size - (W.grid.lines - 1) * W.grid.gap) / W.grid.lines;
     if (W.status.paused === false && Parameters.levels[W.status.level].moving === true) {
       speed = 1 / Parameters.time;
       this.scale -= speed * W.time.delta;
     }
-    textX = '';
-    textY = '';
     _results = [];
     for (i = _i = 0, _ref = this.randomPics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       this.randomPics[i].x = W.grid.left + (this.picSize + W.grid.gap) * (i % W.grid.lines);
@@ -2485,7 +2510,7 @@ Grid = (function() {
   };
 
   Grid.prototype._setRandomPics = function() {
-    var ar, diff, i, j, keys, levelParams, neoKey, pics, randomId, randomKey, randomPics, selectedColors, selectedPics, selectedSubColors, toPick, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _results, _results1, _results2, _s;
+    var ar, diff, i, j, keys, levelParams, neoKey, pic, pics, randomId, randomKey, randomPics, selectedColors, selectedPics, selectedSubColors, toPick, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _results, _results1, _results2, _results3, _s, _t;
     levelParams = Parameters.levels[W.status.level];
     diff = levelParams.difficulty;
     pics = Pics.slice(0);
@@ -2556,7 +2581,17 @@ Grid = (function() {
       j = Math.floor(Math.random() * (i + 1));
       _ref10 = [randomPics[j], randomPics[i]], randomPics[i] = _ref10[0], randomPics[j] = _ref10[1];
     }
-    return this.randomPics = randomPics.slice(0);
+    this.randomPics = [];
+    _results3 = [];
+    for (i = _t = 0, _ref11 = randomPics.length; 0 <= _ref11 ? _t < _ref11 : _t > _ref11; i = 0 <= _ref11 ? ++_t : --_t) {
+      pic = {};
+      pic.filename = randomPics[i].filename;
+      pic.img = randomPics[i].img;
+      pic.color = randomPics[i].color;
+      pic.neo = randomPics[i].neo;
+      _results3.push(this.randomPics.push(pic));
+    }
+    return _results3;
 
     /*for i in [0...diff.colors]
     			colorsKey = Math.random() * colorsIds.length | 0
@@ -2670,21 +2705,18 @@ Grid = (function() {
   };
 
   Grid.prototype.click = function(e) {
-    var i, pic, _i, _ref, _ref1, _ref2, _results;
-    _results = [];
+    var i, pic, _i, _ref, _ref1, _ref2;
     for (i = _i = 0, _ref = this.randomPics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       pic = this.randomPics[i];
       if ((pic.x < (_ref1 = e.pageX) && _ref1 < pic.x + this.picSize) && (pic.y < (_ref2 = e.pageY) && _ref2 < pic.y + this.picSize)) {
         if (pic.neo === true) {
-          _results.push($(this).trigger(Grid.GOOD_ANSWER));
+          $(this).trigger(Grid.GOOD_ANSWER);
         } else {
-          _results.push($(this).trigger(Grid.WRONG_ANSWER));
+          $(this).trigger(Grid.WRONG_ANSWER);
+          return;
         }
-      } else {
-        _results.push(void 0);
       }
     }
-    return _results;
   };
 
   Grid.prototype.getColors = function() {
@@ -2715,6 +2747,7 @@ Grid = (function() {
 Snow = (function() {
   function Snow(options) {
     this.render = __bind(this.render, this);
+    this.resize = __bind(this.resize, this);
     this.levelUp = __bind(this.levelUp, this);
     this.setColors = __bind(this.setColors, this);
     this._updateFlakeColor = __bind(this._updateFlakeColor, this);
@@ -2727,6 +2760,7 @@ Snow = (function() {
     this.rightWindTarget = 0;
     this.colors = [];
     this._initContent();
+    this.tween = null;
   }
 
   Snow.prototype._initContent = function() {
@@ -2734,12 +2768,14 @@ Snow = (function() {
   };
 
   Snow.prototype._unleashFlakes = function() {
-    var color;
+    var color, percX;
     if (this.flakeCount < this.timeFlakeUnleashing) {
       this.flakeCount++;
-      color = this.colors[Math.random() * this.colors.length | 0] || '#F0F0F0';
+      color = this.colors[Math.random() * this.colors.length | 0] || '#FFFFFF';
+      percX = Math.random();
       return this.flakes.push({
-        x: Math.random() * W.ww |  0,
+        perc: percX,
+        x: percX * W.ww |  0,
         y: -10,
         radius: 3 + Math.random() * 7 |  0,
         prevColor: Utils.hexToRgb(color),
@@ -2763,27 +2799,24 @@ Snow = (function() {
   };
 
   Snow.prototype.setColors = function(colors) {
+    var color, i, _i, _ref;
+    if (colors && colors.length === 0) {
+      colors = ['#FFFFFF'];
+    }
     this.colors = colors;
     this.rightWind = 0;
-    return this.rightWindTarget = 0;
-  };
-
-  Snow.prototype.levelUp = function() {
-    var color, i, _i, _ref;
+    this.rightWindTarget = 0;
     for (i = _i = 0, _ref = this.flakes.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       this.flakes[i].prevColor = this.flakes[i].currentColor;
       this.flakes[i].currentColor = Utils.hexToRgb(this.colors[Math.random() * this.colors.length | 0]);
     }
-    this.rightWindTarget = 50;
-    setTimeout((function(_this) {
-      return function() {
-        return _this.rightWindTarget = 0;
-      };
-    })(this), 500);
     color = {
       perc: 0
     };
-    return TweenLite.to(color, 2, {
+    if (this.tween) {
+      this.tween.kill();
+    }
+    return this.tween = TweenLite.to(color, 2, {
       perc: 1,
       ease: Expo.easeOut,
       onUpdate: (function(_this) {
@@ -2797,6 +2830,25 @@ Snow = (function() {
         };
       })(this)
     });
+  };
+
+  Snow.prototype.levelUp = function() {
+    this.rightWindTarget = 50;
+    return setTimeout((function(_this) {
+      return function() {
+        return _this.rightWindTarget = 0;
+      };
+    })(this), 500);
+  };
+
+  Snow.prototype.resize = function() {
+    var flake, i, _i, _ref, _results;
+    _results = [];
+    for (i = _i = 0, _ref = this.flakes.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+      flake = this.flakes[i];
+      _results.push(flake.x = flake.perc * W.ww);
+    }
+    return _results;
   };
 
   Snow.prototype.render = function() {

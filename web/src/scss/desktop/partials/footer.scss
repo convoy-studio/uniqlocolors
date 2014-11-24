@@ -13,12 +13,21 @@
 		font:300 11px/17px $font-family;
 		letter-spacing:1px;
 		margin:10px;
-		float:left;
+		display:inline-block;
 	}
 
 	i {
 		display:block;
 	}
+
+	.facebook-link,
+	.twitter-link,
+	.instagram-link,
+	.google-link {
+		position:relative;
+		bottom:-10px;
+	}
+
 
 	.facebook-link {
 		i {

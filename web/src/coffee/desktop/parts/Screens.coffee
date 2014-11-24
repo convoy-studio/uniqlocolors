@@ -1,6 +1,7 @@
 class Screens
 
-	@HIDDEN: 'hidden'
+	@TUTO_HIDDEN: 'tuto_hidden'
+	@GAMEOVER_HIDDEN: 'gameover_hidden'
 
 	constructor: () ->
 
@@ -9,6 +10,7 @@ class Screens
 		@_initContent()
 		@_initEvents()
 
+
 	# -----------------------------------------------------------------------------o private
 
 	_initContent: () =>
@@ -16,16 +18,19 @@ class Screens
 		@gameOverScreen = @container.filter('.game-over')
 		@tutoScreen = @container.filter('.tuto')
 		@tryAgainScreen = @container.filter('.try-again')
+		@winScreen = @container.filter('.win')
+		@looseScreen = @container.filter('.loose')
 
-		# -----o Tuto
+		# -----o Buttons
 
 		@startButton = @tutoScreen.find('.start-button')
+		@replayButton = @gameOverScreen.find('.replay-button')
+		@getNotifiedButton = @gameOverScreen.find('.get-notified')
 
 
 		# ----o Game Over
 
 		@sharesLinks = @gameOverScreen.find('li')
-
 
 		twttr.ready () =>
 
@@ -43,30 +48,48 @@ class Screens
 		#FB.Canvas.setAutoResize();
 
 
+		# ---o
+
+		@displayTuto()
+
+
 
 	_initEvents: () =>
 
 		@startButton
 			.on(Event.CLICK, @_onStartButtonClick)
 
+		@replayButton
+			.on(Event.CLICK, @_onReplayButtonClick)
+
 		@sharesLinks.filter('.facebook')
-			.on(Event.CLICK, @_onFacebookButtonClick)	
+			.on(Event.CLICK, @_onFacebookButtonClick)
 
-		
-
-
-	_display: () =>
+		@getNotifiedButton
+			.on(Event.CLICK, @_onGetNotifiedButtonClick)	
 
 
+	_pageShared: (type) =>
+
+		console.log type
 
 
 	# -----------------------------------------------------------------------------o listeners
 
 	_onStartButtonClick: () =>
 
-		@container.remove()
+		@tutoScreen.remove()
 
-		$(@).trigger(Tuto.HIDDEN)
+		$(@).trigger(Screens.TUTO_HIDDEN)
+
+
+	_onReplayButtonClick: () =>
+
+		W.status.shared = true
+
+		@gameOverScreen.remove()
+
+		$(@).trigger(Screens.GAMEOVER_HIDDEN)
 
 
 	_onFacebookButtonClick: () =>
@@ -80,10 +103,53 @@ class Screens
 				@_pageShared('facebook')
 		)
 
+	_onGetNotifiedButtonClick: () =>
 
-	_pageShared: (type) =>
+		console.log 'ok'
+		@gameOverScreen.css('display', 'none')
+		@displayLoose()
 
-		console.log type
+
+
+
+
+	# -----------------------------------------------------------------------------o public
+
+	displayTuto: () =>
+
+		setTimeout () =>
+			@tutoScreen.css('display','block')
+			@tutoScreen[0].offsetHeight
+			@tutoScreen.addClass('displayed')
+		, 1000
+
+
+	displayTryAgain: () =>
+
+		@tryAgainScreen.css('display','block')
+		@tryAgainScreen[0].offsetHeight
+		@tryAgainScreen.addClass('displayed')
+
+
+	displayWin: () =>
+
+		@winScreen.css('display','block')
+		@winScreen[0].offsetHeight
+		@winScreen.addClass('displayed')
+
+
+	displayGameOver: () =>
+
+		@gameOverScreen.css('display','block')
+		@gameOverScreen[0].offsetHeight
+		@gameOverScreen.addClass('displayed')
+
+
+	displayLoose: () =>
+
+		@looseScreen.css('display','block')
+		@looseScreen[0].offsetHeight
+		@looseScreen.addClass('displayed')
 
 
 

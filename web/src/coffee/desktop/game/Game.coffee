@@ -16,14 +16,18 @@ class Game
 			level: -1 			
 			lives: Parameters.lives
 			paused: false
+			stopped: false
+			loading: true
 			launched: false
 			initialized: true
+			shared: false
 		}
 
 		# ------o Game parameters
 
 		@gameParameters = Parameters
 		@_gameLaunched = false
+
 
 		# ------o Canvas
 
@@ -32,6 +36,8 @@ class Game
 
 
 		# ------o Init parts
+
+		@screens = new Screens()
 
 		@snow = new Snow({
 			ctx: @ctx
@@ -50,9 +56,16 @@ class Game
 			ctx: @ctx
 		})
 
+		@livesVal = $('.lives span')
+		@levelVal = $('.level span')
+		@levelVal.siblings('sup').text('/' + Parameters.levels.length)
+
+
 		# ------o Load assets
 
 		@_loadPictures()
+
+		@resize()
 
 
 	_initEvents: () =>
@@ -67,8 +80,12 @@ class Game
 			.on(Grid.GOOD_ANSWER, @_onGridGoodAnswer)
 			.on(Grid.WRONG_ANSWER, @_onGridWrongAnswer)
 
-		$('.try-again')
-			.on(Event.CLICK, @_playGame)
+		$('.button.try-again')
+			.on(Event.CLICK, @_onTryAgainClick)
+
+		$(@screens)
+			.on(Screens.TUTO_HIDDEN, @_onTutoHidden)
+			.on(Screens.GAMEOVER_HIDDEN, @_onGameOverHidden)
 
 
 	_loadPictures: () =>
@@ -106,6 +123,8 @@ class Game
 
 	_pauseGame: () =>
 
+		W.body.removeClass('playing')
+
 		W.status.paused = true
 
 		if W.status.lives == 0
@@ -115,22 +134,43 @@ class Game
 
 			W.status.lives--
 
-		
+		@snow.setColors([])
+
+		@container.addClass('hidden')
+
+		@_updateVals()
 
 
 	_playGame: () =>
 
+		W.body.addClass('playing')
+
 		W.status.paused = false
+		W.status.stopped = false
 
 		$('.try-again').css('display', 'none')
 
 		@countDown.reset()
 		@grid.reset()
 
+		@container.removeClass('hidden')
+
 
 	_stopGame: () =>
 
-		$('.game-over').css('display', 'block')
+		W.body.removeClass('playing')
+
+		W.status.stopped = true
+
+		@snow.setColors(['#FFFFFF'])
+
+		@container.addClass('hidden')
+
+
+	_updateVals: () =>
+
+		@livesVal.text(W.status.lives)
+		@levelVal.text(W.status.level + 1)
 
 
 
@@ -139,25 +179,59 @@ class Game
 	_onGameClick: (e) =>
 
 		if W.status.paused == false && e.target.nodeName == 'CANVAS'
-			console.log 'click'
 			@grid.click(e)
+
+
+	_onTryAgainClick: () =>
+
+		@snow.setColors(@grid.getColors())
+		@_playGame()
 
 
 	_onCountDownEnd: () =>
 
-		@_pauseGame()
+		@_onGridWrongAnswer()
 
 
 	_onGridGoodAnswer: () =>
 
-		@levelUp()
-		console.log 'good'
-
+		if W.status.level < Parameters.levels.length - 1
+			@levelUp()
+		else
+			@_stopGame()
+			@container.css('display','none')
+			@screens.displayWin()
+		
 
 	_onGridWrongAnswer: () =>
 
-		@_pauseGame()
-		console.log 'wrong'
+		if W.status.lives > 1
+			@_pauseGame()
+			@screens.displayTryAgain()
+		else
+			if W.status.shared == false
+				@screens.displayGameOver()
+			else
+				@screens.displayLoose()
+				@container.css('display','none')
+			@_stopGame()
+
+		@_updateVals()
+			
+	
+
+	_onTutoHidden: () =>
+
+		@launch()
+
+
+	_onGameOverHidden: () =>
+
+		W.status.lives = Parameters.lives
+		W.status.level = -1
+		@launch()
+
+		@_updateVals()
 
 
 	# -----------------------------------------------------------------------------o listeners
@@ -167,6 +241,7 @@ class Game
 		W.status.launched = true
 		@_gameLaunched = true
 		@levelUp()
+		@_playGame()
 
 
 	resize: () =>
@@ -177,7 +252,8 @@ class Game
 		W.grid.radius = (Math.min(W.ww, W.wh) - W.grid.padding * 2) * 0.5
 		W.grid.size = 2 * (Math.sin(Math.PI * 0.25) * W.grid.radius)
 		W.grid.clockRadius = W.grid.radius + 10
-		W.grid.bottomSpace = Math.asin(20 / W.grid.clockRadius)
+		#W.grid.bottomSpace = Math.asin(20 / W.grid.clockRadius)
+		W.grid.bottomSpace = 0
 
 		W.grid.gap = Math.max(5, W.grid.size * 0.05 / W.grid.lines)
 
@@ -190,6 +266,8 @@ class Game
 
 		if @_gameLaunched == true
 			@render(true)
+
+		@snow.resize()
 
 
 	levelUp: () =>
@@ -205,6 +283,8 @@ class Game
 		@snow.setColors(@grid.getColors())
 		@snow.levelUp()
 
+		@_updateVals()
+
 
 	render: (resized) =>
 
@@ -214,7 +294,7 @@ class Game
 			@snow.render()
 			@countDown.render(resized)
 
-		if W.status.launched == true
+		if W.status.launched == true && W.status.paused != true && W.status.stopped != true
 			@grid.render(resized)
 
 

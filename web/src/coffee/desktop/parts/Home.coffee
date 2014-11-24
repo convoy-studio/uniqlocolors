@@ -54,24 +54,11 @@ class Home
 
 		@container.addClass('hidden')
 
-		logo = $('.uniqlo-logo')
-		tween = {
-			perc:0
-		}
-		TweenLite.to(tween, 2, {
-			perc: 1
-			ease: Expo.easeOut
-			onUpdate: () =>
-				Normalize.transform(logo[0], 'translate3d(0, ' + ((W.wh * 0.5 - 70) * tween.perc) + 'px, 0)')
-			onComplete: () =>
-				Normalize.transform(logo[0], 'translate3d(0, 0, 0)')
-				logo.css {
-					'bottom': 70
-				}
-		})
+		$('.uniqlo-logo.main').addClass('displayed')
+		
 		setTimeout () =>
 			$(@).trigger(Home.HIDDEN)
-		, 500
+		, 1000
 
 
 

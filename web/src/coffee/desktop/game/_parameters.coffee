@@ -4,9 +4,9 @@ Parameters = {
 	levels: [
 		{	
 			difficulty: {
-				colors: 1
+				colors: 2
 				subColors: 1
-				pics: 4
+				pics: 1
 			}
 			picsLength: 9
 			moving: false
@@ -28,87 +28,6 @@ Parameters = {
 			}
 			picsLength: 9
 			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: false
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: true
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: true
-		}
-		{
-			difficulty: {
-				colors: 2
-				subColors: 1
-				pics: 2
-			}
-			picsLength: 16
-			moving: true
 		}
 	]
 }

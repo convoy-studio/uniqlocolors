@@ -1,0 +1,68 @@
+@media screen and (max-width: 980px){
+
+body {
+	overflow:auto;
+}
+
+// ----------------------------o Home
+.home {
+
+	.carousel {
+		height:50%;
+		width:100%;
+
+		header {
+			top:10px;
+
+			p {
+				font-size:12px;
+				line-height:15px;
+
+				strong {
+					font-size:12px;
+					line-height:15px;
+				}
+
+
+				span {
+					font-size:20px;
+					line-height:15px;
+					margin-top:5px;
+				}
+			}
+		}
+
+		footer {
+			.left {
+				display:none;
+			}
+		}
+	}
+
+	.content {
+		width:100%;
+		height:auto;
+
+		.mask {
+			height:auto;
+		}
+
+		.inner {
+			top:0;
+			@include translate(0, 0);
+			padding:40px 0;
+		}
+	}
+
+}
+
+
+// ----------------------------o Footer
+footer {
+	width:100%;
+	text-align:center;
+}
+
+
+// Enf of media query
+}

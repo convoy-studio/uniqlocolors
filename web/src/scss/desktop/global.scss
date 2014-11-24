@@ -6,7 +6,13 @@ body {
 	text-align:center;
 	font:300 15px/20px $font-family;
 	letter-spacing:1px;
+	background:$grey;
 	//-webkit-font-smoothing:antialiased;
+	@include transition(background 1000ms $easeOutExpo 0ms);
+
+	&.playing {
+		background:$white;
+	}
 }
 
 .body {
@@ -43,11 +49,19 @@ strong {
 .uniqlo-logo {
 	display:block;
 	position:absolute;
-	bottom:50%;
-	left:50%;
 	@include sprite('uniqlo-logo');
 	z-index:11;
-	margin:0 0 -35px -35px;
+	top:0;
+	right:0;
+
+	&.main {
+		@include translate3d(100%, 0, 0);
+
+		&.displayed {
+			@include translate3d(0, 0, 0);
+			@include transition(all 500ms $easeOutExpo 500ms);
+		}
+	}
 }
 
 .screen {
@@ -56,6 +70,7 @@ strong {
 	height:100%;
 	width:100%;
 	display:none;
+	opacity:0;
 
 	.content {
 		position:absolute;
@@ -68,6 +83,11 @@ strong {
 		color:$red;
 		text-transform:uppercase;
 		font:600 70px/60px $font-family;
+	}
+
+	&.displayed {
+		opacity:1;
+		@include transition(opacity 700ms $easeOutExpo 0ms);
 	}
 }
 
@@ -207,19 +227,42 @@ form {
 
 }
 
+.game {
 
-// ---------------------------------------o Body states
+	p {
+		position:absolute;
+		top:50%;
+		color:$red;
+		font:500 60px/34px $font-family;
 
-.home {
-	display:none;
+		sub {
+			font:300 15px/34px $font-family;
+			display:block;
+		}
+	}
+
+	.lives {
+		left:50%;
+		margin-left:-35%;
+	}
+
+	.level {
+		right:50%;
+		margin-right:-35%;
+
+		sup {
+			font-size:30px;
+		}
+	}
+
+	&.hidden {
+		.lives,
+		.level {
+			display:none;
+		}
+	}
+
 }
-
-.loose {
-	display:block !important;
-}
-
-
-
 
 
 

@@ -12,6 +12,8 @@ class Snow
 
 		@_initContent()
 
+		@tween = null
+
 
 	# -----------------------------------------------------------------------------o private
 
@@ -31,16 +33,18 @@ class Snow
 		if @flakeCount < @timeFlakeUnleashing
 			@flakeCount++
 
-			color =  @colors[Math.random() * @colors.length | 0] || '#F0F0F0'
-			
+			color =  @colors[Math.random() * @colors.length | 0] || '#FFFFFF'
+			percX = Math.random()
 			@flakes.push {
-				x: Math.random() * W.ww | 0
+				perc: percX
+				x: percX * W.ww | 0
 				y: -10
 				radius: 3 + Math.random() * 7 | 0
 				prevColor: Utils.hexToRgb(color)
 				currentColor: Utils.hexToRgb(color)
 				color: color
 			}
+
 
 	_updateFlakeColor: (perc) =>
 
@@ -57,26 +61,22 @@ class Snow
 
 	setColors: (colors) =>
 
+		if colors && colors.length == 0
+			colors = ['#FFFFFF']
+
 		@colors = colors
 		@rightWind = 0
 		@rightWindTarget = 0
-
-
-	levelUp: () =>
 
 		for i in [0...@flakes.length]
 			@flakes[i].prevColor = @flakes[i].currentColor
 			@flakes[i].currentColor = Utils.hexToRgb(@colors[Math.random() * @colors.length | 0])
 
-		@rightWindTarget = 50
-		
-		setTimeout () =>
-			@rightWindTarget = 0
-		, 500
-
-		# Fade color
 		color = {perc: 0}
-		TweenLite.to(color, 2, {
+		if @tween
+			@tween.kill()
+
+		@tween = TweenLite.to(color, 2, {
 			perc: 1
 			ease: Expo.easeOut
 			onUpdate: () =>
@@ -86,6 +86,31 @@ class Snow
 		})
 
 
+	levelUp: () =>
+
+		@rightWindTarget = 50
+		
+		setTimeout () =>
+			@rightWindTarget = 0
+		, 500
+
+		# Fade color
+		#color = {perc: 0}
+		#TweenLite.to(color, 2, {
+		#	perc: 1
+		#	ease: Expo.easeOut
+		#	onUpdate: () =>
+		#		@_updateFlakeColor(color.perc)
+		#	onComplete: () =>
+		#		@_updateFlakeColor(1)
+		#})
+	
+	resize: () =>
+
+		for i in [0...@flakes.length]
+
+			flake = @flakes[i]
+			flake.x = flake.perc * W.ww
 
 
 	render: () =>

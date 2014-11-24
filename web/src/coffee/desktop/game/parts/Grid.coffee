@@ -10,6 +10,8 @@ class Grid
 		@randomPics = []
 		@_initContent()
 
+		@singleton = @
+
 		@scale = 1
 
 
@@ -37,9 +39,6 @@ class Grid
 		if W.status.paused == false && Parameters.levels[W.status.level].moving == true
 			speed = 1 / Parameters.time
 			@scale -= speed * W.time.delta
-
-		textX = ''
-		textY = ''
 
 		for i in [0...@randomPics.length]
 			@randomPics[i].x = W.grid.left + (@picSize + W.grid.gap) * (i %  W.grid.lines)
@@ -127,7 +126,18 @@ class Grid
 			j = Math.floor Math.random() * (i + 1)
 			[randomPics[i], randomPics[j]] = [randomPics[j], randomPics[i]]
 
-		@randomPics = randomPics.slice(0)
+
+		@randomPics = []
+		for i in [0...randomPics.length]
+			pic = {}
+			pic.filename = randomPics[i].filename
+			pic.img = randomPics[i].img
+			pic.color = randomPics[i].color
+			pic.neo = randomPics[i].neo 
+
+			@randomPics.push(pic)
+
+		#@randomPics = randomPics.slice(0)
 
 
 
@@ -272,6 +282,7 @@ class Grid
 					$(@).trigger(Grid.GOOD_ANSWER)
 				else
 					$(@).trigger(Grid.WRONG_ANSWER)
+					return
 		
 
 	getColors: () =>

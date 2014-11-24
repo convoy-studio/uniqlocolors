@@ -28,8 +28,7 @@ class App
 		#@_onHomeHidden() # --- DEBUG ---
 		#$('.uniqlo-logo').remove()
 		#$('.tuto').remove()
-		#@_onTutoHidden() 
-		@screens = new Screens()
+		#@_onTutoHidden()
 
 		#@game = new Game()
 
@@ -45,9 +44,6 @@ class App
 
 		$(@home)
 			.on(Home.HIDDEN, @_onHomeHidden)
-
-		$(@screens)
-			.on(Screens.TUTO_HIDDEN, @_onTutoHidden)
 
 	
 	_initLang: () =>
@@ -83,10 +79,16 @@ class App
 		W.ww = W.window.width()
 		W.wh = W.window.height()
 
-		W.body.css {
-			'height': W.wh
-			'width': W.ww
-		}
+		if W.sw > 600
+			W.body.css {
+				'height': W.wh
+				'width': W.ww
+			}
+		else 
+			W.body.css {
+				'height': 'auto'
+				'width': '100%'
+			}
 
 		if @home
 			@home.resize()
@@ -109,13 +111,8 @@ class App
 
 		@home.container.remove()
 
-		@screens = new Screens()
+		#@screens = new Screens()
 		@game = new Game()
-
-
-	_onTutoHidden: () =>
-
-		@game.launch()
 
 	
 
@@ -128,10 +125,8 @@ class App
 		W.time.delta = (W.time.now - W.time.old) / 1000
 		W.time.old = W.time.now
 
-		if @_isWindowFocused == true
-
-			if @game
-				@game.update()
+		if @game
+			@game.update()
 
 
 $ ->

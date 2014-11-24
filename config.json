@@ -1,8 +1,7 @@
 {
-
-	"src": "src/",
-	"dev": "dev/",
-	"dist": "dist/",
+	"src": "web/src/",
+	"dev": "web/dev/",
+	"dist": "web/dist/",
 
 	"coffee": [
 		{
@@ -35,7 +34,7 @@
 				"js/shared/**/*.js",
 				"js/desktop/**/*.js"
 			],
-			"dest": "dev/js",
+			"dest": "js",
 			"filename": "script.js"
 		},
 
@@ -45,7 +44,7 @@
 				"js/shared/**/*.js",
 				"js/mobile/**/*.js"
 			],
-			"dest": "dev/js",
+			"dest": "js",
 			"filename": "script.mobile.js"
 		}
 
@@ -55,11 +54,11 @@
 
 		{
 			"src": ["scss/style.scss"],
-			"dest": "dev/css"
+			"dest": "css"
 		},
 		{
 			"src": ["scss/style.ui.scss"],
-			"dest": "dev/css"
+			"dest": "css"
 		}
 	],
 

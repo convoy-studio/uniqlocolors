@@ -28,33 +28,33 @@ class CountDown
 
 	_initContent: () =>
 
-		TweenLite.to(@tweens, 2, {clockPerc: 1, delay: 0, ease: Expo.easeOut})
+		TweenLite.to(@tweens, 2, {clockPerc: 1, delay: 0, ease: Quint.easeOut, delay: 0.5})
 
 		for i in [0...60]
 			@tweens.dash.push({perc: 0})
 
-			TweenLite.to(@tweens.dash[i], 2, {perc: 1, delay: 0 + 1 * i / 60, ease: Expo.easeOut})
+			TweenLite.to(@tweens.dash[i], 2, {perc: 1, delay: 0 + 1 * i / 60 + 1, ease: Quint.easeOut})
 
 	
 	_drawProgressCircle: () =>
 
-		if @_timeOut == false && W.status.paused == false
+		if @_timeOut == false && W.status.paused != true && W.status.stopped != true
 			speed = Math.PI * 2 / Parameters.time
 			@currentTimeDeg += speed * W.time.delta
 
 			@_progressPerc = (@currentTimeDeg + Math.PI * 0.5) / (Math.PI * 2)
 
-		@ctx.beginPath()
+			@ctx.beginPath()
 
-		@ctx.fillStyle = @red
-		@ctx.globalAlpha = 0.2
+			@ctx.fillStyle = @red
+			@ctx.globalAlpha = 0.2
 
-		@ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 10, @arcZero, @currentTimeDeg, false)
-		@ctx.lineTo(W.ww * 0.5, W.wh * 0.5)
+			@ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 10, @arcZero, @currentTimeDeg, false)
+			@ctx.lineTo(W.ww * 0.5, W.wh * 0.5)
 
-		@ctx.fill()
+			@ctx.fill()
 
-		@ctx.globalAlpha = 1
+			@ctx.globalAlpha = 1
 
 		# ---------------o Draw level line
 
@@ -91,7 +91,7 @@ class CountDown
 		if @tweens.clockPerc == 1
 			@ctx.beginPath()
 			@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero, @arcZero + Math.PI * 2, true)
-			@ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'
+			@ctx.fillStyle = 'rgba(230, 230, 230, 0.5)'
 			@ctx.fill()
 
 		@ctx.beginPath()
