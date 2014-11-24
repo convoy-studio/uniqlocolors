@@ -23,14 +23,14 @@ Trads = {
 				"offer": "1€",
 				"pictures": [
 					{
-						"back": "/medias/home/test-1-back.jpg",
-						"front": "/medias/home/test-1-front.png",
-						"color": "#f5855d"
+						"back": "/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/week_1_A.png",
+						"color": "#afd9a9"
 					},
 					{
-						"back": "/medias/home/test-2-back.jpg",
-						"front": "/medias/home/test-2-front.png",
-						"color": "#7cceda"
+						"back": "/medias/home/week_1_B_bg.jpg",
+						"front": "/medias/home/week_1_B.png",
+						"color": "#6bc2de"
 					}
 				]
 			}
