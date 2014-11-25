@@ -59,6 +59,14 @@ class User
     /**
      * @var boolean
      *
+     * @ORM\Column(name="winner", type="boolean")
+     * @Assert\NotNull()
+     */
+    private $winner;
+
+    /**
+     * @var boolean
+     *
      * @ORM\Column(name="reminder", type="boolean")
      * @Assert\NotNull()
      */
@@ -101,6 +109,7 @@ class User
             'firstName'  => $this->getFirstName(),
             'lastName'   => $this->getLastName(),
             'gender'     => $this->getGender(),
+            'winner'     => $this->getWinner(),
             'reminder'   => $this->getReminder(),
             'newsletter' => $this->getNewsletter(),
             'locale'     => $this->getLocale(),
@@ -208,6 +217,18 @@ class User
     public function getGender()
     {
         return $this->gender;
+    }
+
+    public function setWinner($winner)
+    {
+        $this->winner = $winner;
+
+        return $this;
+    }
+
+    public function getWinner()
+    {
+        return $this->winner;
     }
 
     /**

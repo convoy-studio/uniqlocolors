@@ -19,6 +19,7 @@ class UserType extends AbstractType
             ->add('firstName')
             ->add('lastName')
             ->add('gender')
+            ->add('winner')
             ->add('reminder')
             ->add('newsletter')
             ->add('locale');
