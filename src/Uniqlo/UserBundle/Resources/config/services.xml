@@ -9,6 +9,10 @@
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="form.factory"></argument>
         </service>
+
+        <service id="uniqlo.locale" class="Uniqlo\UserBundle\Service\LocaleService">
+            <argument type="service" id="request_stack"/>
+        </service>
     </services>
 
 </container>

@@ -5,6 +5,7 @@ namespace Uniqlo\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use Uniqlo\UserBundle\Entity\User;
@@ -15,9 +16,13 @@ class WebController extends Controller
      * @Route("/")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return [];
+        $locale = $this->get('uniqlo.locale')->getLocale();
+
+        return [
+            'locale' => $locale
+        ];
     }
 
     /**
