@@ -20,9 +20,9 @@ $values: (
 {{#options.functions}}
 @mixin sprite($img, $pixel-ratio: 1) {
   background-image:url(map-get(map-get($values, $img), src));
-  background-position:map-get(map-get($values, $img), x) map-get(map-get($values, $img), y);
-  width:map-get(map-get($values, $img), width);
-  height:map-get(map-get($values, $img), height);
+  background-position:map-get(map-get($values, $img), x) / $pixel-ratio map-get(map-get($values, $img), y) / $pixel-ratio;
+  width:map-get(map-get($values, $img), width) / $pixel-ratio;
+  height:map-get(map-get($values, $img), height) / $pixel-ratio;
   background-size:map-get(map-get($values, $img), spriteWidth) / $pixel-ratio map-get(map-get($values, $img), spriteHeight) / $pixel-ratio;
 }
 {{/options.functions}}

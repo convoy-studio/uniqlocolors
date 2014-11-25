@@ -66,7 +66,7 @@ class Home
 
 	resize: () =>
 
-		dims = Utils.getCoverSizeImage(640, 720, W.ww * 0.5, W.wh)
+		dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh)
 
 		for i in [0...@pics.length]
 			pic = @pics[i]

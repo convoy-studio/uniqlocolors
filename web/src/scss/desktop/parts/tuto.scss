@@ -27,6 +27,17 @@
 		}
 	}
 
+	.loading {
+		span {
+			color:$red;
+			border-bottom:1px solid $red;
+		}
+	}
+
+	.start-button {
+		display:none;
+	}
+
 	.text {
 		width:350px;
 		margin:50px auto;

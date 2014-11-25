@@ -11,6 +11,7 @@
 	li {
 		display:inline-block;
 		margin:0 5px;
+		cursor:pointer;
 
 		a {
 			cursor:pointer;
@@ -35,12 +36,16 @@
 		font:500 25px/20px $font-family;
 		text-transform:uppercase;
 		cursor:pointer;
+		text-decoration:underline;
 		
 		span {
 			display:inline-block;
-			border-bottom:1px solid $black;
-			margin-bottom:10px;
 		}
+	}
+
+	.replay-button {
+		margin:30px 0 64px;
+		display:none;
 	}
 
 }

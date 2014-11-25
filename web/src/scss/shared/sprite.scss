@@ -1,101 +1,110 @@
 $values: (
   enveloppe: (
-    src: '/img/sprite.png',
+    src: '/dev/img/sprite.png',
     x: 0px,
     y: 0px,
     width: 330px,
     height: 233px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
   facebook-logo: (
-    src: '/img/sprite.png',
-    x: -206px,
-    y: -234px,
+    src: '/dev/img/sprite.png',
+    x: -402px,
+    y: -133px,
     width: 15px,
     height: 15px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
   form-v: (
-    src: '/img/sprite.png',
-    x: -270px,
-    y: -234px,
+    src: '/dev/img/sprite.png',
+    x: -418px,
+    y: -101px,
     width: 11px,
     height: 10px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
   google-logo: (
-    src: '/img/sprite.png',
-    x: -222px,
-    y: -234px,
+    src: '/dev/img/sprite.png',
+    x: -402px,
+    y: -101px,
     width: 15px,
     height: 15px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
   instagram-logo: (
-    src: '/img/sprite.png',
-    x: -238px,
-    y: -234px,
+    src: '/dev/img/sprite.png',
+    x: -402px,
+    y: -117px,
     width: 15px,
     height: 15px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
   share-facebook: (
-    src: '/img/sprite.png',
-    x: -71px,
-    y: -234px,
-    width: 44px,
-    height: 44px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
-  ),
-  share-google: (
-    src: '/img/sprite.png',
-    x: -116px,
-    y: -234px,
-    width: 44px,
-    height: 44px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
-  ),
-  share-twitter: (
-    src: '/img/sprite.png',
-    x: -161px,
-    y: -234px,
-    width: 44px,
-    height: 44px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
-  ),
-  twitter-logo: (
-    src: '/img/sprite.png',
-    x: -254px,
-    y: -234px,
-    width: 15px,
-    height: 15px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
-  ),
-  uniqlo-logo: (
-    src: '/img/sprite.png',
+    src: '/dev/img/sprite.png',
     x: 0px,
     y: -234px,
+    width: 60px,
+    height: 60px,
+    spriteWidth: 431px,
+    spriteHeight: 294px
+  ),
+  share-google: (
+    src: '/dev/img/sprite.png',
+    x: -61px,
+    y: -234px,
+    width: 44px,
+    height: 44px,
+    spriteWidth: 431px,
+    spriteHeight: 294px
+  ),
+  share-twitter: (
+    src: '/dev/img/sprite.png',
+    x: -331px,
+    y: -172px,
+    width: 60px,
+    height: 60px,
+    spriteWidth: 431px,
+    spriteHeight: 294px
+  ),
+  twitter-logo: (
+    src: '/dev/img/sprite.png',
+    x: -402px,
+    y: -149px,
+    width: 15px,
+    height: 15px,
+    spriteWidth: 431px,
+    spriteHeight: 294px
+  ),
+  uniqlo-logo-retina: (
+    src: '/dev/img/sprite.png',
+    x: -331px,
+    y: 0px,
+    width: 100px,
+    height: 100px,
+    spriteWidth: 431px,
+    spriteHeight: 294px
+  ),
+  uniqlo-logo: (
+    src: '/dev/img/sprite.png',
+    x: -331px,
+    y: -101px,
     width: 70px,
     height: 70px,
-    spriteWidth: 330px,
-    spriteHeight: 304px
+    spriteWidth: 431px,
+    spriteHeight: 294px
   ),
 );
 
 @mixin sprite($img, $pixel-ratio: 1) {
   background-image:url(map-get(map-get($values, $img), src));
-  background-position:map-get(map-get($values, $img), x) map-get(map-get($values, $img), y);
-  width:map-get(map-get($values, $img), width);
-  height:map-get(map-get($values, $img), height);
+  background-position:map-get(map-get($values, $img), x) / $pixel-ratio map-get(map-get($values, $img), y) / $pixel-ratio;
+  width:map-get(map-get($values, $img), width) / $pixel-ratio;
+  height:map-get(map-get($values, $img), height) / $pixel-ratio;
   background-size:map-get(map-get($values, $img), spriteWidth) / $pixel-ratio map-get(map-get($values, $img), spriteHeight) / $pixel-ratio;
 }
 

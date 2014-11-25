@@ -144,7 +144,7 @@ gulp.task 'sprites', ->
 				algorithm: 'binary-tree'
 				cssTemplate: config.src + sprite.template
 				cssFormat: 'scss'
-				imgPath: '/' + sprite.dest + sprite.filename
+				imgPath: '/dev/' + sprite.dest + sprite.filename
 				padding: 1
 			}))
 
@@ -184,6 +184,7 @@ gulp.task 'favicons', ->
 			size = config.favicons.type[i].sizes[j]
 			filename = config.favicons.dest + name + '-' + size + 'x' + size
 
+			console.log config.dev + config.favicons.dest
 
 			gulp
 				.src(config.src + config.favicons.src + name + ext)
@@ -194,17 +195,17 @@ gulp.task 'favicons', ->
 				.pipe(rename({
 					basename: filename
 				}))
-				.pipe(gulp.dest(config.dest + config.favicons.dest))
+				.pipe(gulp.dest(config.dev + config.favicons.dest))
 
-			if name == 'favicon' && j == 0
+			#if name == 'favicon' && j == 0
 
-				gulp
-					.src(config.dest + filename + '.png')
-					.pipe(rename({
-						basename: 'favicon'
-						extname: '.ico'
-					}))
-					.pipe(gulp.dest(config.dest))
+				#gulp
+				#	.src(config.dev + filename + '.png')
+				#	.pipe(rename({
+				#		basename: 'favicon'
+				#		extname: '.ico'
+				#	}))
+				#	.pipe(gulp.dest(config.dev))
 				
 
 

@@ -17,6 +17,7 @@ body {
 
 .body {
 	height:100%;
+	display:none;
 }
 
 canvas {
@@ -31,9 +32,14 @@ h1 {
 }
 
 h2 {
-	font:500 25px/25px $font-family;
+	font:500 25px/40px $font-family;
 	text-transform:uppercase;
 	margin-bottom:30px;
+
+	strong {
+		display:block;
+		font:500 35px/40px $font-family;
+	}
 }
 
 strong {
@@ -119,6 +125,7 @@ form {
 	padding:20px;
 	text-align:left;
 	background:$white;
+	position:relative;
 
 	.info {
 		text-align:center;
@@ -133,6 +140,7 @@ form {
 			position:absolute;
 			top:11px;
 			left:10px;
+			@include transition(all 300ms $easeOutExpo 0ms);
 		}
 
 		input {
@@ -146,6 +154,13 @@ form {
 
 			&:focus {
 				outline: none;
+			}
+		}
+
+		&.focus {
+			span {
+				//@include translate3d(0, -20px, 0);
+				display:none;
 			}
 		}
 	}
@@ -225,6 +240,38 @@ form {
 		}
 	}
 
+	.error {
+		position:absolute;
+		top:150px;
+		left:0;
+		color:$red;
+		width:100%;
+		padding:0 20px;
+		box-sizing:border-box;
+		text-align:center;
+		display:none;
+	}
+
+	.sent {
+		font:500 25px/25px $font-family;
+		color:$red;
+		text-align:center;
+		position:absolute;
+		bottom:20px;
+		left:0;
+		width:100%;
+		display:none;
+
+		p:nth-child(2){
+			font:300 14px/25px $font-family;
+
+			span {
+				border-bottom:1px solid $red;
+				cursor:pointer;
+			}
+		}
+	}
+
 }
 
 .game {
@@ -279,6 +326,10 @@ form {
 	z-index:2;
 	color:red;
 	font:500 50px/50px Helvetica;
+}
+
+.sf-toolbarreset {
+	display:none !important;
 }
 
 /*.try-again {

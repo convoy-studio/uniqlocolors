@@ -71,7 +71,7 @@ class Screens
 
 	_pageShared: (type) =>
 
-		console.log type
+		@gameOverScreen.find('.replay-button').css('display','block').prev().css('display', 'none')
 
 
 	# -----------------------------------------------------------------------------o listeners
@@ -97,7 +97,7 @@ class Screens
 		FB.ui(
 			{
 				method: 'share'
-				href: 'http://uniqlo.dev'
+				href: 'http://uniqlocolors.eu'
 			},
 			() =>
 				@_pageShared('facebook')
@@ -105,7 +105,6 @@ class Screens
 
 	_onGetNotifiedButtonClick: () =>
 
-		console.log 'ok'
 		@gameOverScreen.css('display', 'none')
 		@displayLoose()
 
@@ -147,6 +146,7 @@ class Screens
 
 	displayLoose: () =>
 
+		W.status.ended = true
 		@looseScreen.css('display','block')
 		@looseScreen[0].offsetHeight
 		@looseScreen.addClass('displayed')

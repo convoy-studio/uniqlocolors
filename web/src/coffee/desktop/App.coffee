@@ -32,6 +32,11 @@ class App
 
 		#@game = new Game()
 
+		$('form').each (key, form) =>
+			new Form({
+				container: $(form)
+			})
+
 		@_isWindowFocused = true
 
 
@@ -63,7 +68,12 @@ class App
 		@hbSource = @body.html()
 		@hbTemplate = Handlebars.compile(@hbSource)
 
+		W.lang = lang
+
 		@body.html(@hbTemplate({'trad': trad, 'product': product}))
+		setTimeout () =>
+			@body.css('display','block')
+		, 100
 			
 
 

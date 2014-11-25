@@ -8,6 +8,100 @@ Trads = {
 		
 	"fr": {
 		"play": "JOUER",
+		"start": "COMMENCER",
+		"try_again": "REJOUER",
+		"tries_left": "Essais restants",
+		"levels": "Niveaux",
+		"game_over": "Perdu",
+		"try_again": "Rejouer !",
+		"game_over_text": "Vous n'avez plus d'essais<br/><span>Partagez</span> le jeu avec vos amis<br/>pour pouvoir <span>jouer à nouveau</span>:",
+		"get_notified": "<span>Être informé</span><br/><span>la semaine prochaine quand vous pourrez rejouer</span>",
+		"loading": "Loading...",
+
+		"sharingText": "UNIQLO GIVEAWAY - Play the color game and get a chance to win free products .",
+
+		"products": [
+			{
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
+					},
+					{
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
+					}
+				]
+			}
+		],
+
+		"home": {
+			"title": "DONNEZ LA COULEUR",
+			"subtitle": "Ce Noël, <strong>partagez la bonne humeur avec votre entourage.</strong>",
+			"info_1": "Chaque semaine, entre maintenant et Noël, UNIQLO vous propose une superbe nouvelle <strong>promotion.</strong>",
+			"info_2": "Soyez sûr de vous tenir au courant toutes les semaines !",
+			"sub_play_button": "Jouer pour gagner",
+		},
+
+		"tuto": "<p>Cliquez sur l'image<br/> <span>qui n'a pas</span> son double.</p><p>Terminez tous les niveaux dans le temps imparti et participez à notre tirage au sort quotidien pour gagner un article à retirer en magasin.</p>",
+
+		"win": {
+			"info": "Remplissez le formulaire<br/>afin de participer au tirage au sort:",
+		},
+
+		"loose": {
+			"see_you": "À bientôt",
+			"info": "Laissez nous votre email <br/>et soyez informé quand vous pourrez rejouer"
+		},
+
+		"form": {
+			"firstname": "Votre prénom",
+			"lastname": "Votre nom de famille",
+			"email": "Votre email",
+			"female": "Femme",
+			"male": "Homme",
+			"remind_me": "M'informer pour la semaine prochaine",
+			"keep_me_posted": "Me tenir informé des prochaines offres Uniqlo",
+			"submit": "Envoyer",
+			"get_a_chance": "Remportez une chance de gagner",
+			"remind_me": "Me rappeler"
+		},
+
+		"footer": {
+			"rules": {
+				"text": "Règlement",
+				"url": ""
+			},
+			"privacy_policy": {
+				"text": "Politique de confidentialité",
+				"url": ""
+			},
+			"terms_of_use": {
+				"text": "Conditions d'utilisation",
+				"url": ""
+			},
+			"credits": {
+				"text": "Crédits",
+				"url": ""
+			},
+			"facebook": "https://www.facebook.com/uniqlo.fr",
+			"twitter": "https://twitter.com/UNIQLO_France",
+			"google": "https://plus.googleapis.com/wm/4/+uniqloparis/",
+			"youtube": "https://www.youtube.com/channel/UCCWqHjQF91GWFf2s1doC8JQ"
+		}
+	},
+
+	"en":{
+		"play": "PLAY",
 		"start": "START",
 		"try_again": "TRY AGAIN",
 		"tries_left": "Tries left",
@@ -17,26 +111,25 @@ Trads = {
 		"game_over_text": "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:",
 		"get_notified": "<span>Get notified</span><br/><span>of next week's giveaway</span>",
 
-
 		"products": [
 			{
-				"category": "Product <br/>Category 1",
-				"name": "Product Name 1",
-				"other_name": "Ultra Light Down",
-				"description": "Product Description 1",
-				"carousel_top": "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>",
-				"price": "10€",
-				"offer": "1€",
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
 				"pictures": [
 					{
-						"back": "/medias/home/week_1_A_bg.jpg",
-						"front": "/medias/home/week_1_A.png",
-						"color": "#afd9a9"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
 					},
 					{
-						"back": "/medias/home/week_1_B_bg.jpg",
-						"front": "/medias/home/week_1_B.png",
-						"color": "#6bc2de"
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
 					}
 				]
 			}
@@ -91,15 +184,102 @@ Trads = {
 				"text": "Crédits",
 				"url": ""
 			},
-			"facebook": "fb",
-			"twitter": "tw",
-			"google": "g",
-			"youtube": "yt"
+			"facebook": "https://www.facebook.com/uniqlo.uk",
+			"twitter": "https://twitter.com/UNIQLO_UK",
+			"google": "https://plus.google.com/b/110396223365528310578/+uniqlouk/posts",
+			"youtube": "https://www.youtube.com/user/uniqloukofficial"
 		}
 	},
+	
+	"de": {
+		"play": "SPIELEN",
+		"start": "START",
+		"try_again": "REPLAY",
+		"tries_left": "Versuche übrig",
+		"levels": "Stufen",
+		"game_over": "Das Spiel ist aus.",
+		"try_again": "Replay !",
+		"game_over_text": "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT.<br/>Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch.",
+		"get_notified": "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>",
 
-	"en": {
-		"play": "PLAY"
+		"products": [
+			{
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
+					},
+					{
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
+					}
+				]
+			}
+		],
+
+		"home": {
+			"title": "FARBE SCHENKEN!",
+			"subtitle": "Mach dieses Jahr zu Weihnachten jemandem eine Freude.",
+			"info_1": "UNIQLO bietet jede Woche ein neues, tolles Angebot. Schau regelmäβig vorbei.",
+			"info_2": "Mach mit bei unserem Farbenspiel um einen Preis zu gewinnen, den du dann im UNIQLO Flagship Store in Berlin abholen kannst. Versuch einfach jede Woche erneut dein Glück.",
+			"sub_play_button": "MITSPIELEN",
+		},
+
+		"tuto": "KLICK AUF DIE BILDER, <span>DIE NICHT PASSEN</span>.</p><p>Vollende jedes Level, um ein kostenloses Produkt zu gewinnen, das im UNIQLO Flagship Store in Berlin abgeholt werden kann.</p>",
+
+		"win": {
+			"info": "Du hast alle Level vollendet.<br/> Gib deine E-Mail-Adresse ein, um den heutigen Preis zu gewinnen, der im UNIQLO Flagship Store in Berlin abgeholt werden kann.",
+		},
+
+		"loose": {
+			"see_you": "Bis bald",
+			"info": "Gib deine E-Mail-Adresse ein,<br/> um den heutigen Preis zu gewinnen,<br/> der im UNIQLO Flagship Store in Berlin abgeholt werden kann."
+		},
+
+		"form": {
+			"firstname": "Ihren Namen",
+			"lastname": "Ihr Name",
+			"email": "E-Mail",
+			"female": "Woman",
+			"male": "Man",
+			"remind_me": "Informieren Sie mich für die nächste Woche,",
+			"keep_me_posted": "Halten Sie mich über kommende Angebote informiert Uniqlo",
+			"submit": "Senden",
+			"get_a_chance": "Gewinnen Sie eine Chance zu gewinnen",
+			"remind_me": "Remind Me"
+		},
+
+		"footer": {
+			"rules": {
+				"text": "Règlement",
+				"url": ""
+			},
+			"privacy_policy": {
+				"text": "Politique de confidentialité",
+				"url": ""
+			},
+			"terms_of_use": {
+				"text": "Conditions d'utilisation",
+				"url": ""
+			},
+			"credits": {
+				"text": "Crédits",
+				"url": ""
+			},
+			"facebook": "https://de-de.facebook.com/uniqlo.deutschland",
+			"twitter": "https://twitter.com/UNIQLO_DE",
+			"google": "https://plus.google.com/107858820395596222759/about",
+			"youtube": "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A"
+		}
 	}
 
 };
@@ -784,7 +964,7 @@ if (!window.requestAnimationFrame) {
 Handlebars.registerHelper('plus_one', function(index) {
 	return index +  1;
 });
-var App, Carousel, CountDown, Event, Game, Grid, Home, Loader, Parameters, Pics, Router, Screens, Scroll, Snow, SocialSharing, Transitions, Tuto, UI_Slider, Utils, VideoPlayer, VideoPlayer_Controls, VideoPlayer_HTML, VideoPlayer_Templates, W, mediasPath,
+var App, Carousel, CountDown, Event, Form, Game, Grid, Home, Loader, Parameters, Pics, Router, Screens, Scroll, Snow, SocialSharing, Transitions, Tuto, UI_Slider, Utils, VideoPlayer, VideoPlayer_Controls, VideoPlayer_HTML, VideoPlayer_Templates, W, mediasPath,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
@@ -2312,6 +2492,13 @@ App = (function() {
       old: +new Date()
     };
     this.home = new Home();
+    $('form').each((function(_this) {
+      return function(key, form) {
+        return new Form({
+          container: $(form)
+        });
+      };
+    })(this));
     return this._isWindowFocused = true;
   };
 
@@ -2336,10 +2523,16 @@ App = (function() {
     product = trad.products[currentWeek];
     this.hbSource = this.body.html();
     this.hbTemplate = Handlebars.compile(this.hbSource);
-    return this.body.html(this.hbTemplate({
+    W.lang = lang;
+    this.body.html(this.hbTemplate({
       'trad': trad,
       'product': product
     }));
+    return setTimeout((function(_this) {
+      return function() {
+        return _this.body.css('display', 'block');
+      };
+    })(this), 100);
   };
 
   App.prototype._onKeyDown = function(e) {};
@@ -2434,12 +2627,14 @@ Game = (function() {
     W.status = {
       level: -1,
       lives: Parameters.lives,
-      paused: false,
+      paused: true,
       stopped: false,
       loading: true,
       launched: false,
       initialized: true,
-      shared: false
+      ended: false,
+      shared: false,
+      winner: false
     };
     this.gameParameters = Parameters;
     this._gameLaunched = false;
@@ -2498,7 +2693,8 @@ Game = (function() {
   };
 
   Game.prototype._initGame = function() {
-    return this.resize();
+    this.resize();
+    return $('.tuto').find('.start-button').css('display', 'block').siblings('.loading').remove();
   };
 
   Game.prototype._pauseGame = function() {
@@ -2557,7 +2753,8 @@ Game = (function() {
       return this.levelUp();
     } else {
       this._stopGame();
-      this.container.css('display', 'none');
+      W.status.ended = true;
+      W.status.winner = true;
       return this.screens.displayWin();
     }
   };
@@ -2568,10 +2765,11 @@ Game = (function() {
       this.screens.displayTryAgain();
     } else {
       if (W.status.shared === false) {
+        W.status.paused = true;
         this.screens.displayGameOver();
       } else {
+        W.status.ended = true;
         this.screens.displayLoose();
-        this.container.css('display', 'none');
       }
       this._stopGame();
     }
@@ -2632,7 +2830,9 @@ Game = (function() {
     this.ctx.clearRect(0, 0, W.ww, W.wh);
     if (W.status.initialized === true) {
       this.snow.render();
-      this.countDown.render(resized);
+      if (W.status.ended !== true) {
+        this.countDown.render(resized);
+      }
     }
     if (W.status.launched === true && W.status.paused !== true && W.status.stopped !== true) {
       return this.grid.render(resized);
@@ -2649,7 +2849,7 @@ Game = (function() {
 
 Parameters = {
   time: 5,
-  lives: 4,
+  lives: 1,
   levels: [
     {
       difficulty: {
@@ -2670,6 +2870,118 @@ Parameters = {
     }, {
       difficulty: {
         colors: 4,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 9,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 1
+      },
+      picsLength: 9,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 3,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 2,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }
+  ]
+};
+
+Parameters = {
+  time: 5,
+  lives: 1,
+  levels: [
+    {
+      difficulty: {
+        colors: 2,
         subColors: 1,
         pics: 1
       },
@@ -2862,7 +3174,85 @@ Pics = [
   ]
 ];
 
-mediasPath = '/medias/products/';
+mediasPath = '/dev/medias/products/';
+
+Form = (function() {
+  function Form(options) {
+    this._onInputBlur = __bind(this._onInputBlur, this);
+    this._onInputFocus = __bind(this._onInputFocus, this);
+    this._onSubmit = __bind(this._onSubmit, this);
+    this._displayError = __bind(this._displayError, this);
+    this._initEvents = __bind(this._initEvents, this);
+    this.container = options.container;
+    this.submitButton = this.container.find('.submit');
+    this._initEvents();
+  }
+
+  Form.prototype._initEvents = function() {
+    this.container.on('submit', this._onSubmit);
+    this.submitButton.on(Event.CLICK, this._onSubmit);
+    return this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+  };
+
+  Form.prototype._displayError = function(error) {
+    console.log(this.container.find('.error.' + error));
+    return this.container.find('.error.' + error).css('display', 'block');
+  };
+
+  Form.prototype._onSubmit = function(e) {
+    var allFieldsField;
+    e.preventDefault();
+    allFieldsField = true;
+    this.container.find('input').each((function(_this) {
+      return function(key, input) {
+        if (input.value === '') {
+          return allFieldsField = false;
+        }
+      };
+    })(this));
+    if (allFieldsField === false) {
+      this._displayError('empty-fields');
+      return !1;
+    }
+    console.log(W, W.status);
+    this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
+    this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
+    console.log(this.container.serialize());
+    return $.ajax({
+      type: 'POST',
+      url: 'http://uniqlo.dev/app_dev.php/api/users.json',
+      dataType: 'json',
+      data: this.container.serialize(),
+      success: (function(_this) {
+        return function(response) {
+          return console.log('success', response);
+        };
+      })(this),
+      error: (function(_this) {
+        return function(response) {
+          return console.log('error', $.parseJSON(response.responseText));
+        };
+      })(this)
+    });
+  };
+
+  Form.prototype._onInputFocus = function(e) {
+    var $this;
+    $this = $(e.currentTarget);
+    return $this.addClass('focus');
+  };
+
+  Form.prototype._onInputBlur = function(e) {
+    var $this;
+    $this = $(e.currentTarget);
+    if ($this.val() === '') {
+      return $this.parents('.input-text').removeClass('focus');
+    }
+  };
+
+  return Form;
+
+})();
 
 Home = (function() {
   Home.HIDDEN = 'hidden';
@@ -2926,7 +3316,7 @@ Home = (function() {
 
   Home.prototype.resize = function() {
     var dims, i, pic, _i, _ref, _results;
-    dims = Utils.getCoverSizeImage(640, 720, W.ww * 0.5, W.wh);
+    dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh);
     _results = [];
     for (i = _i = 0, _ref = this.pics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       pic = this.pics[i];
@@ -2990,7 +3380,7 @@ Screens = (function() {
   };
 
   Screens.prototype._pageShared = function(type) {
-    return console.log(type);
+    return this.gameOverScreen.find('.replay-button').css('display', 'block').prev().css('display', 'none');
   };
 
   Screens.prototype._onStartButtonClick = function() {
@@ -3007,7 +3397,7 @@ Screens = (function() {
   Screens.prototype._onFacebookButtonClick = function() {
     return FB.ui({
       method: 'share',
-      href: 'http://uniqlo.dev'
+      href: 'http://uniqlocolors.eu'
     }, (function(_this) {
       return function() {
         return _this._pageShared('facebook');
@@ -3016,7 +3406,6 @@ Screens = (function() {
   };
 
   Screens.prototype._onGetNotifiedButtonClick = function() {
-    console.log('ok');
     this.gameOverScreen.css('display', 'none');
     return this.displayLoose();
   };
@@ -3050,6 +3439,7 @@ Screens = (function() {
   };
 
   Screens.prototype.displayLoose = function() {
+    W.status.ended = true;
     this.looseScreen.css('display', 'block');
     this.looseScreen[0].offsetHeight;
     return this.looseScreen.addClass('displayed');
@@ -3169,53 +3559,55 @@ CountDown = (function() {
   CountDown.prototype._drawClock = function() {
     var dx, dy, i, length, ox, oy, perc, percProg, radius, rp, _i, _results;
     radius = W.grid.clockRadius;
-    this.ctx.lineWidth = 6;
-    this.ctx.strokeStyle = this.red;
-    if (this.tweens.clockPerc === 1) {
-      this.ctx.beginPath();
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * 2, true);
-      this.ctx.fillStyle = 'rgba(230, 230, 230, 0.5)';
-      this.ctx.fill();
-    }
-    this.ctx.beginPath();
-    this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace) * this.tweens.clockPerc, false);
-    this.ctx.stroke();
-    this.ctx.beginPath();
-    this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero + Math.PI * 2, this.arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * this.tweens.clockPerc), true);
-    this.ctx.stroke();
-    _results = [];
-    for (i = _i = 0; _i < 120; i = ++_i) {
-      this.ctx.beginPath();
-      perc = i / 120;
-      rp = this.arcZero + Math.PI * 2 * perc;
-      ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp);
-      oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp);
-      if (rp < this.arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
-        if (i % 30 === 0) {
-          this.ctx.lineWidth = 5;
-          length = 15;
-        } else if (i % 10 === 0) {
-          this.ctx.lineWidth = 3;
-          length = 8;
-        } else {
-          this.ctx.lineWidth = 1;
-          length = 5;
-        }
-        if (i < 60) {
-          percProg = this.tweens.dash[i].perc;
-        } else {
-          percProg = this.tweens.dash[60 - (i - 60)].perc;
-        }
-        dx = ox + (Math.cos(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
-        dy = oy + (Math.sin(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
-        this.ctx.moveTo(ox, oy);
-        this.ctx.lineTo(dx, dy);
-        _results.push(this.ctx.stroke());
-      } else {
-        _results.push(void 0);
+    if (!(W.status.paused === true && W.ww < 640)) {
+      this.ctx.lineWidth = 6;
+      this.ctx.strokeStyle = this.red;
+      if (this.tweens.clockPerc === 1) {
+        this.ctx.beginPath();
+        this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * 2, true);
+        this.ctx.fillStyle = 'rgba(230, 230, 230, 0.5)';
+        this.ctx.fill();
       }
+      this.ctx.beginPath();
+      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace) * this.tweens.clockPerc, false);
+      this.ctx.stroke();
+      this.ctx.beginPath();
+      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero + Math.PI * 2, this.arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * this.tweens.clockPerc), true);
+      this.ctx.stroke();
+      _results = [];
+      for (i = _i = 0; _i < 120; i = ++_i) {
+        this.ctx.beginPath();
+        perc = i / 120;
+        rp = this.arcZero + Math.PI * 2 * perc;
+        ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp);
+        oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp);
+        if (rp < this.arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
+          if (i % 30 === 0) {
+            this.ctx.lineWidth = 5;
+            length = 15;
+          } else if (i % 10 === 0) {
+            this.ctx.lineWidth = 3;
+            length = 8;
+          } else {
+            this.ctx.lineWidth = 1;
+            length = 5;
+          }
+          if (i < 60) {
+            percProg = this.tweens.dash[i].perc;
+          } else {
+            percProg = this.tweens.dash[60 - (i - 60)].perc;
+          }
+          dx = ox + (Math.cos(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
+          dy = oy + (Math.sin(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
+          this.ctx.moveTo(ox, oy);
+          this.ctx.lineTo(dx, dy);
+          _results.push(this.ctx.stroke());
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
     }
-    return _results;
   };
 
   CountDown.prototype.levelUp = function() {

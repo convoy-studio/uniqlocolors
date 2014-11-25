@@ -8,6 +8,100 @@ Trads = {
 		
 	"fr": {
 		"play": "JOUER",
+		"start": "COMMENCER",
+		"try_again": "REJOUER",
+		"tries_left": "Essais restants",
+		"levels": "Niveaux",
+		"game_over": "Perdu",
+		"try_again": "Rejouer !",
+		"game_over_text": "Vous n'avez plus d'essais<br/><span>Partagez</span> le jeu avec vos amis<br/>pour pouvoir <span>jouer à nouveau</span>:",
+		"get_notified": "<span>Être informé</span><br/><span>la semaine prochaine quand vous pourrez rejouer</span>",
+		"loading": "Loading...",
+
+		"sharingText": "UNIQLO GIVEAWAY - Play the color game and get a chance to win free products .",
+
+		"products": [
+			{
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
+					},
+					{
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
+					}
+				]
+			}
+		],
+
+		"home": {
+			"title": "DONNEZ LA COULEUR",
+			"subtitle": "Ce Noël, <strong>partagez la bonne humeur avec votre entourage.</strong>",
+			"info_1": "Chaque semaine, entre maintenant et Noël, UNIQLO vous propose une superbe nouvelle <strong>promotion.</strong>",
+			"info_2": "Soyez sûr de vous tenir au courant toutes les semaines !",
+			"sub_play_button": "Jouer pour gagner",
+		},
+
+		"tuto": "<p>Cliquez sur l'image<br/> <span>qui n'a pas</span> son double.</p><p>Terminez tous les niveaux dans le temps imparti et participez à notre tirage au sort quotidien pour gagner un article à retirer en magasin.</p>",
+
+		"win": {
+			"info": "Remplissez le formulaire<br/>afin de participer au tirage au sort:",
+		},
+
+		"loose": {
+			"see_you": "À bientôt",
+			"info": "Laissez nous votre email <br/>et soyez informé quand vous pourrez rejouer"
+		},
+
+		"form": {
+			"firstname": "Votre prénom",
+			"lastname": "Votre nom de famille",
+			"email": "Votre email",
+			"female": "Femme",
+			"male": "Homme",
+			"remind_me": "M'informer pour la semaine prochaine",
+			"keep_me_posted": "Me tenir informé des prochaines offres Uniqlo",
+			"submit": "Envoyer",
+			"get_a_chance": "Remportez une chance de gagner",
+			"remind_me": "Me rappeler"
+		},
+
+		"footer": {
+			"rules": {
+				"text": "Règlement",
+				"url": ""
+			},
+			"privacy_policy": {
+				"text": "Politique de confidentialité",
+				"url": ""
+			},
+			"terms_of_use": {
+				"text": "Conditions d'utilisation",
+				"url": ""
+			},
+			"credits": {
+				"text": "Crédits",
+				"url": ""
+			},
+			"facebook": "https://www.facebook.com/uniqlo.fr",
+			"twitter": "https://twitter.com/UNIQLO_France",
+			"google": "https://plus.googleapis.com/wm/4/+uniqloparis/",
+			"youtube": "https://www.youtube.com/channel/UCCWqHjQF91GWFf2s1doC8JQ"
+		}
+	},
+
+	"en":{
+		"play": "PLAY",
 		"start": "START",
 		"try_again": "TRY AGAIN",
 		"tries_left": "Tries left",
@@ -17,26 +111,25 @@ Trads = {
 		"game_over_text": "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:",
 		"get_notified": "<span>Get notified</span><br/><span>of next week's giveaway</span>",
 
-
 		"products": [
 			{
-				"category": "Product <br/>Category 1",
-				"name": "Product Name 1",
-				"other_name": "Ultra Light Down",
-				"description": "Product Description 1",
-				"carousel_top": "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>",
-				"price": "10€",
-				"offer": "1€",
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
 				"pictures": [
 					{
-						"back": "/medias/home/week_1_A_bg.jpg",
-						"front": "/medias/home/week_1_A.png",
-						"color": "#afd9a9"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
 					},
 					{
-						"back": "/medias/home/week_1_B_bg.jpg",
-						"front": "/medias/home/week_1_B.png",
-						"color": "#6bc2de"
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
 					}
 				]
 			}
@@ -91,15 +184,102 @@ Trads = {
 				"text": "Crédits",
 				"url": ""
 			},
-			"facebook": "fb",
-			"twitter": "tw",
-			"google": "g",
-			"youtube": "yt"
+			"facebook": "https://www.facebook.com/uniqlo.uk",
+			"twitter": "https://twitter.com/UNIQLO_UK",
+			"google": "https://plus.google.com/b/110396223365528310578/+uniqlouk/posts",
+			"youtube": "https://www.youtube.com/user/uniqloukofficial"
 		}
 	},
+	
+	"de": {
+		"play": "SPIELEN",
+		"start": "START",
+		"try_again": "REPLAY",
+		"tries_left": "Versuche übrig",
+		"levels": "Stufen",
+		"game_over": "Das Spiel ist aus.",
+		"try_again": "Replay !",
+		"game_over_text": "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT.<br/>Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch.",
+		"get_notified": "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>",
 
-	"en": {
-		"play": "PLAY"
+		"products": [
+			{
+				"category": "Doudoune <br/>ULD",
+				"name": "Doudoune Ultra Light",
+				"other_name": "Doudoune Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "49,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#abd7a4"
+					},
+					{
+						"back": "/dev/medias/home/week_1_B_bg.jpg",
+						"front": "/dev/medias/home/week_1_B.png",
+						"color": "#5bbad8"
+					}
+				]
+			}
+		],
+
+		"home": {
+			"title": "FARBE SCHENKEN!",
+			"subtitle": "Mach dieses Jahr zu Weihnachten jemandem eine Freude.",
+			"info_1": "UNIQLO bietet jede Woche ein neues, tolles Angebot. Schau regelmäβig vorbei.",
+			"info_2": "Mach mit bei unserem Farbenspiel um einen Preis zu gewinnen, den du dann im UNIQLO Flagship Store in Berlin abholen kannst. Versuch einfach jede Woche erneut dein Glück.",
+			"sub_play_button": "MITSPIELEN",
+		},
+
+		"tuto": "KLICK AUF DIE BILDER, <span>DIE NICHT PASSEN</span>.</p><p>Vollende jedes Level, um ein kostenloses Produkt zu gewinnen, das im UNIQLO Flagship Store in Berlin abgeholt werden kann.</p>",
+
+		"win": {
+			"info": "Du hast alle Level vollendet.<br/> Gib deine E-Mail-Adresse ein, um den heutigen Preis zu gewinnen, der im UNIQLO Flagship Store in Berlin abgeholt werden kann.",
+		},
+
+		"loose": {
+			"see_you": "Bis bald",
+			"info": "Gib deine E-Mail-Adresse ein,<br/> um den heutigen Preis zu gewinnen,<br/> der im UNIQLO Flagship Store in Berlin abgeholt werden kann."
+		},
+
+		"form": {
+			"firstname": "Ihren Namen",
+			"lastname": "Ihr Name",
+			"email": "E-Mail",
+			"female": "Woman",
+			"male": "Man",
+			"remind_me": "Informieren Sie mich für die nächste Woche,",
+			"keep_me_posted": "Halten Sie mich über kommende Angebote informiert Uniqlo",
+			"submit": "Senden",
+			"get_a_chance": "Gewinnen Sie eine Chance zu gewinnen",
+			"remind_me": "Remind Me"
+		},
+
+		"footer": {
+			"rules": {
+				"text": "Règlement",
+				"url": ""
+			},
+			"privacy_policy": {
+				"text": "Politique de confidentialité",
+				"url": ""
+			},
+			"terms_of_use": {
+				"text": "Conditions d'utilisation",
+				"url": ""
+			},
+			"credits": {
+				"text": "Crédits",
+				"url": ""
+			},
+			"facebook": "https://de-de.facebook.com/uniqlo.deutschland",
+			"twitter": "https://twitter.com/UNIQLO_DE",
+			"google": "https://plus.google.com/107858820395596222759/about",
+			"youtube": "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A"
+		}
 	}
 
 };

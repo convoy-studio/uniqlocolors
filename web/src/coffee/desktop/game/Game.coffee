@@ -15,12 +15,14 @@ class Game
 		W.status = {
 			level: -1 			
 			lives: Parameters.lives
-			paused: false
+			paused: true
 			stopped: false
 			loading: true
 			launched: false
 			initialized: true
+			ended: false
 			shared: false
+			winner: false
 		}
 
 		# ------o Game parameters
@@ -111,7 +113,7 @@ class Game
 	_initGame: () =>
 
 		@resize()
-
+		$('.tuto').find('.start-button').css('display','block').siblings('.loading').remove()
 		#@_gameLaunched = true
 
 		#@levelUp()
@@ -199,7 +201,8 @@ class Game
 			@levelUp()
 		else
 			@_stopGame()
-			@container.css('display','none')
+			W.status.ended = true
+			W.status.winner = true
 			@screens.displayWin()
 		
 
@@ -210,10 +213,11 @@ class Game
 			@screens.displayTryAgain()
 		else
 			if W.status.shared == false
+				W.status.paused = true
 				@screens.displayGameOver()
 			else
+				W.status.ended = true
 				@screens.displayLoose()
-				@container.css('display','none')
 			@_stopGame()
 
 		@_updateVals()
@@ -292,7 +296,8 @@ class Game
 
 		if W.status.initialized == true
 			@snow.render()
-			@countDown.render(resized)
+			if W.status.ended != true
+				@countDown.render(resized)
 
 		if W.status.launched == true && W.status.paused != true && W.status.stopped != true
 			@grid.render(resized)

@@ -85,60 +85,62 @@ class CountDown
 
 		# ---------------o Draw halfes
 
-		@ctx.lineWidth = 6
-		@ctx.strokeStyle = @red
+		if !(W.status.paused == true && W.ww < 640)
 
-		if @tweens.clockPerc == 1
-			@ctx.beginPath()
-			@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero, @arcZero + Math.PI * 2, true)
-			@ctx.fillStyle = 'rgba(230, 230, 230, 0.5)'
-			@ctx.fill()
+			@ctx.lineWidth = 6
+			@ctx.strokeStyle = @red
 
-		@ctx.beginPath()
-		@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero, @arcZero + Math.PI * (1 - W.grid.bottomSpace) * @tweens.clockPerc, false)
-		@ctx.stroke()
-
-		@ctx.beginPath()
-		@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero + Math.PI * 2, @arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * @tweens.clockPerc), true)
-		@ctx.stroke()
-
-		# ---------------o Draw lines
-
-		for i in [0...120]
+			if @tweens.clockPerc == 1
+				@ctx.beginPath()
+				@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero, @arcZero + Math.PI * 2, true)
+				@ctx.fillStyle = 'rgba(230, 230, 230, 0.5)'
+				@ctx.fill()
 
 			@ctx.beginPath()
-			perc = i / 120
+			@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero, @arcZero + Math.PI * (1 - W.grid.bottomSpace) * @tweens.clockPerc, false)
+			@ctx.stroke()
 
-			rp = @arcZero + Math.PI * 2 * perc
-			ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp)  
-			oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp) 
-			
-			if rp < @arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > @arcZero + Math.PI * (1 + W.grid.bottomSpace)
+			@ctx.beginPath()
+			@ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, @arcZero + Math.PI * 2, @arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * @tweens.clockPerc), true)
+			@ctx.stroke()
 
-				if i % 30 == 0
-					@ctx.lineWidth = 5
-					length = 15
-				else if i % 10 == 0
-					@ctx.lineWidth = 3
-					length = 8
-				else
-					@ctx.lineWidth = 1
-					length = 5 
+			# ---------------o Draw lines
 
-				if i < 60
-					percProg = @tweens.dash[i].perc
-				else
-					percProg = @tweens.dash[60 - (i - 60)].perc
+			for i in [0...120]
 
-				dx = ox + (Math.cos(- Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg
-				dy = oy + (Math.sin(- Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg
+				@ctx.beginPath()
+				perc = i / 120
 
-				#dx = ox
-				#dy = oy - 50
+				rp = @arcZero + Math.PI * 2 * perc
+				ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp)  
+				oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp) 
+				
+				if rp < @arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > @arcZero + Math.PI * (1 + W.grid.bottomSpace)
 
-				@ctx.moveTo(ox, oy);
-				@ctx.lineTo(dx, dy);
-				@ctx.stroke()
+					if i % 30 == 0
+						@ctx.lineWidth = 5
+						length = 15
+					else if i % 10 == 0
+						@ctx.lineWidth = 3
+						length = 8
+					else
+						@ctx.lineWidth = 1
+						length = 5 
+
+					if i < 60
+						percProg = @tweens.dash[i].perc
+					else
+						percProg = @tweens.dash[60 - (i - 60)].perc
+
+					dx = ox + (Math.cos(- Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg
+					dy = oy + (Math.sin(- Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg
+
+					#dx = ox
+					#dy = oy - 50
+
+					@ctx.moveTo(ox, oy);
+					@ctx.lineTo(dx, dy);
+					@ctx.stroke()
 
 
 	# -----------------------------------------------------------------------------o public

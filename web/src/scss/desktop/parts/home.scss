@@ -25,6 +25,13 @@
 		width:50%;
 		float:left;
 		overflow:hidden;
+
+		p:last-child {
+			strong {
+				color:$red;
+				font-weight:300;
+			}
+		}
 	}
 
 	.mask {
@@ -47,8 +54,8 @@
 		margin:40px 0 55px;
 
 		span {
-			font:500 60px/60px $font-family;
-			padding:25px 34px 12px 31px;
+			font:500 80px/80px $font-family;
+			padding:33px 48px 16px 51px;
 			color:$white;
 			display:inline-block;
 			cursor:pointer;
@@ -56,7 +63,7 @@
 	}
 
 	.sub-play-text {
-		font:500 35px/20px $font-family;
+		font:500 35px/35px $font-family;
 		text-transform:uppercase;
 		margin-bottom:50px;
 
@@ -175,11 +182,11 @@
 
 				img {
 					max-width:90%;
-					max-height:70%;
+					max-height:90%;
 					position:absolute;
-					top:50%;
+					bottom:0;
 					left:50%;
-					@include translate(-50%, -50%);
+					@include translate(-50%, 0);
 				}
 			}
 		}

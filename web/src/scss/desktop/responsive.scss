@@ -2,13 +2,71 @@
 
 body {
 	overflow:auto;
+	font:300 12px/15px $font-family;
+	@include clearfix();
 }
+
+.body {
+	@include clearfix();
+}
+	
+.uniqlo-logo.main {
+	@include translate3d(0, 0, 0);
+	left:0;
+	right:auto;
+	@include sprite('uniqlo-logo-retina', 2);
+	height:50px;
+	width:50px;
+}
+
+.button {
+	span {
+		font-size:20px;
+	}
+}
+
+.screen {
+	.content {
+		position:static;
+		top:0;
+		left:0;
+		@include translate3d(0, 0, 0);
+		padding:80px 20px;
+		box-sizing:border-box;
+	}
+
+	.title {
+		font-size:50px;
+		line-height:45px;
+	}
+}
+
+form {
+	width:100%;
+	box-sizing:border-box;
+
+	.input-text {
+		input {
+			font:300 12px/15px $font-family;
+			padding:14px 10px 11px 10px
+		}
+		span {
+			top:15px;
+		}
+	}
+}
+
+
 
 // ----------------------------o Home
 .home {
 
+	.uniqlo-logo {
+		display:none;
+	}
+
 	.carousel {
-		height:50%;
+		height:320px;
 		width:100%;
 
 		header {
@@ -33,8 +91,14 @@ body {
 		}
 
 		footer {
+			bottom:5px;
+
 			.left {
 				display:none;
+			}
+
+			.right {
+				right:10px;
 			}
 		}
 	}
@@ -42,6 +106,22 @@ body {
 	.content {
 		width:100%;
 		height:auto;
+		background:$white;
+
+		h1 {
+			font-size:42px;
+			line-height:40px;
+		}
+
+		h2 {
+			font-size:12px;
+			line-height:20px;
+
+			strong {
+				font-size:20px;
+				line-height:20px;
+			}
+		}
 
 		.mask {
 			height:auto;
@@ -52,15 +132,140 @@ body {
 			@include translate(0, 0);
 			padding:40px 0;
 		}
+
+		.play-button {
+			margin:30px auto 40px;
+
+			span {
+				font-size:40px;
+				line-height:40px;
+				padding:20px 20px 10px 18px;
+			}
+		}
+
+		.sub-play-text {
+			font-size:20px;
+			line-height:25px;
+
+			strong {
+				line-height:18px;
+			}
+		}
+	}
+
+}
+
+
+// ----------------------------o Tuto
+
+.tuto {
+
+	.text {
+		width:100%;
+
+		p:nth-child(1){
+			font-size:20px;
+			line-height:20px;
+			margin-bottom:20px;
+		}
+	}
+}
+
+
+// ----------------------------o Try again
+
+.try-again {
+
+	.content {
+		width:100%;
+		max-width:400px;
+	}
+
+	.status {
+		font-size:40px;
+		line-height:30px;
+
+		sub {
+			margin-top:10px;
+			font-size:12px;
+		}
+	}
+
+}
+
+
+// ----------------------------o Game over
+
+.game-over {
+
+	.facebook {
+		@include sprite('share-facebook', 1.5);
+	}
+
+	.twitter {
+		@include sprite('share-twitter', 1.5);
+	}
+
+	.get-notified {
+		font-size:20px;
+		line-height:25px;
+	}
+
+	.replay-button {
+		margin-bottom:42px;
+	}
+
+}
+
+
+// ----------------------------o Loose
+
+.loose {
+
+}
+
+
+// ----------------------------o Win
+
+.win {
+
+	.letter,
+	form {
+		float:none;
+		clear:both;
+	}
+
+	.letter {
+		margin:0;
+	}
+
+	.enveloppe {
+		background:none;
+		width:100%;
+		box-sizing:border-box;
+	}
+
+	.push {
+		margin:0;
+		width:100%;
+
+		strong {
+			font-size:20px;
+			line-height:20px;
+		}
 	}
 
 }
 
 
 // ----------------------------o Footer
-footer {
+.main-footer {
 	width:100%;
 	text-align:center;
+	bottom:0;
+	left:0;
+	position:relative;
+	display:none;
 }
 
 

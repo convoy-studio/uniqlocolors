@@ -87,7 +87,8 @@ body {
     background: white; }
 
 .body {
-  height: 100%; }
+  height: 100%;
+  display: none; }
 
 canvas {
   position: absolute;
@@ -99,9 +100,12 @@ h1 {
   margin-bottom: 30px; }
 
 h2 {
-  font: 500 25px/25px "Uniqlo", "Helvetica", sans-serif;
+  font: 500 25px/40px "Uniqlo", "Helvetica", sans-serif;
   text-transform: uppercase;
   margin-bottom: 30px; }
+  h2 strong {
+    display: block;
+    font: 500 35px/40px "Uniqlo", "Helvetica", sans-serif; }
 
 strong {
   font-weight: 500;
@@ -113,11 +117,11 @@ strong {
 .uniqlo-logo {
   display: block;
   position: absolute;
-  background-image: url("/img/sprite.png");
-  background-position: 0px -234px;
+  background-image: url("/dev/img/sprite.png");
+  background-position: -331px -101px;
   width: 70px;
   height: 70px;
-  background-size: 330px 304px;
+  background-size: 431px 294px;
   z-index: 11;
   top: 0;
   right: 0; }
@@ -171,7 +175,8 @@ form {
   width: 290px;
   padding: 20px;
   text-align: left;
-  background: white; }
+  background: white;
+  position: relative; }
   form .info {
     text-align: center;
     margin-bottom: 40px; }
@@ -181,7 +186,10 @@ form {
     form .input-text span {
       position: absolute;
       top: 11px;
-      left: 10px; }
+      left: 10px;
+      -webkit-transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+      -moz-transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+      transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0ms; }
     form .input-text input {
       width: 100%;
       border: none;
@@ -192,6 +200,8 @@ form {
       box-sizing: border-box; }
       form .input-text input:focus {
         outline: none; }
+    form .input-text.focus span {
+      display: none; }
   form .radios {
     margin-bottom: 10px; }
     form .radios:before, form .radios:after {
@@ -239,17 +249,41 @@ form {
     form .checkbox:after {
       clear: both; }
     form .checkbox i:after {
-      background-image: url("/img/sprite.png");
-      background-position: -270px -234px;
+      background-image: url("/dev/img/sprite.png");
+      background-position: -418px -101px;
       width: 11px;
       height: 10px;
-      background-size: 330px 304px; }
+      background-size: 431px 294px; }
   form .submit span {
     display: block;
     width: 100%;
     background: black;
     text-align: center;
     box-sizing: border-box; }
+  form .error {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    color: red;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: none; }
+  form .sent {
+    font: 500 25px/25px "Uniqlo", "Helvetica", sans-serif;
+    color: red;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: none; }
+    form .sent p:nth-child(2) {
+      font: 300 14px/25px "Uniqlo", "Helvetica", sans-serif; }
+      form .sent p:nth-child(2) span {
+        border-bottom: 1px solid red;
+        cursor: pointer; }
 
 .game p {
   position: absolute;
@@ -276,6 +310,9 @@ form {
   z-index: 2;
   color: red;
   font: 500 50px/50px Helvetica; }
+
+.sf-toolbarreset {
+  display: none !important; }
 
 /*.try-again {
 	position:absolute;
@@ -330,29 +367,29 @@ form {
     position: relative;
     bottom: -10px; }
   .main-footer .facebook-link i {
-    background-image: url("/img/sprite.png");
-    background-position: -206px -234px;
+    background-image: url("/dev/img/sprite.png");
+    background-position: -402px -133px;
     width: 15px;
     height: 15px;
-    background-size: 330px 304px; }
+    background-size: 431px 294px; }
   .main-footer .twitter-link i {
-    background-image: url("/img/sprite.png");
-    background-position: -254px -234px;
+    background-image: url("/dev/img/sprite.png");
+    background-position: -402px -149px;
     width: 15px;
     height: 15px;
-    background-size: 330px 304px; }
+    background-size: 431px 294px; }
   .main-footer .instagram-link i {
-    background-image: url("/img/sprite.png");
-    background-position: -238px -234px;
+    background-image: url("/dev/img/sprite.png");
+    background-position: -402px -117px;
     width: 15px;
     height: 15px;
-    background-size: 330px 304px; }
+    background-size: 431px 294px; }
   .main-footer .google-link i {
-    background-image: url("/img/sprite.png");
-    background-position: -222px -234px;
+    background-image: url("/dev/img/sprite.png");
+    background-position: -402px -101px;
     width: 15px;
     height: 15px;
-    background-size: 330px 304px; }
+    background-size: 431px 294px; }
 
 .home {
   position: absolute;
@@ -376,6 +413,9 @@ form {
     width: 50%;
     float: left;
     overflow: hidden; }
+    .home .content p:last-child strong {
+      color: red;
+      font-weight: 300; }
   .home .mask {
     height: 100%;
     width: 100%;
@@ -393,13 +433,13 @@ form {
   .home .play-button {
     margin: 40px 0 55px; }
     .home .play-button span {
-      font: 500 60px/60px "Uniqlo", "Helvetica", sans-serif;
-      padding: 25px 34px 12px 31px;
+      font: 500 80px/80px "Uniqlo", "Helvetica", sans-serif;
+      padding: 33px 48px 16px 51px;
       color: white;
       display: inline-block;
       cursor: pointer; }
   .home .sub-play-text {
-    font: 500 35px/20px "Uniqlo", "Helvetica", sans-serif;
+    font: 500 35px/35px "Uniqlo", "Helvetica", sans-serif;
     text-transform: uppercase;
     margin-bottom: 50px; }
     .home .sub-play-text strong {
@@ -475,13 +515,13 @@ form {
       width: 100%; }
       .home .carousel .slides .front img {
         max-width: 90%;
-        max-height: 70%;
+        max-height: 90%;
         position: absolute;
-        top: 50%;
+        bottom: 0;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); }
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0); }
   .home h1,
   .home .sub-play-text {
     -webkit-transition: color 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
@@ -531,6 +571,11 @@ form {
       background: #8a8a8a; }
     .tuto .squares .red {
       background: red; }
+  .tuto .loading span {
+    color: red;
+    border-bottom: 1px solid red; }
+  .tuto .start-button {
+    display: none; }
   .tuto .text {
     width: 350px;
     margin: 50px auto; }
@@ -546,37 +591,40 @@ form {
   margin: 30px 0 55px; }
 .game-over li {
   display: inline-block;
-  margin: 0 5px; }
+  margin: 0 5px;
+  cursor: pointer; }
   .game-over li a {
     cursor: pointer;
     display: block;
     height: 100%; }
 .game-over .facebook {
-  background-image: url("/img/sprite.png");
-  background-position: -71px -234px;
-  width: 44px;
-  height: 44px;
-  background-size: 330px 304px; }
+  background-image: url("/dev/img/sprite.png");
+  background-position: 0px -234px;
+  width: 60px;
+  height: 60px;
+  background-size: 431px 294px; }
 .game-over .twitter {
-  background-image: url("/img/sprite.png");
-  background-position: -161px -234px;
-  width: 44px;
-  height: 44px;
-  background-size: 330px 304px; }
+  background-image: url("/dev/img/sprite.png");
+  background-position: -331px -172px;
+  width: 60px;
+  height: 60px;
+  background-size: 431px 294px; }
 .game-over .google {
-  background-image: url("/img/sprite.png");
-  background-position: -116px -234px;
+  background-image: url("/dev/img/sprite.png");
+  background-position: -61px -234px;
   width: 44px;
   height: 44px;
-  background-size: 330px 304px; }
+  background-size: 431px 294px; }
 .game-over .get-notified {
   font: 500 25px/20px "Uniqlo", "Helvetica", sans-serif;
   text-transform: uppercase;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: underline; }
   .game-over .get-notified span {
-    display: inline-block;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px; }
+    display: inline-block; }
+.game-over .replay-button {
+  margin: 30px 0 64px;
+  display: none; }
 
 .try-again .content {
   width: 400px; }
@@ -624,41 +672,92 @@ form {
     margin-top: 40px;
     margin: 30px auto 0; }
 .win .enveloppe {
-  background-image: url("/img/sprite.png");
+  background-image: url("/dev/img/sprite.png");
   background-position: 0px 0px;
   width: 330px;
   height: 233px;
-  background-size: 330px 304px;
+  background-size: 431px 294px;
   position: absolute;
   bottom: 0;
   left: 0; }
 .win form {
   float: left; }
 
-.loose {
-  background: #e6e6e6;
-  display: block;
-  opacity: 1;
-  z-index: 1000;
-  position: relative; }
-  .loose .title {
-    font-size: 100px;
-    line-height: 100px;
-    margin-bottom: 20px; }
-  .loose form {
-    margin: 0 auto; }
-  .loose .see-you {
-    font: 500 25px/25px "Uniqlo", "Helvetica", sans-serif;
-    text-transform: uppercase;
-    margin: 20px 0 30px;
-    text-align: center; }
+.loose .title {
+  font-size: 100px;
+  line-height: 100px;
+  margin-bottom: 20px; }
+.loose form {
+  margin: 0 auto; }
+.loose .see-you {
+  font: 500 25px/25px "Uniqlo", "Helvetica", sans-serif;
+  text-transform: uppercase;
+  margin: 20px 0 30px;
+  text-align: center; }
+.loose form .info {
+  margin: 20px 0 40px; }
 
 @media screen and (max-width: 980px) {
   body {
-    overflow: auto; }
+    overflow: auto;
+    font: 300 12px/15px "Uniqlo", "Helvetica", sans-serif; }
+    body:before, body:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */ }
+    body:after {
+      clear: both; }
 
+  .body:before, .body:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .body:after {
+    clear: both; }
+
+  .uniqlo-logo.main {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+    right: auto;
+    background-image: url("/dev/img/sprite.png");
+    background-position: -165.5px 0px;
+    width: 50px;
+    height: 50px;
+    background-size: 215.5px 147px;
+    height: 50px;
+    width: 50px; }
+
+  .button span {
+    font-size: 20px; }
+
+  .screen .content {
+    position: static;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    padding: 80px 20px;
+    box-sizing: border-box; }
+  .screen .title {
+    font-size: 50px;
+    line-height: 45px; }
+
+  form {
+    width: 100%;
+    box-sizing: border-box; }
+    form .input-text input {
+      font: 300 12px/15px "Uniqlo", "Helvetica", sans-serif;
+      padding: 14px 10px 11px 10px; }
+    form .input-text span {
+      top: 15px; }
+
+  .home .uniqlo-logo {
+    display: none; }
   .home .carousel {
-    height: 50%;
+    height: 320px;
     width: 100%; }
     .home .carousel header {
       top: 10px; }
@@ -672,11 +771,25 @@ form {
           font-size: 20px;
           line-height: 15px;
           margin-top: 5px; }
-    .home .carousel footer .left {
-      display: none; }
+    .home .carousel footer {
+      bottom: 5px; }
+      .home .carousel footer .left {
+        display: none; }
+      .home .carousel footer .right {
+        right: 10px; }
   .home .content {
     width: 100%;
-    height: auto; }
+    height: auto;
+    background: white; }
+    .home .content h1 {
+      font-size: 42px;
+      line-height: 40px; }
+    .home .content h2 {
+      font-size: 12px;
+      line-height: 20px; }
+      .home .content h2 strong {
+        font-size: 20px;
+        line-height: 20px; }
     .home .content .mask {
       height: auto; }
     .home .content .inner {
@@ -685,7 +798,74 @@ form {
       -ms-transform: translate(0, 0);
       transform: translate(0, 0);
       padding: 40px 0; }
+    .home .content .play-button {
+      margin: 30px auto 40px; }
+      .home .content .play-button span {
+        font-size: 40px;
+        line-height: 40px;
+        padding: 20px 20px 10px 18px; }
+    .home .content .sub-play-text {
+      font-size: 20px;
+      line-height: 25px; }
+      .home .content .sub-play-text strong {
+        line-height: 18px; }
 
-  footer {
+  .tuto .text {
+    width: 100%; }
+    .tuto .text p:nth-child(1) {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 20px; }
+
+  .try-again .content {
     width: 100%;
-    text-align: center; } }
+    max-width: 400px; }
+  .try-again .status {
+    font-size: 40px;
+    line-height: 30px; }
+    .try-again .status sub {
+      margin-top: 10px;
+      font-size: 12px; }
+
+  .game-over .facebook {
+    background-image: url("/dev/img/sprite.png");
+    background-position: 0px -156px;
+    width: 40px;
+    height: 40px;
+    background-size: 287.33333px 196px; }
+  .game-over .twitter {
+    background-image: url("/dev/img/sprite.png");
+    background-position: -220.66667px -114.66667px;
+    width: 40px;
+    height: 40px;
+    background-size: 287.33333px 196px; }
+  .game-over .get-notified {
+    font-size: 20px;
+    line-height: 25px; }
+  .game-over .replay-button {
+    margin-bottom: 42px; }
+
+  .win .letter,
+  .win form {
+    float: none;
+    clear: both; }
+  .win .letter {
+    margin: 0; }
+  .win .enveloppe {
+    background: none;
+    width: 100%;
+    box-sizing: border-box; }
+  .win .push {
+    margin: 0;
+    width: 100%; }
+    .win .push strong {
+      font-size: 20px;
+      line-height: 20px; }
+
+  .main-footer {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    display: none; } }
