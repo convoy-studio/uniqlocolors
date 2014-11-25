@@ -94,6 +94,20 @@ class User
         $this->createdAt = new \DateTime;
     }
 
+    public function toArray() {
+        return [
+            'id'         => $this->id,
+            'email'      => $this->getEmail(),
+            'firstName'  => $this->getFirstName(),
+            'lastName'   => $this->getLastName(),
+            'gender'     => $this->getGender(),
+            'reminder'   => $this->getReminder(),
+            'newsletter' => $this->getNewsletter(),
+            'locale'     => $this->getLocale(),
+            'createdAt'  => $this->getCreatedAt()->format('c')
+        ];
+    }
+
     /**
      * Get id
      *
