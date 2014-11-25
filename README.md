@@ -60,6 +60,7 @@ At the end of the installation, you'll be prompted your parameters, such as MySQ
         "lastName": "bar",
         "locale": "en",
         "gender": "male",
+        "winner": true,
         "newsletter": true,
         "reminder": false
     }
