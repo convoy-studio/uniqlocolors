@@ -1,0 +1,122 @@
+play: "JOUER"
+start: "START"
+try_again: "TRY AGAIN"
+tries_left: "Tries left"
+levels: "Levels"
+game_over: "Game<br/>Over"
+try_again: "Try<br/>Again!"
+game_over_text: "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:"
+get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
+
+home_title: "GIVE COLORS"
+home_subtitle: "this holiday season <strong>put a smile on everybody’s face!</strong>"
+home_info_1: "Each week, until December 27th, a new offer for you to shop. Warmth and dazzling colors for the people you treasure"
+home_info_2: "Play our color game and get a chance to win a <strong>free product</strong> or <strong>discounts</strong>. Come back every week for new giveaways"
+home_sub_play_button: "Play to win"
+
+tuto: "<p>Click on the visual that<br/> <span>does not</span> have a pair.</p><p>Complete all levels in time and get a chance to win one of this week’s featured products.</p>"
+
+win_info: "Fill the form to enter into<br/>the raffle draw for a prize:"
+
+loose_see_you: "See you soon"
+loose_info: "Leave us your email to be <br/>notified of next week’s giveaway"
+
+# Form
+
+form_firstname: "Your First Name"
+form_lastname: "Your Last Name"
+form_email: "Your email"
+form_female: "Female"
+form_male: "Male"
+form_remind_me: "Remind me of next giveaways"
+form_keep_me_posted: "Kepp me posted on future Uniqlo's offers"
+form_submit: "Submit"
+form_get_a_chance: "Get a chance to win a"
+form_remind_me: "Remind me
+
+# Footer
+
+footer_rules_text: "Règlement"
+footer_rules_url: "
+footer_privacy_policy_text: "Politique de confidentialité"
+footer_privacy_policy_url: "
+footer_terms_of_use_text: "Conditions d'utilisation"
+footer_terms_of_use_url: "
+footer_credits_text: "Crédits"
+footer_credits_url: "
+footer_facebook: "fb"
+footer_twitter: "tw"
+footer_google: "g"
+footer_youtube: "yt
+
+# Product week 1
+
+product_1_category: "Product <br/>Category 1"
+product_1_name: "Product Name 1"
+product_1_other_name: "Ultra Light Down"
+product_1_description: "Product Description 1"
+product_1_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
+product_1_price: "10€"
+product_1_offer: "1€"
+
+product_1_picture_1_back: "/medias/home/week_1_A_bg.jpg"
+product_1_picture_1_front: "/medias/home/week_1_A.png"
+product_1_picture_1_color: "#afd9a9"
+
+product_1_picture_2_back: "/medias/home/week_1_B_bg.jpg"
+product_1_picture_2_front: "/medias/home/week_1_B.png"
+product_1_picture_2_color: "#6bc2de"
+
+# Product week 2
+
+product_2_category: "Product <br/>Category 1"
+product_2_name: "Product Name 1"
+product_2_other_name: "Ultra Light Down"
+product_2_description: "Product Description 1"
+product_2_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
+product_2_price: "10€"
+product_2_offer: "1€"
+
+product_2_picture_1_back: "/medias/home/week_1_A_bg.jpg"
+product_2_picture_1_front: "/medias/home/week_1_A.png"
+product_2_picture_1_color: "#afd9a9"
+
+product_2_picture_2_back: "/medias/home/week_1_B_bg.jpg"
+product_2_picture_2_front: "/medias/home/week_1_B.png"
+product_2_picture_2_color: "#6bc2de"
+
+# Product week 3
+
+product_3_category: "Product <br/>Category 1"
+product_3_name: "Product Name 1"
+product_3_other_name: "Ultra Light Down"
+product_3_description: "Product Description 1"
+product_3_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
+product_3_price: "10€"
+product_3_offer: "1€"
+
+product_3_picture_1_back: "/medias/home/week_1_A_bg.jpg"
+product_3_picture_1_front: "/medias/home/week_1_A.png"
+product_3_picture_1_color: "#afd9a9"
+
+product_3_picture_2_back: "/medias/home/week_1_B_bg.jpg"
+product_3_picture_2_front: "/medias/home/week_1_B.png"
+product_3_picture_2_color: "#6bc2de"
+
+# Product week 4
+
+product_4_category: "Product <br/>Category 1"
+product_4_name: "Product Name 1"
+product_4_other_name: "Ultra Light Down"
+product_4_description: "Product Description 1"
+product_4_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
+product_4_price: "10€"
+product_4_offer: "1€"
+
+product_4_picture_1_back: "/medias/home/week_1_A_bg.jpg"
+product_4_picture_1_front: "/medias/home/week_1_A.png"
+product_4_picture_1_color: "#afd9a9"
+
+product_4_picture_2_back: "/medias/home/week_1_B_bg.jpg"
+product_4_picture_2_front: "/medias/home/week_1_B.png"
+product_4_picture_2_color: "#6bc2de"
