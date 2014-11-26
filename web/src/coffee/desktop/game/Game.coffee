@@ -249,17 +249,26 @@ class Game
 
 
 	resize: () =>
-	
-		@canvas.width = W.ww
-		@canvas.height = W.wh
 
 		W.grid.radius = (Math.min(W.ww, W.wh) - W.grid.padding * 2) * 0.5
 		W.grid.size = 2 * (Math.sin(Math.PI * 0.25) * W.grid.radius)
-		W.grid.clockRadius = W.grid.radius + 10
+		W.grid.clockRadius = W.grid.radius + 20
 		#W.grid.bottomSpace = Math.asin(20 / W.grid.clockRadius)
 		W.grid.bottomSpace = 0
 
 		W.grid.gap = Math.max(5, W.grid.size * 0.05 / W.grid.lines)
+
+		if W.ww < 640
+			W.grid.radius = 30
+			W.grid.size = W.ww - 40
+			W.grid.clockRadius = 40
+			@container.css('height', W.grid.size + 200 + 20)
+			@canvas.width = W.grid.size
+			@canvas.height = W.grid.size + 200
+		else
+			@container.css('height', 'auto')
+			@canvas.width = W.ww
+			@canvas.height = W.wh
 
 		if W.ww > W.wh
 			W.grid.top = W.grid.padding + W.grid.radius - W.grid.size * 0.5
@@ -270,6 +279,8 @@ class Game
 
 		if @_gameLaunched == true
 			@render(true)
+
+
 
 		@snow.resize()
 

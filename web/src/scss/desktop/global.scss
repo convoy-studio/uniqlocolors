@@ -281,10 +281,12 @@ form {
 		top:50%;
 		color:$red;
 		font:500 60px/34px $font-family;
+		@include translate(0, -50%);
 
 		sub {
 			font:300 15px/34px $font-family;
 			display:block;
+			margin-top:15px;
 		}
 	}
 
@@ -299,6 +301,7 @@ form {
 
 		sup {
 			font-size:30px;
+			line-height:0;
 		}
 	}
 

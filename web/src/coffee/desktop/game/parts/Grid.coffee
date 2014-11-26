@@ -36,13 +36,18 @@ class Grid
 
 		@picSize = (W.grid.size - (W.grid.lines - 1) *  W.grid.gap) /  W.grid.lines
 
+		if W.ww < 640
+			top = 200
+		else
+			top = W.grid.top
+
 		if W.status.paused == false && Parameters.levels[W.status.level].moving == true
 			speed = 1 / Parameters.time
 			@scale -= speed * W.time.delta
 
 		for i in [0...@randomPics.length]
 			@randomPics[i].x = W.grid.left + (@picSize + W.grid.gap) * (i %  W.grid.lines)
-			@randomPics[i].y = W.grid.top + (@picSize + W.grid.gap) * ~~ (i /  W.grid.lines)
+			@randomPics[i].y = top + (@picSize + W.grid.gap) * ~~ (i /  W.grid.lines)
 
 			@ctx.save()
 			@ctx.translate(@randomPics[i].x, @randomPics[i].y)

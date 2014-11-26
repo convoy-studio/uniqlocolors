@@ -1829,13 +1829,23 @@ Game = (function() {
   };
 
   Game.prototype.resize = function() {
-    this.canvas.width = W.ww;
-    this.canvas.height = W.wh;
     W.grid.radius = (Math.min(W.ww, W.wh) - W.grid.padding * 2) * 0.5;
     W.grid.size = 2 * (Math.sin(Math.PI * 0.25) * W.grid.radius);
-    W.grid.clockRadius = W.grid.radius + 10;
+    W.grid.clockRadius = W.grid.radius + 20;
     W.grid.bottomSpace = 0;
     W.grid.gap = Math.max(5, W.grid.size * 0.05 / W.grid.lines);
+    if (W.ww < 640) {
+      W.grid.radius = 30;
+      W.grid.size = W.ww - 40;
+      W.grid.clockRadius = 40;
+      this.container.css('height', W.grid.size + 200 + 20);
+      this.canvas.width = W.grid.size;
+      this.canvas.height = W.grid.size + 200;
+    } else {
+      this.container.css('height', 'auto');
+      this.canvas.width = W.ww;
+      this.canvas.height = W.wh;
+    }
     if (W.ww > W.wh) {
       W.grid.top = W.grid.padding + W.grid.radius - W.grid.size * 0.5;
       W.grid.left = W.ww * 0.5 - W.grid.radius + (W.grid.radius - W.grid.size * 0.5);
@@ -2010,7 +2020,7 @@ Parameters = {
 };
 
 Parameters = {
-  time: 5,
+  time: 50,
   lives: 1,
   levels: [
     {
@@ -2350,7 +2360,11 @@ Home = (function() {
 
   Home.prototype.resize = function() {
     var dims, i, pic, _i, _ref, _results;
-    dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh);
+    if (W.ww < 640) {
+      dims = Utils.getCoverSizeImage(600, 600, W.ww, 320);
+    } else {
+      dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh);
+    }
     _results = [];
     for (i = _i = 0, _ref = this.pics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       pic = this.pics[i];
@@ -2559,7 +2573,12 @@ CountDown = (function() {
   };
 
   CountDown.prototype._drawProgressCircle = function() {
-    var pos, speed;
+    var pos, speed, top;
+    if (W.ww < 640) {
+      top = 100;
+    } else {
+      top = W.wh * 0.5;
+    }
     if (this._timeOut === false && W.status.paused !== true && W.status.stopped !== true) {
       speed = Math.PI * 2 / Parameters.time;
       this.currentTimeDeg += speed * W.time.delta;
@@ -2567,8 +2586,8 @@ CountDown = (function() {
       this.ctx.beginPath();
       this.ctx.fillStyle = this.red;
       this.ctx.globalAlpha = 0.2;
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 10, this.arcZero, this.currentTimeDeg, false);
-      this.ctx.lineTo(W.ww * 0.5, W.wh * 0.5);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 20, this.arcZero, this.currentTimeDeg, false);
+      this.ctx.lineTo(W.ww * 0.5, top);
       this.ctx.fill();
       this.ctx.globalAlpha = 1;
     }
@@ -2576,71 +2595,78 @@ CountDown = (function() {
     pos = this.arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2;
     this.ctx.beginPath();
     if (pos < this.arcZero + Math.PI * (1 - W.grid.bottomSpace)) {
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 20, this.arcZero, pos, false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, pos, false);
     } else {
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 20, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace), false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace), false);
     }
     this.ctx.stroke();
     this.ctx.beginPath();
     if (pos > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 20, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false);
     } else if (pos === Math.PI * 2) {
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, W.grid.radius + 20, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), this.arcZero + Math.PI * 2, false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), this.arcZero + Math.PI * 2, false);
     }
     return this.ctx.stroke();
   };
 
   CountDown.prototype._drawClock = function() {
-    var dx, dy, i, length, ox, oy, perc, percProg, radius, rp, _i, _results;
+    var dx, dy, i, length, ox, oy, perc, percProg, radius, rp, top, _i, _results;
     radius = W.grid.clockRadius;
     if (!(W.status.paused === true && W.ww < 640)) {
+      if (W.ww < 640) {
+        top = 100;
+      } else {
+        top = W.wh * 0.5;
+      }
       this.ctx.lineWidth = 6;
       this.ctx.strokeStyle = this.red;
       if (this.tweens.clockPerc === 1) {
         this.ctx.beginPath();
         this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * 2, true);
-        this.ctx.fillStyle = 'rgba(230, 230, 230, 0.5)';
+        this.ctx.fillStyle = 'rgba(230, 230, 230, 0.8)';
         this.ctx.fill();
       }
       this.ctx.beginPath();
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace) * this.tweens.clockPerc, false);
+      this.ctx.arc(W.ww * 0.5, top, radius, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace) * this.tweens.clockPerc, false);
       this.ctx.stroke();
       this.ctx.beginPath();
-      this.ctx.arc(W.ww * 0.5, W.wh * 0.5, radius, this.arcZero + Math.PI * 2, this.arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * this.tweens.clockPerc), true);
+      this.ctx.arc(W.ww * 0.5, top, radius, this.arcZero + Math.PI * 2, this.arcZero + Math.PI * (2 - (1 - W.grid.bottomSpace) * this.tweens.clockPerc), true);
       this.ctx.stroke();
-      _results = [];
-      for (i = _i = 0; _i < 120; i = ++_i) {
-        this.ctx.beginPath();
-        perc = i / 120;
-        rp = this.arcZero + Math.PI * 2 * perc;
-        ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp);
-        oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp);
-        if (rp < this.arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
-          if (i % 30 === 0) {
-            this.ctx.lineWidth = 5;
-            length = 15;
-          } else if (i % 10 === 0) {
-            this.ctx.lineWidth = 3;
-            length = 8;
+      if (W.ww > 640) {
+        _results = [];
+        for (i = _i = 0; _i < 120; i = ++_i) {
+          this.ctx.beginPath();
+          perc = i / 120;
+          rp = this.arcZero + Math.PI * 2 * perc;
+          ox = W.ww * 0.5 + (radius + 3) * Math.cos(rp);
+          oy = W.wh * 0.5 + (radius + 3) * Math.sin(rp);
+          if (rp < this.arcZero + Math.PI * (1 - W.grid.bottomSpace) || rp > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
+            if (i % 30 === 0) {
+              this.ctx.lineWidth = 5;
+              length = 15;
+            } else if (i % 10 === 0) {
+              this.ctx.lineWidth = 3;
+              length = 8;
+            } else {
+              this.ctx.lineWidth = 1;
+              length = 5;
+            }
+            if (i < 60) {
+              percProg = this.tweens.dash[i].perc;
+            } else {
+              percProg = this.tweens.dash[60 - (i - 60)].perc;
+            }
+            dx = ox + (Math.cos(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
+            dy = oy + (Math.sin(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
+            this.ctx.moveTo(ox, oy);
+            this.ctx.lineTo(dx, dy);
+            _results.push(this.ctx.stroke());
           } else {
-            this.ctx.lineWidth = 1;
-            length = 5;
+            _results.push(void 0);
           }
-          if (i < 60) {
-            percProg = this.tweens.dash[i].perc;
-          } else {
-            percProg = this.tweens.dash[60 - (i - 60)].perc;
-          }
-          dx = ox + (Math.cos(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
-          dy = oy + (Math.sin(-Math.PI * 0.5 + Math.PI * 2 * perc) * length) * percProg;
-          this.ctx.moveTo(ox, oy);
-          this.ctx.lineTo(dx, dy);
-          _results.push(this.ctx.stroke());
-        } else {
-          _results.push(void 0);
         }
+        return _results;
       }
-      return _results;
     }
   };
 
@@ -2701,8 +2727,13 @@ Grid = (function() {
   };
 
   Grid.prototype._drawPictures = function() {
-    var i, speed, _i, _ref, _results;
+    var i, speed, top, _i, _ref, _results;
     this.picSize = (W.grid.size - (W.grid.lines - 1) * W.grid.gap) / W.grid.lines;
+    if (W.ww < 640) {
+      top = 200;
+    } else {
+      top = W.grid.top;
+    }
     if (W.status.paused === false && Parameters.levels[W.status.level].moving === true) {
       speed = 1 / Parameters.time;
       this.scale -= speed * W.time.delta;
@@ -2710,7 +2741,7 @@ Grid = (function() {
     _results = [];
     for (i = _i = 0, _ref = this.randomPics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       this.randomPics[i].x = W.grid.left + (this.picSize + W.grid.gap) * (i % W.grid.lines);
-      this.randomPics[i].y = W.grid.top + (this.picSize + W.grid.gap) * ~~(i / W.grid.lines);
+      this.randomPics[i].y = top + (this.picSize + W.grid.gap) * ~~(i / W.grid.lines);
       this.ctx.save();
       this.ctx.translate(this.randomPics[i].x, this.randomPics[i].y);
       this.ctx.translate(this.picSize * 0.5, this.picSize * 0.5);

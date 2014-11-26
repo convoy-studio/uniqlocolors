@@ -66,8 +66,16 @@ class Home
 
 	resize: () =>
 
-		dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh)
+		if W.ww < 640
+			dims = Utils.getCoverSizeImage(600, 600, W.ww, 320)
+		else
+			dims = Utils.getCoverSizeImage(600, 600, W.ww * 0.5, W.wh)
 
 		for i in [0...@pics.length]
 			pic = @pics[i]
 			pic.css(dims)
+
+
+
+
+

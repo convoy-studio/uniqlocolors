@@ -141,7 +141,7 @@ Parameters = {
 }
 
 Parameters = {
-	time: 5,
+	time: 50,
 	lives: 1,
 	levels: [
 		{	

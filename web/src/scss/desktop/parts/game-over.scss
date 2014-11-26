@@ -33,13 +33,18 @@
 	}
 
 	.get-notified {
-		font:500 25px/20px $font-family;
+		font:500 25px/35px $font-family;
 		text-transform:uppercase;
 		cursor:pointer;
-		text-decoration:underline;
+		width:500px;
+
+		p {
+			display:inline;
+			border-bottom:2px solid $black;
+		}
 		
 		span {
-			display:inline-block;
+			display:inline;
 		}
 	}
 
