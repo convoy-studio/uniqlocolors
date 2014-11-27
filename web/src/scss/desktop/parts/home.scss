@@ -234,7 +234,7 @@
 		.slides {
 			li {
 
-				img, .front {
+				img, .front, footer {
 					@include transition(all 1500ms $easeOutExpo 0ms);
 				}
 
@@ -242,6 +242,9 @@
 				&.left {
 					.background
 					 {
+						opacity:0;
+					}
+					footer {
 						opacity:0;
 					}
 				}
