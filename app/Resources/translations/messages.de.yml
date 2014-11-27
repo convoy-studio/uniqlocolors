@@ -21,7 +21,7 @@ home_carousel_title: "<strong>FARBE SCHENKEN!</strong>"
 tuto_info_1: "KLICK AUF DIE BILDER, <span>DIE NICHT PASSEN</span>."
 tuto_info_2: "Vollende jedes Level, um ein kostenloses Produkt zu gewinnen, das im UNIQLO Flagship Store in Berlin abgeholt werden kann."
 
-game_over_text: "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT."
+game_over_text: "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT!"
 game_over_sub: "Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch."
 
 loose_text: "DU HAST ES LEIDER NICHT GESCHAFFT."
@@ -51,6 +51,7 @@ footer_google: "https://plus.google.com/107858820395596222759/about"
 footer_youtube: "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A
 
 twitter_account: '@UNIQLO_DE'
+
 
 # Product week 1
 
@@ -134,11 +135,9 @@ week_4_product_2_color: "f5855d"
 week_4_product_2_back: "week_4_B_back.jpg"
 week_4_product_2_front: "week_4_B.png"
 
+win_week_1_picture: "week_1.jpg"
+win_week_2_picture: "week_2.jpg"
+win_week_3_picture: "week_3.jpg"
+win_week_4_picture: "week_4.jpg"
 
-
-
-
-
-
-
-
+twitter_share_text: "Lorem ipsum dolor sit amet"

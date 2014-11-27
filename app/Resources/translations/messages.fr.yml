@@ -7,6 +7,7 @@ game_over: "Perdu"
 get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
 loading: "Chargement"
 
+
 # Screens
 
 home_title: "Donnez de la couleur"
@@ -20,7 +21,7 @@ home_carousel_title: "Offrez <strong><span>la couleur</span></strong>"
 tuto_info_1: "Cliquez sur l'image<br/> <span>qui n'a pas</span> son double."
 tuto_info_2: "Terminez tous les niveaux dans le temps imparti et participez à notre tirage au sort quotidien pour gagner un article à retirer en magasin."
 
-game_over_text: "Vous n'avez plus d'essais"
+game_over_text: "Vous n'avez plus d'essais!"
 game_over_sub: "<span>Partagez</span> le jeu avec vos amis<br>pour pouvoir <span>jouer à nouveau</span>"
 
 loose_text: "Vous n'avez plus d'essais"
@@ -134,7 +135,9 @@ week_4_product_2_color: "f5855d"
 week_4_product_2_back: "week_4_B_back.jpg"
 week_4_product_2_front: "week_4_B.png"
 
+win_week_1_picture: "week_1.jpg"
+win_week_2_picture: "week_2.jpg"
+win_week_3_picture: "week_3.jpg"
+win_week_4_picture: "week_4.jpg"
 
-
-
-
+twitter_share_text: "Lorem ipsum dolor sit amet"

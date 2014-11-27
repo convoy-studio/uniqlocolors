@@ -21,7 +21,7 @@ home_carousel_title: "Give <strong><span>color</span></strong>"
 tuto_info_1: "Click on the visual that<br/> <span>does not</span> have a pair."
 tuto_info_2: "Complete all levels in time and get a chance to win one of this week’s featured products."
 
-game_over_text: "You've run out of tries!<br/"
+game_over_text: "You've run out of tries!"
 game_over_text: "<span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:"
 
 loose_text: "You have no more tries left"
@@ -51,6 +51,7 @@ footer_google: "https://plus.google.com/b/110396223365528310578/+uniqlouk/posts"
 footer_youtube: "https://www.youtube.com/user/uniqloukofficial
 
 twitter_account: '@UNIQLO_UK'
+
 
 # Product week 1
 
@@ -139,9 +140,4 @@ win_week_2_picture: "week_2.jpg"
 win_week_3_picture: "week_3.jpg"
 win_week_4_picture: "week_4.jpg"
 
-
-
-
-
-
-
+twitter_share_text: "Lorem ipsum dolor sit amet"
