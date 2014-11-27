@@ -58,7 +58,7 @@ class Form
 
 		$.ajax {
 			type: 'POST'
-			url: '/app_dev.php/api/users.json'
+			url: '/api/users.json'
 			dataType: 'json'
 			data: @container.serialize()
 			success: (response) =>
