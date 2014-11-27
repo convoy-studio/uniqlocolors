@@ -53,15 +53,12 @@ class Form
 			@_displayError('empty-fields')
 			return !1
 
-		console.log W, W.status
 		@container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />')
 		@container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />')
 
-		console.log @container.serialize()
-
 		$.ajax {
 			type: 'POST'
-			url: 'http://uniqlo.dev/app_dev.php/api/users.json'
+			url: '/app_dev.php/api/users.json'
 			dataType: 'json'
 			data: @container.serialize()
 			success: (response) =>

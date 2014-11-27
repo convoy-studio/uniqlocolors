@@ -691,7 +691,8 @@ form {
   .win .push strong {
     display: block;
     font-size: 30px;
-    margin-top: 8px; }
+    line-height: 30px;
+    margin-top: 4px; }
   .win .push img {
     display: block;
     margin-top: 40px;

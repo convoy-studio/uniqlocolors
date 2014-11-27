@@ -1897,7 +1897,7 @@ Game = (function() {
 
 Parameters = {
   time: 5,
-  lives: 1,
+  lives: 4,
   levels: [
     {
       difficulty: {
@@ -2019,22 +2019,6 @@ Parameters = {
       },
       picsLength: 16,
       moving: true
-    }
-  ]
-};
-
-Parameters = {
-  time: 50,
-  lives: 1,
-  levels: [
-    {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 1
-      },
-      picsLength: 9,
-      moving: false
     }
   ]
 };
@@ -2265,13 +2249,11 @@ Form = (function() {
       this._displayError('empty-fields');
       return !1;
     }
-    console.log(W, W.status);
     this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
     this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
-    console.log(this.container.serialize());
     return $.ajax({
       type: 'POST',
-      url: 'http://uniqlo.dev/app_dev.php/api/users.json',
+      url: '/app_dev.php/api/users.json',
       dataType: 'json',
       data: this.container.serialize(),
       success: (function(_this) {

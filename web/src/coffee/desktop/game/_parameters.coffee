@@ -1,7 +1,9 @@
 Parameters = {
 	time: 5,
-	lives: 1,
+	lives: 4,
 	levels: [
+	
+
 		{	
 			difficulty: {
 				colors: 2,
@@ -11,6 +13,7 @@ Parameters = {
 			picsLength: 9,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 3,
@@ -20,6 +23,7 @@ Parameters = {
 			picsLength: 9,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 4,
@@ -29,6 +33,7 @@ Parameters = {
 			picsLength: 9,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -38,6 +43,7 @@ Parameters = {
 			picsLength: 16,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -47,6 +53,7 @@ Parameters = {
 			picsLength: 16,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -56,6 +63,7 @@ Parameters = {
 			picsLength: 16,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -65,6 +73,7 @@ Parameters = {
 			picsLength: 16,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -74,6 +83,7 @@ Parameters = {
 			picsLength: 16,
 			moving: false
 		},
+
 		{
 			difficulty: {
 				colors: 1,
@@ -83,6 +93,7 @@ Parameters = {
 			picsLength: 9,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -92,6 +103,7 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 1,
@@ -101,6 +113,7 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -110,6 +123,7 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 1,
@@ -119,6 +133,7 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -128,6 +143,7 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		},
+
 		{
 			difficulty: {
 				colors: 2,
@@ -137,22 +153,6 @@ Parameters = {
 			picsLength: 16,
 			moving: true
 		}	
-	]
-}
-
-Parameters = {
-	time: 50,
-	lives: 1,
-	levels: [
-		{	
-			difficulty: {
-				colors: 2,
-				subColors: 1,
-				pics: 1,
-			},
-			picsLength: 9,
-			moving: false
-		}
 	]
 }
 
