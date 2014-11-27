@@ -27,7 +27,6 @@
     <meta property="og:site_name" content="Uniqlo Colors">
     <meta property="og:description" content="{{ 'meta_description'|trans }}">
 
-
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="{{ 'twitter_account'|trans }}">
@@ -41,7 +40,6 @@
     <!--[if lte IE 8]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
-
 </head>
 <body class="desktop">
 
@@ -53,28 +51,28 @@
 
             .state-0 h1,
             .state-0 .sub-play-text {
-                color:{{ 'week_1_product_1_color'|trans }};
+                color:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-0 .play-button span {
-                background:{{ 'week_1_product_1_color'|trans }};
+                background:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-0 .sub-play-text strong {
-                border-bottom-color:{{ 'week_1_product_1_color'|trans }};
+                border-bottom-color:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-1 h1,
             .state-1 .sub-play-text {
-                color:{{ 'week_1_product_1_color'|trans }};
+                color:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-1 .play-button span {
-                background:{{ 'week_1_product_1_color'|trans }};
+                background:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-1 .sub-play-text strong {
-                border-bottom-color:{{ 'week_1_product_1_color'|trans }};
+                border-bottom-color:{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
         </style>
@@ -93,38 +91,38 @@
 
                     <ul class="slides">
                         <li>
-                            <span class="img background" data-src="/dev/medias/home/{{ 'week_1_product_1_back'|trans }}"></span>
+                            <span class="img background" data-src="/dev/medias/home/{{ ('week_'~week~'_product_1_back')|trans }}"></span>
                             <div class="front">
-                                <span class="img" data-src="/dev/medias/home/{{ 'week_1_product_1_front'|trans }}"></span>
+                                <span class="img" data-src="/dev/medias/home/{{ ('week_'~week~'_product_1_front')|trans }}"></span>
                             </div>
 
                             <footer>
                                 <div class="left">
-                                    <p class="name">{{ 'week_1_product_1_name'|trans }}</p>
-                                    <p class="description">{{ 'week_1_product_1_description'|trans }}</p>
+                                    <p class="name">{{ ('week_'~week~'_product_1_name')|trans }}</p>
+                                    <p class="description">{{ ('week_'~week~'_product_1_description')|trans }}</p>
                                 </div>
                                 <div class="right">
-                                    <p class="category">{{ 'week_1_product_1_category'|trans }}</p>
-                                    <p class="price">{{ 'week_1_product_1_price'|trans }}</p>
-                                    <p class="offer">{{ 'week_1_product_1_offer'|trans }}</p>
+                                    <p class="category">{{ ('week_'~week~'_product_1_category')|trans }}</p>
+                                    <p class="price">{{ ('week_'~week~'_product_1_price')|trans }}</p>
+                                    <p class="offer">{{ ('week_'~week~'_product_1_offer')|trans }}</p>
                                 </div>
                             </footer>
                         </li>
                         <li>
-                            <span class="img background" data-src="/dev/medias/home/{{ 'week_1_product_2_back'|trans }}"></span>
+                            <span class="img background" data-src="/dev/medias/home/{{ ('week_'~week~'_product_2_back')|trans }}"></span>
                             <div class="front">
-                                <span class="img" data-src="/dev/medias/home/{{ 'week_1_product_2_front'|trans }}"></span>
+                                <span class="img" data-src="/dev/medias/home/{{ ('week_'~week~'_product_2_front')|trans }}"></span>
                             </div>
 
                             <footer>
                                 <div class="left">
-                                    <p class="name">{{ 'week_1_product_2_name'|trans }}</p>
-                                    <p class="description">{{ 'week_1_product_2_description'|trans }}</p>
+                                    <p class="name">{{ ('week_'~week~'_product_2_name')|trans }}</p>
+                                    <p class="description">{{ ('week_'~week~'_product_2_description')|trans }}</p>
                                 </div>
                                 <div class="right">
-                                    <p class="category">{{ 'week_1_product_2_category'|trans }}</p>
-                                    <p class="price">{{ 'week_1_product_2_price'|trans }}</p>
-                                    <p class="offer">{{ 'week_1_product_2_offer'|trans }}</p>
+                                    <p class="category">{{ ('week_'~week~'_product_2_category')|trans }}</p>
+                                    <p class="price">{{ ('week_'~week~'_product_2_price')|trans }}</p>
+                                    <p class="offer">{{ ('week_'~week~'_product_2_offer')|trans }}</p>
                                 </div>
                             </footer>
                         </li>
@@ -145,7 +143,7 @@
 
                         <div class="already-text"><p>{{ 'home_already_played'|trans }}</p></div>
 
-                        <p class="sub-play-text">{{ 'home_sub_play_button'|trans }} <strong>{{ 'week_1_product_1_other_name'|trans }}</strong></p>
+                        <p class="sub-play-text">{{ 'home_sub_play_button'|trans }} <strong>{{ ('week_'~week~'_product_1_other_name')|trans }}</strong></p>
                         <p>{{ 'home_info_2'|trans|raw }}</p>
                     </div>
                 </div>

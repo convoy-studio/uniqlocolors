@@ -20,8 +20,30 @@ class WebController extends Controller
     {
         $locale = $this->get('uniqlo.locale')->getLocale();
 
+        // 24 novembre, 1 décembre, 8 décembre, 15 décembre
+
+        $getWeek = function () {
+            $today = new \DateTime;
+
+            if ($today < new \DateTime('1 december 2014'))
+                return 1;
+
+            if ($today < new \DateTime('8 december 2014'))
+                return 2;
+
+            if ($today < new \DateTime('15 december 2014'))
+                return 3;
+
+            return 4;
+        };
+
+        if (!$week = $request->query->get('week', null)) {
+            $week = $getWeek();
+        }
+
         return [
-            'locale' => $locale
+            'locale' => $locale,
+            'week' => $week
         ];
     }
 
