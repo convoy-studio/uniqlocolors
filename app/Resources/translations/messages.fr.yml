@@ -61,6 +61,8 @@ week_1_product_1_description: "Chaleur et légèreté. Une révolution à emport
 week_1_product_1_price: "49,90€"
 week_1_product_1_offer: "39,90€"
 week_1_product_1_color: "f5855d"
+week_1_product_1_back: "week_1_A_back.jpg"
+week_1_product_1_front: "week_1_A.png"
 
 week_1_product_2_category: "Ultra Light"
 week_1_product_2_name: "Veste homme et femme"
@@ -69,6 +71,8 @@ week_1_product_2_description: "Chaleur et légèreté. Une révolution à emport
 week_1_product_2_price: "69,90€"
 week_1_product_2_offer: "59,90€"
 week_1_product_2_color: "f5855d"
+week_1_product_2_back: "week_1_A_back.jpg"
+week_1_product_2_front: "week_1_A.png"
 
 week_2_product_1_category: "Ultra Light"
 week_2_product_1_name: "Parka homme"
@@ -77,6 +81,8 @@ week_2_product_1_description: "Chaleur et légèreté. Une révolution à emport
 week_2_product_1_price: "79,90€"
 week_2_product_1_offer: "59,90€"
 week_2_product_1_color: "f5855d"
+week_2_product_1_back: "week_1_B_back.jpg"
+week_2_product_1_front: "week_1_B.png"
 
 week_2_product_2_category: "Pulls 100% Cachemire"
 week_2_product_2_name: "Pulls cols V et rond homme"
@@ -85,6 +91,8 @@ week_2_product_2_description: "100% cachemire représente bien plus qu’une pro
 week_2_product_2_price: "89,90€"
 week_2_product_2_offer: "79,90€"
 week_2_product_2_color: "f5855d"
+week_2_product_2_back: "week_2_A_back.jpg"
+week_2_product_2_front: "week_2_A.png"
 
 week_3_product_2_category: "Pulls 100% Cachemire"
 week_3_product_1_name: "Pulls cols V et rond femme"
@@ -93,6 +101,8 @@ week_3_product_1_description: "100% cachemire représente bien plus qu’une pro
 week_3_product_1_price: "69,90€"
 week_3_product_1_offer: "59,90€"
 week_3_product_1_color: "f5855d"
+week_3_product_1_back: "week_2_B_back.jpg"
+week_3_product_1_front: "week_2_B.png"
 
 week_3_product_2_category: "HEATTECH"
 week_3_product_2_name: "T-shirts Heattech homme et femme"
@@ -101,6 +111,8 @@ week_3_product_2_description: "Si chaud et si léger. Le nouveau remède contre 
 week_3_product_2_price: "9,90€"
 week_3_product_2_offer: "14,90€"
 week_3_product_2_color: "f5855d"
+week_3_product_2_back: "week_3_B_back.jpg"
+week_3_product_2_front: "week_3_B.png"
 
 week_4_product_1_category: "ACCESSOIRES"
 week_4_product_1_name: "Gants et bonnets en cachemire"
@@ -109,6 +121,8 @@ week_4_product_1_description: "Tout ce dont vous avez besoin pour rester au chau
 week_4_product_1_price: "29,90€"
 week_4_product_1_offer: "19,90€"
 week_4_product_1_color: "f5855d"
+week_4_product_1_back: "week_4_A_back.jpg"
+week_4_product_1_front: "week_4_A.png"
 
 week_4_product_2_category: "ACCESSOIRES"
 week_4_product_2_name: "Écharpes en cachemire"
@@ -117,6 +131,8 @@ week_4_product_2_description: "Tout ce dont vous avez besoin pour rester au chau
 week_4_product_2_price: "39,90€"
 week_4_product_2_offer: "29,90€"
 week_4_product_2_color: "f5855d"
+week_4_product_2_back: "week_4_B_back.jpg"
+week_4_product_2_front: "week_4_B.png"
 
 
 
