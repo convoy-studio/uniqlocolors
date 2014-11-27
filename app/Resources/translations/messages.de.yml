@@ -7,6 +7,8 @@ game_over: "Das Spiel ist aus."
 get_notified: "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>"
 loading: "Loading"
 
+home_subtitle: "Mach dieses Jahr zu Weihnachten jemandem eine Freude."
+
 
 # Screens
 
@@ -48,7 +50,7 @@ footer_rules_text: "Règlement"
 footer_facebook: "https://de-de.facebook.com/uniqlo.deutschland"
 footer_twitter: "https://twitter.com/UNIQLO_DE"
 footer_google: "https://plus.google.com/107858820395596222759/about"
-footer_youtube: "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A
+footer_youtube: "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A"
 
 twitter_account: '@UNIQLO_DE'
 

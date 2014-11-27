@@ -10,14 +10,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <title>Uniqlo Colors - {{ 'home_title'|trans }}</title>
-    <meta name="description" content="{{ 'home_subtitle'|trans }}">
+    <meta name="description" content="{{ 'meta_description'|trans }}">
 
     <link rel="stylesheet" type="text/css" href="/dev/css/style.css">
 
     <!-- SOCIAL DATAS -->
     <!-- GOOGLE PLUS -->
     <meta itemprop="name" content="Uniqlo Colors - {{ 'home_title'|trans }}">
-    <meta itemprop="description" content="{{ 'home_subtitle'|trans }}">
+    <meta itemprop="description" content="{{ 'meta_description'|trans }}">
 
     <!-- FACEBOOK -->
     <meta property="og:type" content="website" />
@@ -25,7 +25,7 @@
     <meta property="og:url" content="http://uniqlocolors.eu/">
     <meta property="og:image" content="http://uniqlocolors.eu/dev/medias/share/share.png">
     <meta property="og:site_name" content="Uniqlo Colors">
-    <meta property="og:description" content="{{ 'home_subtitle'|trans }}">
+    <meta property="og:description" content="{{ 'meta_description'|trans }}">
 
 
     <!-- TWITTER -->
@@ -33,7 +33,7 @@
     <meta name="twitter:site" content="{{ 'twitter_account'|trans }}">
     <meta name="twitter:creator" content="{{ 'twitter_account'|trans }}">
     <meta name="twitter:title" content="Uniqlo Colors - {{ 'home_title'|trans }}">
-    <meta name="twitter:description" content="{{ 'home_subtitle'|trans }}">
+    <meta name="twitter:description" content="{{ 'meta_description'|trans }}">
     <meta name="twitter:image" content="/dev/medias/share/share.png">
 
     <link rel="icon" type="image/gif" href="/dev/medias/favicons/favicon.png">
@@ -146,7 +146,7 @@
                         <div class="already-text"><p>{{ 'home_already_played'|trans }}</p></div>
 
                         <p class="sub-play-text">{{ 'home_sub_play_button'|trans }} <strong>{{ 'week_1_product_1_other_name'|trans }}</strong></p>
-                        <p>{{ 'home_info_2'|trans }}</p>
+                        <p>{{ 'home_info_2'|trans|raw }}</p>
                     </div>
                 </div>
             </div>
@@ -183,8 +183,8 @@
                 <p class="title">{{ 'game_over'|trans }}</p>
 
                 <p class="text">
-                    {{ 'game_over_text'|trans }}
-                    {{ 'game_over_sub'|trans }}
+                    {{ 'game_over_text'|trans|raw }}
+                    {{ 'game_over_sub'|trans|raw }}
                 </p>
 
                 <ul>
@@ -195,7 +195,7 @@
 
                 <p class="replay-button button"><span>{{ 'try_again'|trans }}</span></p>
 
-                <div class="get-notified"><p>{{ 'get_notified'|trans }}</p></div>
+                <div class="get-notified"><p>{{ 'get_notified'|trans|raw }}</p></div>
             </div>
 
         </section>
@@ -214,7 +214,7 @@
                 </div>
 
                 <form>
-                    <p class="info">{{ 'form_info'|trans }}</p>
+                    <p class="info">{{ 'form_info'|trans|raw }}</p>
 
                     <p class="input-text">
                         <input class="text" name="firstName" id="win-firstname" />
@@ -288,7 +288,7 @@
                     <span class="grey"></span>
                 </div>
                 <div class="text">
-                    <p>{{ 'tuto_info_1'|trans }}</p>
+                    <p>{{ 'tuto_info_1'|trans|raw }}</p>
                     <p>{{ 'tuto_info_2'|trans }}</p>
                 </div>
                 <div class="loading"><span>{{ 'loading'|trans }}</span></div>

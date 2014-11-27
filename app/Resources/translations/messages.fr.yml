@@ -7,6 +7,8 @@ game_over: "Perdu"
 get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
 loading: "Chargement"
 
+meta_description: "Ce Noël, partagez la bonne humeur avec votre entourage."
+
 
 # Screens
 
@@ -48,9 +50,9 @@ footer_rules_text: "Règlement"
 footer_facebook: "https://www.facebook.com/uniqlo.fr"
 footer_twitter: "https://twitter.com/UNIQLO_France"
 footer_google: "https://plus.googleapis.com/wm/4/+uniqloparis/"
-footer_youtube: "https://www.youtube.com/channel/UCCWqHjQF91GWFf2s1doC8JQ
+footer_youtube: "https://www.youtube.com/channel/UCCWqHjQF91GWFf2s1doC8JQ"
 
-twitter_account: '@UNIQLO_France'
+twitter_account: "@UNIQLO_France"
 
 
 # Product week 1

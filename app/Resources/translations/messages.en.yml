@@ -7,6 +7,8 @@ game_over: "Game<br/>Over"
 get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
 loading: "Loading"
 
+meta_description: "This holiday season put a smile on everybody’s face!"
+
 
 # Screens
 
@@ -48,7 +50,7 @@ footer_rules_text: "Legals"
 footer_facebook: "https://www.facebook.com/uniqlo.uk"
 footer_twitter: "https://twitter.com/UNIQLO_UK"
 footer_google: "https://plus.google.com/b/110396223365528310578/+uniqlouk/posts"
-footer_youtube: "https://www.youtube.com/user/uniqloukofficial
+footer_youtube: "https://www.youtube.com/user/uniqloukofficial"
 
 twitter_account: '@UNIQLO_UK'
 
