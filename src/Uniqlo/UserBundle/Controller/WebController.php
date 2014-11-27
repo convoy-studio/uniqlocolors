@@ -48,7 +48,7 @@ class WebController extends Controller
     }
 
     /**
-     * @Route("/export")
+     * @Route("/export-Wf99C082ffR7B40Cj0G3267jO3Ow7c")
      * @Template()
      */
     public function exportAction()
