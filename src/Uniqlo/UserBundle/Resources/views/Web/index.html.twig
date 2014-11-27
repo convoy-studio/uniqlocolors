@@ -118,6 +118,9 @@
                         <p>{{{trad.home.info_1}}}</p>
 
                         <p class="button play-button"><span>{{trad.play}}</span></p>
+
+                        <div class="already-text"><p>Already played Already played Already played Already played</p></div>
+
                         <p class="sub-play-text">{{trad.home.sub_play_button}} <strong>{{product.other_name}}</strong></p>
                         <p>{{{trad.home.info_2}}}</p>
                     </div>
@@ -241,40 +244,20 @@
 
         <section class="screen loose">
             <div class="content">
-                <p class="title">Thanks for playing!</p>
-
-                <form>
-                    <p class="info">{{{trad.loose.info}}}</p>
-
-                    <p class="input-text">
-                        <input class="text" name="firstName" id="win-firstname" />
-                        <span>{{trad.form.firstname}}</span>
-                    </p>
-
-                    <p class="input-text">
-                        <input class="text" name="lastName" id="win-lastname" />
-                        <span>{{trad.form.lastname}}</span>
-                    </p>
-
-                    <p class="input-text">
-                        <input class="text" name="email" id="win-email" />
-                        <span>{{trad.form.email}}</span>
-                    </p>
-
-                    <p class="button submit"><span>{{trad.form.remind_me}}</span></p>
-
-                    <p class="error empty-field">{{trad.form.error.empty_fields}}</p>
-
-                    <input type="hidden" name="newsletter" value="false" />
-                    <input type="hidden" name="reminder" value="true" />
-                    <input type="hidden" name="gender" value="male" />
-
-                    <div class="sent">
-                        <p>SENT</p>
-                        <p>Now <span>share your won</span></p>
-                    </div>
-
-                </form>
+                
+                <div class="squares">
+                    <span class="grey"></span>
+                    <span class="grey"></span>
+                    <span class="red"></span>
+                    <span class="black"></span>
+                    <span class="black"></span>
+                    <span class="black"></span>
+                    <span class="grey"></span>
+                    <span class="black"></span>
+                    <span class="grey"></span>
+                </div>
+                <div class="no-try"><p>You have no more tries left</p></div>
+                <p>Come back tomorrow for a new try.</p>
             </div>
         </section>
 
@@ -313,6 +296,15 @@
     </section>
 
     <script>
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-1566247-5', 'auto');
+        ga('send', 'pageview');
+
         // Facebook init
 
         (function(d, s, id){

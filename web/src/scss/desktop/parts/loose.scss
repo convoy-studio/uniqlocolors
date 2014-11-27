@@ -23,6 +23,18 @@
 		}
 	}
 
+	.no-try {
+		font:500 25px/35px $font-family;
+		text-transform:uppercase;
+		margin:30px 0 40px;
+		max-width:500px;
+
+		p {
+			display:inline;
+			border-bottom:2px solid $black;
+		}
+	}
+
 
 
 }

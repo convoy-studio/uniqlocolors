@@ -157,6 +157,11 @@ form {
 				line-height:18px;
 			}
 		}
+
+		.already-text {
+			font-size:18px;
+			line-height:25px;
+		}
 	}
 
 }
@@ -184,6 +189,7 @@ form {
 		top:70px;
 		font-size:40px;
 		line-height:30px;
+		@include translate(0, 0);
 
 		sub {
 			font-size:14px;

@@ -25,10 +25,15 @@ class Form
 			.find('input')
 				.on('blur', @_onInputBlur)
 
+		@container.find('.radio')
+			.on(Event.CLICK, @_onRadioClick)
+
+		@container.find('.checkbox')
+			.on(Event.CLICK, @_onCheckboxClick)
+
 
 	_displayError: (error) =>
 
-		console.log @container.find('.error.' + error)
 		@container.find('.error.' + error).css('display', 'block')
 
 
@@ -84,6 +89,29 @@ class Form
 
 		if $this.val() == ''
 			$this.parents('.input-text').removeClass('focus')
+
+
+
+	_onRadioClick: (e) =>
+
+		$this = $(e.currentTarget)
+		klass = $this.attr('class')
+
+		$this.addClass('active').siblings().removeClass('active')
+		$this.find('input').prop('checked', true)
+		$this.siblings().find('input').prop('checked', false)
+
+	_onCheckboxClick: (e) =>
+
+		$this = $(e.currentTarget)
+		klass = $this.attr('class')
+
+		if klass.match('active')
+			$this.removeClass('active')
+			$this.find('input').prop('checked', false)
+		else
+			$this.addClass('active')
+			$this.find('input').prop('checked', true)
 
 
 

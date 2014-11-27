@@ -146,7 +146,7 @@ class Screens
 
 	displayLoose: () =>
 
-		W.status.ended = true
+		#W.status.ended = true
 		@looseScreen.css('display','block')
 		@looseScreen[0].offsetHeight
 		@looseScreen.addClass('displayed')

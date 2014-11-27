@@ -171,6 +171,23 @@ strong {
 .text span {
   color: red; }
 
+.squares {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto; }
+  .squares span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: left; }
+  .squares .black {
+    background: black; }
+  .squares .grey {
+    background: #8a8a8a; }
+  .squares .red {
+    background: red; }
+
 form {
   width: 290px;
   padding: 20px;
@@ -211,24 +228,26 @@ form {
       /* 2 */ }
     form .radios:after {
       clear: both; }
-  form .radio input, form .checkbox input {
-    display: none; }
-  form .radio i, form .checkbox i {
-    display: block;
-    float: left;
-    width: 16px;
-    height: 16px;
-    background: #e6e6e6;
-    margin-right: 10px;
-    position: relative; }
-    form .radio i:after, form .checkbox i:after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      opacity: 0; }
-  form .radio.active i:after, form .checkbox.active i:after {
-    opacity: 1; }
+  form .radio, form .checkbox {
+    cursor: pointer; }
+    form .radio input, form .checkbox input {
+      display: none; }
+    form .radio i, form .checkbox i {
+      display: block;
+      float: left;
+      width: 16px;
+      height: 16px;
+      background: #e6e6e6;
+      margin-right: 10px;
+      position: relative; }
+      form .radio i:after, form .checkbox i:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        opacity: 0; }
+    form .radio.active i:after, form .checkbox.active i:after {
+      opacity: 1; }
   form .radio {
     float: left;
     margin-right: 20px; }
@@ -444,13 +463,12 @@ form {
       display: inline-block;
       cursor: pointer; }
   .home .sub-play-text {
-    font: 500 35px/35px "Uniqlo", "Helvetica", sans-serif;
+    font: 500 35px/45px "Uniqlo", "Helvetica", sans-serif;
     text-transform: uppercase;
     margin-bottom: 50px; }
     .home .sub-play-text strong {
-      display: inline-block;
-      border-bottom: 2px solid white;
-      line-height: 25px; }
+      display: inline;
+      border-bottom: 3px solid white; }
   .home .carousel {
     position: relative;
     overflow: hidden; }
@@ -484,7 +502,8 @@ form {
       .home .carousel footer .left,
       .home .carousel footer .right {
         position: absolute;
-        bottom: 0; }
+        bottom: 0;
+        width: 50%; }
       .home .carousel footer .left {
         left: 20px;
         text-align: left; }
@@ -527,6 +546,18 @@ form {
         -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
         transform: translate(-50%, 0); }
+  .home .already-text {
+    font: 500 25px/35px "Uniqlo", "Helvetica", sans-serif;
+    display: none;
+    text-transform: uppercase;
+    margin: 30px 0 40px; }
+    .home .already-text p {
+      display: inline;
+      border-bottom: 2px solid black; }
+  .home.already-played .play-button {
+    display: none; }
+  .home.already-played .already-text {
+    display: block; }
   .home h1,
   .home .sub-play-text {
     -webkit-transition: color 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0ms;
@@ -560,22 +591,6 @@ form {
 
 .tuto {
   display: none; }
-  .tuto .squares {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto; }
-    .tuto .squares span {
-      display: block;
-      width: 40px;
-      height: 40px;
-      margin: 5px;
-      float: left; }
-    .tuto .squares .black {
-      background: black; }
-    .tuto .squares .grey {
-      background: #8a8a8a; }
-    .tuto .squares .red {
-      background: red; }
   .tuto .loading span {
     color: red;
     border-bottom: 1px solid red; }
@@ -586,7 +601,8 @@ form {
     margin: 50px auto; }
     .tuto .text p:nth-child(1) {
       font: 500 25px/30px "Uniqlo", "Helvetica", sans-serif;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 5px; }
     .tuto .text span {
       text-transform: uppercase; }
 
@@ -624,7 +640,8 @@ form {
   font: 500 25px/35px "Uniqlo", "Helvetica", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
-  width: 500px; }
+  width: 500px;
+  display: none; }
   .game-over .get-notified p {
     display: inline;
     border-bottom: 2px solid black; }
@@ -704,6 +721,14 @@ form {
   text-align: center; }
 .loose form .info {
   margin: 20px 0 40px; }
+.loose .no-try {
+  font: 500 25px/35px "Uniqlo", "Helvetica", sans-serif;
+  text-transform: uppercase;
+  margin: 30px 0 40px;
+  max-width: 500px; }
+  .loose .no-try p {
+    display: inline;
+    border-bottom: 2px solid black; }
 
 @media screen and (max-width: 640px) {
   body {
@@ -823,6 +848,9 @@ form {
       line-height: 25px; }
       .home .content .sub-play-text strong {
         line-height: 18px; }
+    .home .content .already-text {
+      font-size: 18px;
+      line-height: 25px; }
 
   .tuto .text {
     width: 100%; }
@@ -834,7 +862,10 @@ form {
   .game p {
     top: 70px;
     font-size: 40px;
-    line-height: 30px; }
+    line-height: 30px;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
     .game p sub {
       font-size: 14px;
       width: 60px;

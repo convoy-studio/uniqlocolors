@@ -20,6 +20,10 @@ class App
 
 	_initContent: () =>
 
+		W.basil = new window.Basil({
+			namespace: 'uniqlocolors'
+		})
+
 		W.time = {
 			old: +new Date()
 		}

@@ -1522,6 +1522,9 @@ App = (function() {
   }
 
   App.prototype._initContent = function() {
+    W.basil = new window.Basil({
+      namespace: 'uniqlocolors'
+    });
     W.time = {
       old: +new Date()
     };
@@ -1667,7 +1670,7 @@ Game = (function() {
       launched: false,
       initialized: true,
       ended: false,
-      shared: false,
+      shared: W.basil.get('shared') || false,
       winner: false
     };
     this.gameParameters = Parameters;
@@ -1798,14 +1801,14 @@ Game = (function() {
       this._pauseGame();
       this.screens.displayTryAgain();
     } else {
+      this._stopGame();
       if (W.status.shared === false) {
         W.status.paused = true;
         this.screens.displayGameOver();
       } else {
-        W.status.ended = true;
+        W.status.paused = false;
         this.screens.displayLoose();
       }
-      this._stopGame();
     }
     return this._updateVals();
   };
@@ -1822,6 +1825,7 @@ Game = (function() {
   };
 
   Game.prototype.launch = function() {
+    W.basil.set('played', true);
     W.status.launched = true;
     this._gameLaunched = true;
     this.levelUp();
@@ -2222,6 +2226,8 @@ mediasPath = '/dev/medias/products/';
 
 Form = (function() {
   function Form(options) {
+    this._onCheckboxClick = __bind(this._onCheckboxClick, this);
+    this._onRadioClick = __bind(this._onRadioClick, this);
     this._onInputBlur = __bind(this._onInputBlur, this);
     this._onInputFocus = __bind(this._onInputFocus, this);
     this._onSubmit = __bind(this._onSubmit, this);
@@ -2235,11 +2241,12 @@ Form = (function() {
   Form.prototype._initEvents = function() {
     this.container.on('submit', this._onSubmit);
     this.submitButton.on(Event.CLICK, this._onSubmit);
-    return this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+    this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+    this.container.find('.radio').on(Event.CLICK, this._onRadioClick);
+    return this.container.find('.checkbox').on(Event.CLICK, this._onCheckboxClick);
   };
 
   Form.prototype._displayError = function(error) {
-    console.log(this.container.find('.error.' + error));
     return this.container.find('.error.' + error).css('display', 'block');
   };
 
@@ -2294,6 +2301,28 @@ Form = (function() {
     }
   };
 
+  Form.prototype._onRadioClick = function(e) {
+    var $this, klass;
+    $this = $(e.currentTarget);
+    klass = $this.attr('class');
+    $this.addClass('active').siblings().removeClass('active');
+    $this.find('input').prop('checked', true);
+    return $this.siblings().find('input').prop('checked', false);
+  };
+
+  Form.prototype._onCheckboxClick = function(e) {
+    var $this, klass;
+    $this = $(e.currentTarget);
+    klass = $this.attr('class');
+    if (klass.match('active')) {
+      $this.removeClass('active');
+      return $this.find('input').prop('checked', false);
+    } else {
+      $this.addClass('active');
+      return $this.find('input').prop('checked', true);
+    }
+  };
+
   return Form;
 
 })();
@@ -2313,6 +2342,7 @@ Home = (function() {
   }
 
   Home.prototype._initContent = function() {
+    var diff, midnight, now, oneday;
     this.pics = [];
     this.loader = new Loader({
       container: this.carousel,
@@ -2341,7 +2371,15 @@ Home = (function() {
         };
       })(this)
     });
-    return this.container.addClass('state-0');
+    this.container.addClass('state-0');
+    now = new Date();
+    midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+    diff = now.getTime() - midnight.getTime();
+    oneday = 1000 * 60 * 60 * 24;
+    if (oneday - diff < 0) {
+      W.basil.set('played', false);
+      return W.basil.set('shared', false);
+    }
   };
 
   Home.prototype._initEvents = function() {
@@ -2487,7 +2525,6 @@ Screens = (function() {
   };
 
   Screens.prototype.displayLoose = function() {
-    W.status.ended = true;
     this.looseScreen.css('display', 'block');
     this.looseScreen[0].offsetHeight;
     return this.looseScreen.addClass('displayed');
@@ -2573,11 +2610,13 @@ CountDown = (function() {
   };
 
   CountDown.prototype._drawProgressCircle = function() {
-    var pos, speed, top;
+    var pos, shift, speed, top;
     if (W.ww < 640) {
       top = 100;
+      shift = 10;
     } else {
       top = W.wh * 0.5;
+      shift = 20;
     }
     if (this._timeOut === false && W.status.paused !== true && W.status.stopped !== true) {
       speed = Math.PI * 2 / Parameters.time;
@@ -2586,7 +2625,7 @@ CountDown = (function() {
       this.ctx.beginPath();
       this.ctx.fillStyle = this.red;
       this.ctx.globalAlpha = 0.2;
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 20, this.arcZero, this.currentTimeDeg, false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + shift, this.arcZero, this.currentTimeDeg, false);
       this.ctx.lineTo(W.ww * 0.5, top);
       this.ctx.fill();
       this.ctx.globalAlpha = 1;

@@ -21,7 +21,7 @@ class Game
 			launched: false
 			initialized: true
 			ended: false
-			shared: false
+			shared: W.basil.get('shared') || false
 			winner: false
 		}
 
@@ -212,13 +212,15 @@ class Game
 			@_pauseGame()
 			@screens.displayTryAgain()
 		else
+			@_stopGame()
 			if W.status.shared == false
 				W.status.paused = true
 				@screens.displayGameOver()
 			else
-				W.status.ended = true
+				#W.status.ended = true
+				W.status.paused = false
 				@screens.displayLoose()
-			@_stopGame()
+			
 
 		@_updateVals()
 			
@@ -241,6 +243,8 @@ class Game
 	# -----------------------------------------------------------------------------o listeners
 
 	launch: () =>
+
+		W.basil.set('played', true)
 
 		W.status.launched = true
 		@_gameLaunched = true
@@ -279,9 +283,7 @@ class Game
 
 		if @_gameLaunched == true
 			@render(true)
-
-
-
+			
 		@snow.resize()
 
 

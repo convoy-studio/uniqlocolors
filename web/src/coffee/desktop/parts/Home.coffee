@@ -42,6 +42,23 @@ class Home
 		@container.addClass('state-0')
 
 
+		# get the difference between now and midnight
+		now = new Date()
+		midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0)
+
+		diff = now.getTime() - midnight.getTime()
+		oneday = 1000 * 60 * 60 * 24
+
+		if oneday - diff < 0
+			W.basil.set('played', false)
+			W.basil.set('shared', false)
+
+		# get if the player has already played
+		#if W.basil.get('played') == true
+		#	@container.addClass('already-played')
+		#	@container.find('.play-button').remove()
+
+
 	_initEvents: () =>
 
 		@container.find('.play-button')

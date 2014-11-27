@@ -40,8 +40,10 @@ class CountDown
 
 		if W.ww < 640
 			top = 100
+			shift = 10
 		else
 			top = W.wh * 0.5
+			shift = 20
 
 		if @_timeOut == false && W.status.paused != true && W.status.stopped != true
 			speed = Math.PI * 2 / Parameters.time
@@ -54,7 +56,7 @@ class CountDown
 			@ctx.fillStyle = @red
 			@ctx.globalAlpha = 0.2
 
-			@ctx.arc(W.ww * 0.5, top, W.grid.radius + 20, @arcZero, @currentTimeDeg, false)
+			@ctx.arc(W.ww * 0.5, top, W.grid.radius + shift, @arcZero, @currentTimeDeg, false)
 			@ctx.lineTo(W.ww * 0.5, top)
 
 			@ctx.fill()

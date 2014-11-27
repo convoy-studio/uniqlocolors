@@ -10,15 +10,12 @@ Trads = {
 		"try_again": "Rejouer !",
 		"game_over_text": "Vous n'avez plus d'essais<br/><span>Partagez</span> le jeu avec vos amis<br/>pour pouvoir <span>jouer à nouveau</span>:",
 		"get_notified": "<span>Être informé</span><br/><span>la semaine prochaine quand vous pourrez rejouer</span>",
-		"loading": "Loading...",
-
-		"sharingText": "UNIQLO GIVEAWAY - Play the color game and get a chance to win free products .",
 
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
+				"category": "Ultra Light",
+				"name": "Doudoune sans manches homme et femme",
+				"other_name": "Une Doudoune Ultra Light",
 				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
 				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
 				"price": "49,90€",
@@ -35,7 +32,154 @@ Trads = {
 						"color": "#5bbad8"
 					}
 				]
-			}
+			},
+			{
+				"category": "Ultra Light",
+				"name": "Veste homme et femme",
+				"other_name": "Une Veste Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light",
+				"name": "Parka homme",
+				"other_name": "Une Parka Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Pulls 100% Cachemire",
+				"name": "Pulls cols V et rond homme",
+				"other_name": "Un pull cachemire",
+				"description": "100% cachemire représente bien plus qu’une promesse sur une étiquette.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Pulls 100% Cachemire",
+				"name": "Pulls cols V et rond femme",
+				"other_name": "Un pull cachemire",
+				"description": "100% cachemire représente bien plus qu’une promesse sur une étiquette.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "T-shirts Heattech homme et femme",
+				"other_name": "Un T-shirt Heattech",
+				"description": "Si chaud et si léger. Le nouveau remède contre le froid.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "9,90€",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSOIRES",
+				"name": "Gants et bonnets en cachemire",
+				"other_name": "Gants et bonnets en cachemire",
+				"description": "Tout ce dont vous avez besoin pour rester au chaud tout l’hiver.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSOIRES",
+				"name": "Écharpes en cachemire",
+				"other_name": "Une écharpes en cachemire",
+				"description": "Tout ce dont vous avez besoin pour rester au chaud tout l’hiver.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			}						
 		],
 
 		"home": {
@@ -105,25 +249,173 @@ Trads = {
 		"game_over_text": "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:",
 		"get_notified": "<span>Get notified</span><br/><span>of next week's giveaway</span>",
 
+
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
-				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
-				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"category": "Ultra Light Down",
+				"name": "Doudoune sans manches homme et femme",
+				"other_name": "Une Doudoune Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
 				"price": "49,90€",
 				"offer": "39,90€",
 				"pictures": [
 					{
 						"back": "/dev/medias/home/week_1_A_bg.jpg",
 						"front": "/dev/medias/home/week_1_A.png",
-						"color": "#abd7a4"
+						"color": "#f5855d"
 					},
 					{
-						"back": "/dev/medias/home/week_1_B_bg.jpg",
-						"front": "/dev/medias/home/week_1_B.png",
-						"color": "#5bbad8"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Ultra Light Down",
+				"name": "Veste homme et femme",
+				"other_name": "Une Veste Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light Down",
+				"name": "Parka homme",
+				"other_name": "Une Parka Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% cashmere sweaters.",
+				"name": "Cashmere sweater Man",
+				"other_name": "Cashmere sweater",
+				"description": "Amazingly light and indulgently soft",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% cashmere sweaters.",
+				"name": "Cashmere sweater Woman",
+				"other_name": "Cashmere sweater",
+				"description": "Amazingly light and indulgently soft.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "T-shirts Heattech homme et femme",
+				"other_name": "Un T-shirt Heattech",
+				"description": "Less layers. more freedom. One thin heattech layer gives you warmth without weight.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "£9,90",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSORIES",
+				"name": "Hats and gloves",
+				"other_name": "Hats and gloves",
+				"description": "All you need to stay toasty all over.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSORIES",
+				"name": "Heat-retaining scarves",
+				"other_name": "Heat-retaining scarves",
+				"description": "All you need to stay toasty all over.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
 					}
 				]
 			}
@@ -196,25 +488,173 @@ Trads = {
 		"game_over_text": "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT.<br/>Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch.",
 		"get_notified": "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>",
 
+
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
-				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
-				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"category": "Ultra Light Down",
+				"name": "Ultra Light Down von UNIQLO sind leicht und warm.",
+				"other_name": "Ultra Light Down von UNIQLO sind leicht und warm.",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
 				"price": "49,90€",
 				"offer": "39,90€",
 				"pictures": [
 					{
 						"back": "/dev/medias/home/week_1_A_bg.jpg",
 						"front": "/dev/medias/home/week_1_A.png",
-						"color": "#abd7a4"
+						"color": "#f5855d"
 					},
 					{
-						"back": "/dev/medias/home/week_1_B_bg.jpg",
-						"front": "/dev/medias/home/week_1_B.png",
-						"color": "#5bbad8"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Ultra Light Down",
+				"name": "Die Möglichkeiten sind grenzenlos",
+				"other_name": "Die Möglichkeiten sind grenzenlos",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light Down",
+				"name": "Ultra Light Down Jacke ab",
+				"other_name": "Ultra Light Down Jacke ab",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% Kaschmir Pullover",
+				"name": "Pullover mit V-Ausschnitt für Herren",
+				"other_name": "Kaschmir Pullover",
+				"description": "Weich, leicht und in vielen attraktiven Farben",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% Kaschmir Pullover",
+				"name": "Pullover mit V-Ausschnitt für Damen",
+				"other_name": "Kaschmir Pullover",
+				"description": "Weich, leicht und in vielen attraktiven Farben",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "HEATTECH Produkte für Damen und Herren",
+				"other_name": "HEATTECH Produkten",
+				"description": "Heattech-Stoffe von UNIQLO wärmen ohne aufzutragen.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "9,90€",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Zubehör",
+				"name": "Accessories aus 100% Kaschmir ab",
+				"other_name": "Accessories aus 100% Kaschmir ab",
+				"description": "Warm und farbenfroh - praktisch für jeden Tag.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Zubehör",
+				"name": "Socken und HEATTECH Accessoires ab",
+				"other_name": "Socken und HEATTECH Accessoires ab",
+				"description": "Warm und farbenfroh - praktisch für jeden Tag.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
 					}
 				]
 			}

@@ -1,31 +1,5 @@
 .tuto {
 	display:none;
-	
-	.squares {
-		width:150px;
-		height:150px;
-		margin:0 auto;
-
-		span {
-			display:block;
-			width:40px;
-			height:40px;
-			margin:5px;
-			float:left;
-		}
-
-		.black {
-			background:$black;
-		}
-
-		.grey {
-			background:#8a8a8a;
-		}
-
-		.red {
-			background:$red;
-		}
-	}
 
 	.loading {
 		span {
@@ -45,6 +19,7 @@
 		p:nth-child(1) {
 			font:500 25px/30px $font-family;
 			text-transform:uppercase;
+			margin-bottom:5px;
 		}
 
 		span {

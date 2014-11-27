@@ -16,15 +16,12 @@ Trads = {
 		"try_again": "Rejouer !",
 		"game_over_text": "Vous n'avez plus d'essais<br/><span>Partagez</span> le jeu avec vos amis<br/>pour pouvoir <span>jouer à nouveau</span>:",
 		"get_notified": "<span>Être informé</span><br/><span>la semaine prochaine quand vous pourrez rejouer</span>",
-		"loading": "Loading...",
-
-		"sharingText": "UNIQLO GIVEAWAY - Play the color game and get a chance to win free products .",
 
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
+				"category": "Ultra Light",
+				"name": "Doudoune sans manches homme et femme",
+				"other_name": "Une Doudoune Ultra Light",
 				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
 				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
 				"price": "49,90€",
@@ -41,7 +38,154 @@ Trads = {
 						"color": "#5bbad8"
 					}
 				]
-			}
+			},
+			{
+				"category": "Ultra Light",
+				"name": "Veste homme et femme",
+				"other_name": "Une Veste Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light",
+				"name": "Parka homme",
+				"other_name": "Une Parka Ultra Light",
+				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Pulls 100% Cachemire",
+				"name": "Pulls cols V et rond homme",
+				"other_name": "Un pull cachemire",
+				"description": "100% cachemire représente bien plus qu’une promesse sur une étiquette.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Pulls 100% Cachemire",
+				"name": "Pulls cols V et rond femme",
+				"other_name": "Un pull cachemire",
+				"description": "100% cachemire représente bien plus qu’une promesse sur une étiquette.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "T-shirts Heattech homme et femme",
+				"other_name": "Un T-shirt Heattech",
+				"description": "Si chaud et si léger. Le nouveau remède contre le froid.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "9,90€",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSOIRES",
+				"name": "Gants et bonnets en cachemire",
+				"other_name": "Gants et bonnets en cachemire",
+				"description": "Tout ce dont vous avez besoin pour rester au chaud tout l’hiver.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSOIRES",
+				"name": "Écharpes en cachemire",
+				"other_name": "Une écharpes en cachemire",
+				"description": "Tout ce dont vous avez besoin pour rester au chaud tout l’hiver.",
+				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			}						
 		],
 
 		"home": {
@@ -111,25 +255,173 @@ Trads = {
 		"game_over_text": "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:",
 		"get_notified": "<span>Get notified</span><br/><span>of next week's giveaway</span>",
 
+
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
-				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
-				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"category": "Ultra Light Down",
+				"name": "Doudoune sans manches homme et femme",
+				"other_name": "Une Doudoune Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
 				"price": "49,90€",
 				"offer": "39,90€",
 				"pictures": [
 					{
 						"back": "/dev/medias/home/week_1_A_bg.jpg",
 						"front": "/dev/medias/home/week_1_A.png",
-						"color": "#abd7a4"
+						"color": "#f5855d"
 					},
 					{
-						"back": "/dev/medias/home/week_1_B_bg.jpg",
-						"front": "/dev/medias/home/week_1_B.png",
-						"color": "#5bbad8"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Ultra Light Down",
+				"name": "Veste homme et femme",
+				"other_name": "Une Veste Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light Down",
+				"name": "Parka homme",
+				"other_name": "Une Parka Ultra Light",
+				"description": "Weightless warmth. Light, warm, pocketable, portable. An evolution in outerwear.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% cashmere sweaters.",
+				"name": "Cashmere sweater Man",
+				"other_name": "Cashmere sweater",
+				"description": "Amazingly light and indulgently soft",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% cashmere sweaters.",
+				"name": "Cashmere sweater Woman",
+				"other_name": "Cashmere sweater",
+				"description": "Amazingly light and indulgently soft.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "T-shirts Heattech homme et femme",
+				"other_name": "Un T-shirt Heattech",
+				"description": "Less layers. more freedom. One thin heattech layer gives you warmth without weight.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "£9,90",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSORIES",
+				"name": "Hats and gloves",
+				"other_name": "Hats and gloves",
+				"description": "All you need to stay toasty all over.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "ACCESSORIES",
+				"name": "Heat-retaining scarves",
+				"other_name": "Heat-retaining scarves",
+				"description": "All you need to stay toasty all over.",
+				"carousel_top": "Give <strong><span>color</span></strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
 					}
 				]
 			}
@@ -202,25 +494,173 @@ Trads = {
 		"game_over_text": "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT.<br/>Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch.",
 		"get_notified": "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>",
 
+
 		"products": [
 			{
-				"category": "Doudoune <br/>ULD",
-				"name": "Doudoune Ultra Light",
-				"other_name": "Doudoune Ultra Light",
-				"description": "Chaleur et légèreté. Une révolution à emporter partout.",
-				"carousel_top": "Offrez <strong><span>la couleur</span></strong>",
+				"category": "Ultra Light Down",
+				"name": "Ultra Light Down von UNIQLO sind leicht und warm.",
+				"other_name": "Ultra Light Down von UNIQLO sind leicht und warm.",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
 				"price": "49,90€",
 				"offer": "39,90€",
 				"pictures": [
 					{
 						"back": "/dev/medias/home/week_1_A_bg.jpg",
 						"front": "/dev/medias/home/week_1_A.png",
-						"color": "#abd7a4"
+						"color": "#f5855d"
 					},
 					{
-						"back": "/dev/medias/home/week_1_B_bg.jpg",
-						"front": "/dev/medias/home/week_1_B.png",
-						"color": "#5bbad8"
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Ultra Light Down",
+				"name": "Die Möglichkeiten sind grenzenlos",
+				"other_name": "Die Möglichkeiten sind grenzenlos",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},	
+			{
+				"category": "Ultra Light Down",
+				"name": "Ultra Light Down Jacke ab",
+				"other_name": "Ultra Light Down Jacke ab",
+				"description": "Schwerelose Wärme",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "79,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% Kaschmir Pullover",
+				"name": "Pullover mit V-Ausschnitt für Herren",
+				"other_name": "Kaschmir Pullover",
+				"description": "Weich, leicht und in vielen attraktiven Farben",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "89,90€",
+				"offer": "79,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "100% Kaschmir Pullover",
+				"name": "Pullover mit V-Ausschnitt für Damen",
+				"other_name": "Kaschmir Pullover",
+				"description": "Weich, leicht und in vielen attraktiven Farben",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "69,90€",
+				"offer": "59,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "HEATTECH",
+				"name": "HEATTECH Produkte für Damen und Herren",
+				"other_name": "HEATTECH Produkten",
+				"description": "Heattech-Stoffe von UNIQLO wärmen ohne aufzutragen.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "9,90€",
+				"offer": "14,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Zubehör",
+				"name": "Accessories aus 100% Kaschmir ab",
+				"other_name": "Accessories aus 100% Kaschmir ab",
+				"description": "Warm und farbenfroh - praktisch für jeden Tag.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "19,90€",
+				"offer": "29,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
+					}
+				]
+			},
+			{
+				"category": "Zubehör",
+				"name": "Socken und HEATTECH Accessoires ab",
+				"other_name": "Socken und HEATTECH Accessoires ab",
+				"description": "Warm und farbenfroh - praktisch für jeden Tag.",
+				"carousel_top": "<strong>FARBE SCHENKEN!</strong>",
+				"price": "29,90€",
+				"offer": "39,90€",
+				"pictures": [
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/dev/medias/home/week_1_A.png",
+						"color": "#f5855d"
+					},
+					{
+						"back": "/dev/medias/home/week_1_A_bg.jpg",
+						"front": "/medias/home/test-2-front.png",
+						"color": "#7cceda"
 					}
 				]
 			}
@@ -285,6 +725,344 @@ Trads = {
 };
 
 var currentWeek = 0;
+(function () {
+	// Basil
+	var Basil = function (options) {
+		return Basil.utils.extend(Basil.plugins, new Basil.Storage().init(options));
+	};
+
+	// Version
+	Basil.version = '0.3.4';
+
+	// Utils
+	Basil.utils = {
+		extend: function () {
+			var destination = typeof arguments[0] === 'object' ? arguments[0] : {};
+			for (var i = 1; i < arguments.length; i++) {
+				if (arguments[i] && typeof arguments[i] === 'object')
+					for (var property in arguments[i])
+						destination[property] = arguments[i][property];
+			}
+			return destination;
+		},
+		isArray: function (obj) {
+			return Object.prototype.toString.call(obj) === '[object Array]';
+		},
+		registerPlugin: function (methods) {
+			Basil.plugins = this.extend(methods, Basil.plugins);
+		}
+	};
+
+	Basil.plugins = {};
+
+	// Options
+	Basil.options = Basil.utils.extend({
+		namespace: 'b45i1',
+		storage: null,
+		storages: ['local', 'cookie', 'session', 'memory'],
+		expireDays: 365
+	}, window.Basil ? window.Basil.options : {});
+
+	// Storage
+	Basil.Storage = function () {
+		var _salt = 'b45i1' + (Math.random() + 1)
+				.toString(36)
+				.substring(7),
+			_storages = {},
+			_toStoragesArray = function (storages) {
+				if (!storages)
+					return null;
+				return Basil.utils.isArray(storages) ? storages : [storages];
+			},
+			_toStoredKey = function (namespace, name) {
+				var key = '';
+				if (typeof name === 'string')
+					key = namespace + ':' + name;
+				else if (Basil.utils.isArray(name)) {
+					key = namespace;
+					for (var i = 0; i < name.length; i++)
+						if (name[i])
+							key += ':' + name[i];
+				}
+				return key;
+			},
+			_toKeyName = function (namespace, name) {
+				if (!namespace)
+					return name;
+				return name.replace(new RegExp('^' + namespace + ':'), '');
+			},
+			_toStoredValue = function (value) {
+				return JSON.stringify(value);
+			},
+			_fromStoredValue = function (value) {
+				return JSON.parse(value);
+			};
+
+		// local storage
+		_storages.local = {
+			engine: window.localStorage,
+			check: function () {
+				try {
+					this.engine.setItem(_salt, true);
+					this.engine.removeItem(_salt);
+				} catch (e) {
+					return false;
+				}
+				return true;
+			},
+			set: function (name, value, options) {
+				if (!name)
+					return;
+				this.engine.setItem(name, value);
+			},
+			get: function (name) {
+				return this.engine.getItem(name);
+			},
+			remove: function (name) {
+				this.engine.removeItem(name);
+			},
+			reset: function (namespace) {
+				for (var i = 0, key; i < this.engine.length; i++) {
+					key = this.engine.key(i);
+					if (!namespace || key.indexOf(namespace) === 0) {
+						this.remove(key);
+						i--;
+					}
+				}
+			},
+			keys: function (namespace) {
+				var keys = [];
+				for (var i = 0, key; i < this.engine.length; i++) {
+					key = this.engine.key(i);
+					if (!namespace || key.indexOf(namespace) === 0)
+						keys.push(_toKeyName(namespace, key));
+				}
+				return keys;
+			}
+		};
+
+		// session storage
+		_storages.session = Basil.utils.extend({}, _storages.local, {
+			engine: window.sessionStorage
+		});
+
+		// memory storage
+		_storages.memory = {
+			_hash: {},
+			check: function () {
+				return true;
+			},
+			set: function (name, value, options) {
+				if (!name)
+					return;
+				this._hash[name] = value;
+			},
+			get: function (name) {
+				return this._hash[name] || null;
+			},
+			remove: function (name) {
+				delete this._hash[name];
+			},
+			reset: function (namespace) {
+				for (var key in this._hash) {
+					if (!namespace || key.indexOf(namespace) === 0)
+						this.remove(key);
+				}
+			},
+			keys: function (namespace) {
+				var keys = [];
+				for (var key in this._hash)
+					if (!namespace || key.indexOf(namespace) === 0)
+						keys.push(_toKeyName(namespace, key));
+				return keys;
+			}
+		};
+
+		// cookie storage
+		_storages.cookie = {
+			check: function () {
+				return navigator.cookieEnabled;
+			},
+			set: function (name, value, options) {
+				if (!name)
+					return;
+				options = options || {};
+				var cookie = name + '=' + value;
+				if (options.expireDays) {
+					var date = new Date();
+					date.setTime(date.getTime() + (options.expireDays * 24 * 60 * 60 * 1000));
+					cookie += '; expires=' + date.toGMTString();
+				}
+				if (options.domain)
+					cookie += '; domain=' + options.domain;
+				document.cookie = cookie + '; path=/';
+			},
+			get: function (name) {
+				var cookies = document.cookie.split(';');
+				for (var i = 0, cookie; i < cookies.length; i++) {
+					cookie = cookies[i].replace(/^\s*/, '');
+					if (cookie.indexOf(name + '=') === 0)
+						return cookie.substring(name.length + 1, cookie.length);
+				}
+				return null;
+			},
+			remove: function (name) {
+				if (!name)
+					return;
+				// remove cookie from main domain
+				this.set(name, '', { expireDays: -1 });
+				// remove cookie from upper domains
+				var domainParts = document.domain.split('.');
+				for (var i = domainParts.length - 1; i > 0; i--) {
+					this.set(name, '', { expireDays: -1, domain: '.' + domainParts.slice(- i).join('.') });
+				}
+			},
+			reset: function (namespace) {
+				var cookies = document.cookie.split(';');
+				for (var i = 0, cookie, key; i < cookies.length; i++) {
+					cookie = cookies[i].replace(/^\s*/, '');
+					key = cookie.substr(0, cookie.indexOf('='));
+					if (!namespace || key.indexOf(namespace) === 0)
+						this.remove(key);
+				}
+			},
+			keys: function (namespace) {
+				var keys = [],
+					cookies = document.cookie.split(';');
+				for (var i = 0, cookie, key; i < cookies.length; i++) {
+					cookie = cookies[i].replace(/^\s*/, '');
+					key = cookie.substr(0, cookie.indexOf('='));
+					if (!namespace || key.indexOf(namespace) === 0)
+						keys.push(_toKeyName(namespace, key));
+				}
+				return keys;
+			}
+		};
+
+		return {
+			init: function (options) {
+				this.options = Basil.utils.extend({}, Basil.options, options);
+				this.supportedStorages = {};
+				for (var i = 0, storage; i < this.options.storages.length; i++) {
+					storage = this.options.storages[i];
+					if (_storages.hasOwnProperty(storage))
+						this.supportedStorages[storage] = _storages[storage];
+				}
+				this.defaultStorage = this.check(this.options.storage) ? this.options.storage : this.detect();
+				return this;
+			},
+			detect: function () {
+				for (var storage in this.supportedStorages)
+					if (this.check(storage))
+						return storage;
+				return null;
+			},
+			check: function (storage) {
+				storage = storage || this.defaultStorage;
+				if (this.supportedStorages.hasOwnProperty(storage))
+					return this.supportedStorages[storage].check();
+				return false;
+			},
+			set: function (name, value, options) {
+				options = options || {};
+				if (!(name = _toStoredKey(options.namespace || this.options.namespace, name)))
+					return;
+				value = _toStoredValue(value);
+				options = Basil.utils.extend({
+					expireDays: this.options.expireDays
+				}, options);
+				var storages = _toStoragesArray(options.storages) || [this.defaultStorage];
+				for (var i = 0, storage; i < storages.length; i++) {
+					storage = storages[i];
+					if (!this.check(storage))
+						continue;
+					_storages[storage].set(name, value, options);
+				}
+			},
+			get: function (name, options) {
+				options = options || {};
+				if (!(name = _toStoredKey(options.namespace || this.options.namespace, name)))
+					return null;
+				var value = null,
+					storages = _toStoragesArray(options.storages) || [this.defaultStorage];
+				for (var i = 0, storage; value === null && i < storages.length; i++) {
+					storage = storages[i];
+					if (!this.check(storage))
+						continue;
+					value = _fromStoredValue(_storages[storage].get(name));
+				}
+				return value;
+			},
+			remove: function (name, options) {
+				options = options || {};
+				if (!(name = _toStoredKey(options.namespace || this.options.namespace, name)))
+					return null;
+				var storages = _toStoragesArray(options.storages) || [this.defaultStorage];
+				for (var i = 0, storage; i < storages.length; i++) {
+					storage = storages[i];
+					if (!this.check(storage))
+						continue;
+					_storages[storage].remove(name);
+				}
+			},
+			reset: function (options) {
+				options = options || {};
+				var storages = _toStoragesArray(options.storages) || [this.defaultStorage],
+					namespace = options.namespace || this.options.namespace;
+				for (var i = 0, storage; i < storages.length; i++) {
+					storage = storages[i];
+					if (!this.check(storage))
+						continue;
+					_storages[storage].reset(namespace);
+				}
+			},
+			keys: function (options) {
+				options = options || {};
+				var keys = [];
+				for (var key in this.keysMap(options))
+					keys.push(key);
+				return keys;
+			},
+			keysMap: function (options) {
+				options = options || {};
+				var map = {},
+					storages = _toStoragesArray(options.storages) || this.options.storages,
+					namespace = options.namespace || this.options.namespace;
+				for (var i = 0, storage, storageKeys; i < storages.length; i++) {
+					storage = storages[i];
+					if (!this.check(storage))
+						continue;
+					storageKeys = _storages[storage].keys(namespace);
+					for (var j = 0, key; j < storageKeys.length; j++) {
+						key = storageKeys[j];
+						map[key] = map[key] instanceof Array ? map[key] : [];
+						map[key].push(storage);
+					}
+				}
+				return map;
+			},
+			// Access to native storages, without namespace or basil value decoration
+			memory: _storages.memory,
+			cookie: _storages.cookie,
+			localStorage: _storages.local,
+			sessionStorage: _storages.session
+		};
+	};
+
+	// browser export
+	window.Basil = Basil;
+
+	// AMD export
+	if (typeof define === 'function' && define.amd) {
+		define(function() {
+			return Basil;
+		});
+	// commonjs export
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = Basil;
+	}
+
+})();
 (function(u,q){"function"===typeof define&&define.amd?define([],q):"object"===typeof exports?module.exports=q():u.Handlebars=u.Handlebars||q()})(this,function(){var u=function(){function m(k){this.string=k}m.prototype.toString=function(){return""+this.string};return m}(),q=function(m){function k(e){return a[e]}var h={},a={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","`":"&#x60;"},d=/[&<>"'`]/g,g=/[&<>"'`]/;h.extend=function(a){for(var f=1;f<arguments.length;f++)for(var e in arguments[f])Object.prototype.hasOwnProperty.call(arguments[f],
 e)&&(a[e]=arguments[f][e]);return a};var c=Object.prototype.toString;h.toString=c;var e=function(a){return"function"===typeof a};e(/x/)&&(e=function(a){return"function"===typeof a&&"[object Function]"===c.call(a)});h.isFunction=e;var b=Array.isArray||function(a){return a&&"object"===typeof a?"[object Array]"===c.call(a):!1};h.isArray=b;h.escapeExpression=function(a){if(a instanceof m)return a.toString();if(null==a)return"";if(!a)return a+"";a=""+a;return g.test(a)?a.replace(d,k):a};h.isEmpty=function(a){return a||
 0===a?b(a)&&0===a.length?!0:!1:!0};h.appendContextPath=function(a,f){return(a?a+".":"")+f};return h}(u),t=function(){function m(h,a){var d;a&&a.firstLine&&(d=a.firstLine,h+=" - "+d+":"+a.firstColumn);for(var g=Error.prototype.constructor.call(this,h),c=0;c<k.length;c++)this[k[c]]=g[k[c]];d&&(this.lineNumber=d,this.column=a.firstColumn)}var k="description fileName lineNumber message name number stack".split(" ");m.prototype=Error();return m}(),x=function(m,k){function h(f,e){this.helpers=f||{};this.partials=
@@ -2488,6 +3266,9 @@ App = (function() {
   }
 
   App.prototype._initContent = function() {
+    W.basil = new window.Basil({
+      namespace: 'uniqlocolors'
+    });
     W.time = {
       old: +new Date()
     };
@@ -2633,7 +3414,7 @@ Game = (function() {
       launched: false,
       initialized: true,
       ended: false,
-      shared: false,
+      shared: W.basil.get('shared') || false,
       winner: false
     };
     this.gameParameters = Parameters;
@@ -2764,14 +3545,14 @@ Game = (function() {
       this._pauseGame();
       this.screens.displayTryAgain();
     } else {
+      this._stopGame();
       if (W.status.shared === false) {
         W.status.paused = true;
         this.screens.displayGameOver();
       } else {
-        W.status.ended = true;
+        W.status.paused = false;
         this.screens.displayLoose();
       }
-      this._stopGame();
     }
     return this._updateVals();
   };
@@ -2788,6 +3569,7 @@ Game = (function() {
   };
 
   Game.prototype.launch = function() {
+    W.basil.set('played', true);
     W.status.launched = true;
     this._gameLaunched = true;
     this.levelUp();
@@ -3188,6 +3970,8 @@ mediasPath = '/dev/medias/products/';
 
 Form = (function() {
   function Form(options) {
+    this._onCheckboxClick = __bind(this._onCheckboxClick, this);
+    this._onRadioClick = __bind(this._onRadioClick, this);
     this._onInputBlur = __bind(this._onInputBlur, this);
     this._onInputFocus = __bind(this._onInputFocus, this);
     this._onSubmit = __bind(this._onSubmit, this);
@@ -3201,11 +3985,12 @@ Form = (function() {
   Form.prototype._initEvents = function() {
     this.container.on('submit', this._onSubmit);
     this.submitButton.on(Event.CLICK, this._onSubmit);
-    return this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+    this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+    this.container.find('.radio').on(Event.CLICK, this._onRadioClick);
+    return this.container.find('.checkbox').on(Event.CLICK, this._onCheckboxClick);
   };
 
   Form.prototype._displayError = function(error) {
-    console.log(this.container.find('.error.' + error));
     return this.container.find('.error.' + error).css('display', 'block');
   };
 
@@ -3260,6 +4045,28 @@ Form = (function() {
     }
   };
 
+  Form.prototype._onRadioClick = function(e) {
+    var $this, klass;
+    $this = $(e.currentTarget);
+    klass = $this.attr('class');
+    $this.addClass('active').siblings().removeClass('active');
+    $this.find('input').prop('checked', true);
+    return $this.siblings().find('input').prop('checked', false);
+  };
+
+  Form.prototype._onCheckboxClick = function(e) {
+    var $this, klass;
+    $this = $(e.currentTarget);
+    klass = $this.attr('class');
+    if (klass.match('active')) {
+      $this.removeClass('active');
+      return $this.find('input').prop('checked', false);
+    } else {
+      $this.addClass('active');
+      return $this.find('input').prop('checked', true);
+    }
+  };
+
   return Form;
 
 })();
@@ -3279,6 +4086,7 @@ Home = (function() {
   }
 
   Home.prototype._initContent = function() {
+    var diff, midnight, now, oneday;
     this.pics = [];
     this.loader = new Loader({
       container: this.carousel,
@@ -3307,7 +4115,15 @@ Home = (function() {
         };
       })(this)
     });
-    return this.container.addClass('state-0');
+    this.container.addClass('state-0');
+    now = new Date();
+    midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+    diff = now.getTime() - midnight.getTime();
+    oneday = 1000 * 60 * 60 * 24;
+    if (oneday - diff < 0) {
+      W.basil.set('played', false);
+      return W.basil.set('shared', false);
+    }
   };
 
   Home.prototype._initEvents = function() {
@@ -3453,7 +4269,6 @@ Screens = (function() {
   };
 
   Screens.prototype.displayLoose = function() {
-    W.status.ended = true;
     this.looseScreen.css('display', 'block');
     this.looseScreen[0].offsetHeight;
     return this.looseScreen.addClass('displayed');
@@ -3539,11 +4354,13 @@ CountDown = (function() {
   };
 
   CountDown.prototype._drawProgressCircle = function() {
-    var pos, speed, top;
+    var pos, shift, speed, top;
     if (W.ww < 640) {
       top = 100;
+      shift = 10;
     } else {
       top = W.wh * 0.5;
+      shift = 20;
     }
     if (this._timeOut === false && W.status.paused !== true && W.status.stopped !== true) {
       speed = Math.PI * 2 / Parameters.time;
@@ -3552,7 +4369,7 @@ CountDown = (function() {
       this.ctx.beginPath();
       this.ctx.fillStyle = this.red;
       this.ctx.globalAlpha = 0.2;
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 20, this.arcZero, this.currentTimeDeg, false);
+      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + shift, this.arcZero, this.currentTimeDeg, false);
       this.ctx.lineTo(W.ww * 0.5, top);
       this.ctx.fill();
       this.ctx.globalAlpha = 1;

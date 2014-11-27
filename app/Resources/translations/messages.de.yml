@@ -1,122 +1,127 @@
-play: "JOUER"
+play: "SPIELEN"
 start: "START"
-try_again: "TRY AGAIN"
-tries_left: "Tries left"
-levels: "Levels"
-game_over: "Game<br/>Over"
-try_again: "Try<br/>Again!"
-game_over_text: "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:"
-get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
+try_again: "REPLAY"
+tries_left: "Versuche übrig"
+levels: "Stufen"
+game_over: "Das Spiel ist aus."
+try_again: "Replay !"
+get_notified: "<span>Befreien Sie sich von der nächsten Woche Werbegeschenk mitgeteilt.</span>"
 
-home_title: "GIVE COLORS"
-home_subtitle: "this holiday season <strong>put a smile on everybody’s face!</strong>"
-home_info_1: "Each week, until December 27th, a new offer for you to shop. Warmth and dazzling colors for the people you treasure"
-home_info_2: "Play our color game and get a chance to win a <strong>free product</strong> or <strong>discounts</strong>. Come back every week for new giveaways"
-home_sub_play_button: "Play to win"
 
-tuto: "<p>Click on the visual that<br/> <span>does not</span> have a pair.</p><p>Complete all levels in time and get a chance to win one of this week’s featured products.</p>"
+# Screens
 
-win_info: "Fill the form to enter into<br/>the raffle draw for a prize:"
+home_title: "FARBE SCHENKEN!"
+home_subtitle: "Mach dieses Jahr zu Weihnachten jemandem eine Freude."
+home_info_1: "UNIQLO bietet jede Woche ein neues, tolles Angebot. Schau regelmäβig vorbei."
+home_info_2: "Mach mit bei unserem Farbenspiel um einen Preis zu gewinnen, den du dann im UNIQLO Flagship Store in Berlin abholen kannst. Versuch einfach jede Woche erneut dein Glück."
+home_sub_play_button: "MITSPIELEN"
+home_already_played: "Already Tried"
+home_carousel_title: "<strong>FARBE SCHENKEN!</strong>"
 
-loose_see_you: "See you soon"
-loose_info: "Leave us your email to be <br/>notified of next week’s giveaway"
+tuto_info_1: "KLICK AUF DIE BILDER, <span>DIE NICHT PASSEN</span>."
+tuto_info_2: "Vollende jedes Level, um ein kostenloses Produkt zu gewinnen, das im UNIQLO Flagship Store in Berlin abgeholt werden kann."
+
+game_over_text: "OH NEIN… DU HAST ES LEIDER NICHT GESCHAFFT.<br/>Teile dieses Spiel mit anderen, um noch einmal zu spielen ODER komm morgen zurück für einen neuen Versuch."
+
+loose_text: "DU HAST ES LEIDER NICHT GESCHAFFT."
+loose_sub_text: "Come back tomorrow"
+
+win_info: "Gewinnen Sie eine Chance zu gewinnen"
+
 
 # Form
 
-form_firstname: "Your First Name"
-form_lastname: "Your Last Name"
-form_email: "Your email"
-form_female: "Female"
-form_male: "Male"
-form_remind_me: "Remind me of next giveaways"
-form_keep_me_posted: "Kepp me posted on future Uniqlo's offers"
-form_submit: "Submit"
-form_get_a_chance: "Get a chance to win a"
-form_remind_me: "Remind me
+form_info: "Du hast alle Level vollendet.<br/> Gib deine E-Mail-Adresse ein, um den heutigen Preis zu gewinnen, der im UNIQLO Flagship Store in Berlin abgeholt werden kann."
+form_firstname: "Ihren Namen"
+form_lastname: "Ihren Name"
+form_email: "E-Mail"
+form_female: "Woman"
+form_male: "Man"
+form_newsletter: "Halten Sie mich über kommende Angebote informiert Uniqlo"
+form_submit: "Senden"
+
 
 # Footer
 
 footer_rules_text: "Règlement"
-footer_rules_url: "
-footer_privacy_policy_text: "Politique de confidentialité"
-footer_privacy_policy_url: "
-footer_terms_of_use_text: "Conditions d'utilisation"
-footer_terms_of_use_url: "
-footer_credits_text: "Crédits"
-footer_credits_url: "
-footer_facebook: "fb"
-footer_twitter: "tw"
-footer_google: "g"
-footer_youtube: "yt
+footer_facebook: "https://de-de.facebook.com/uniqlo.deutschland"
+footer_twitter: "https://twitter.com/UNIQLO_DE"
+footer_google: "https://plus.google.com/107858820395596222759/about"
+footer_youtube: "https://www.youtube.com/channel/UCLigCO7wCiUkxN9668HyF1A
+
+
 
 # Product week 1
 
-product_1_category: "Product <br/>Category 1"
-product_1_name: "Product Name 1"
-product_1_other_name: "Ultra Light Down"
-product_1_description: "Product Description 1"
-product_1_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
-product_1_price: "10€"
-product_1_offer: "1€"
+week_1_product_1_category: "Ultra Light Down"
+week_1_product_1_name: "Ultra Light Down von UNIQLO sind leicht und warm."
+week_1_product_1_other_name: "Ultra Light Down von UNIQLO sind leicht und warm."
+week_1_product_1_description: "Schwerelose Wärme"
+week_1_product_1_price: "49,90€"
+week_1_product_1_offer: "39,90€"
+week_1_product_1_color: "f5855d"
 
-product_1_picture_1_back: "/medias/home/week_1_A_bg.jpg"
-product_1_picture_1_front: "/medias/home/week_1_A.png"
-product_1_picture_1_color: "#afd9a9"
+week_1_product_2_category: "Ultra Light Down"
+week_1_product_2_name: "Die Möglichkeiten sind grenzenlos"
+week_1_product_2_other_name: "Die Möglichkeiten sind grenzenlos"
+week_1_product_2_description: "Schwerelose Wärme"
+week_1_product_2_price: "69,90€"
+week_1_product_2_offer: "59,90€"
+week_1_product_2_color: "f5855d"
 
-product_1_picture_2_back: "/medias/home/week_1_B_bg.jpg"
-product_1_picture_2_front: "/medias/home/week_1_B.png"
-product_1_picture_2_color: "#6bc2de"
+week_2_product_1_category: "Ultra Light Down"
+week_2_product_1_name: "Ultra Light Down Jacke ab"
+week_2_product_1_other_name: "Ultra Light Down Jacke ab"
+week_2_product_1_description: "Schwerelose Wärme"
+week_2_product_1_price: "79,90€"
+week_2_product_1_offer: "59,90€"
+week_2_product_1_color: "f5855d"
 
-# Product week 2
+week_2_product_2_category: "100% Kaschmir Pullover"
+week_2_product_2_name: "Pullover mit V-Ausschnitt für Herren"
+week_2_product_2_other_name: "Kaschmir Pullover"
+week_2_product_2_description: "Weich, leicht und in vielen attraktiven Farben"
+week_2_product_2_price: "89,90€"
+week_2_product_2_offer: "79,90€"
+week_2_product_2_color: "f5855d"
 
-product_2_category: "Product <br/>Category 1"
-product_2_name: "Product Name 1"
-product_2_other_name: "Ultra Light Down"
-product_2_description: "Product Description 1"
-product_2_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
-product_2_price: "10€"
-product_2_offer: "1€"
+week_3_product_1_category: "100% Kaschmir Pullover"
+week_3_product_1_name: "Pullover mit V-Ausschnitt für Damen"
+week_3_product_1_other_name: "Kaschmir Pullover"
+week_3_product_1_description: "Weich, leicht und in vielen attraktiven Farben"
+week_3_product_1_price: "69,90€"
+week_3_product_1_offer: "59,90€"
+week_3_product_1_color: "f5855d"
 
-product_2_picture_1_back: "/medias/home/week_1_A_bg.jpg"
-product_2_picture_1_front: "/medias/home/week_1_A.png"
-product_2_picture_1_color: "#afd9a9"
+week_3_product_2_category: "HEATTECH"
+week_3_product_2_name: "HEATTECH Produkte für Damen und Herren"
+week_3_product_2_other_name: "HEATTECH Produkten"
+week_3_product_2_description: "Heattech-Stoffe von UNIQLO wärmen ohne aufzutragen."
+week_3_product_2_price: "14,90€"
+week_3_product_2_offer: "9,90€"
+week_3_product_2_color: "f5855d"
 
-product_2_picture_2_back: "/medias/home/week_1_B_bg.jpg"
-product_2_picture_2_front: "/medias/home/week_1_B.png"
-product_2_picture_2_color: "#6bc2de"
+week_4_product_1_category: "Zubehör"
+week_4_product_1_name: "Accessories aus 100% Kaschmir ab"
+week_4_product_1_other_name: "Accessories aus 100% Kaschmir ab"
+week_4_product_1_description: "Warm und farbenfroh - praktisch für jeden Tag."
+week_4_product_1_price: "29,90€"
+week_4_product_1_offer: "19,90€"
+week_4_product_1_color: "f5855d"
 
-# Product week 3
+week_4_product_2_category: "Zubehör"
+week_4_product_2_name: "Socken und HEATTECH Accessoires ab"
+week_4_product_2_other_name: "Socken und HEATTECH Accessoires ab"
+week_4_product_2_description: "Warm und farbenfroh - praktisch für jeden Tag."
+week_4_product_2_price: "29,90€"
+week_4_product_2_offer: "39,90€"
+week_4_product_2_color: "f5855d"
 
-product_3_category: "Product <br/>Category 1"
-product_3_name: "Product Name 1"
-product_3_other_name: "Ultra Light Down"
-product_3_description: "Product Description 1"
-product_3_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
-product_3_price: "10€"
-product_3_offer: "1€"
 
-product_3_picture_1_back: "/medias/home/week_1_A_bg.jpg"
-product_3_picture_1_front: "/medias/home/week_1_A.png"
-product_3_picture_1_color: "#afd9a9"
 
-product_3_picture_2_back: "/medias/home/week_1_B_bg.jpg"
-product_3_picture_2_front: "/medias/home/week_1_B.png"
-product_3_picture_2_color: "#6bc2de"
 
-# Product week 4
 
-product_4_category: "Product <br/>Category 1"
-product_4_name: "Product Name 1"
-product_4_other_name: "Ultra Light Down"
-product_4_description: "Product Description 1"
-product_4_carousel_top: "This holiday saison <strong>give the gift of <span>Ultra Light Down</span></strong>"
-product_4_price: "10€"
-product_4_offer: "1€"
 
-product_4_picture_1_back: "/medias/home/week_1_A_bg.jpg"
-product_4_picture_1_front: "/medias/home/week_1_A.png"
-product_4_picture_1_color: "#afd9a9"
 
-product_4_picture_2_back: "/medias/home/week_1_B_bg.jpg"
-product_4_picture_2_front: "/medias/home/week_1_B.png"
-product_4_picture_2_color: "#6bc2de"
+
+

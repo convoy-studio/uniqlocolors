@@ -63,14 +63,13 @@
 	}
 
 	.sub-play-text {
-		font:500 35px/35px $font-family;
+		font:500 35px/45px $font-family;
 		text-transform:uppercase;
 		margin-bottom:50px;
 
 		strong {
-			display:inline-block;
-			border-bottom:2px solid $white;
-			line-height:25px;
+			display:inline;
+			border-bottom:3px solid $white;
 		}
 	}
 
@@ -122,6 +121,7 @@
 			.right {
 				position:absolute;
 				bottom:0;
+				width:50%;
 			}
 
 			.left {
@@ -189,6 +189,27 @@
 					@include translate(-50%, 0);
 				}
 			}
+		}
+	}
+
+	.already-text {
+		font:500 25px/35px $font-family;
+		display:none;
+		text-transform:uppercase;
+		margin:30px 0 40px;
+
+		p {
+			display:inline;
+			border-bottom:2px solid $black;
+		}
+	}
+
+	&.already-played {
+		.play-button {
+			display:none;
+		}
+		.already-text {
+			display:block;
 		}
 	}
 
