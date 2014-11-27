@@ -4,8 +4,8 @@ try_again: "TRY AGAIN"
 tries_left: "Tries left"
 levels: "Levels"
 game_over: "Game<br/>Over"
-try_again: "Try<br/>Again!"
 get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
+loading: "Loading"
 
 
 # Screens
@@ -21,7 +21,8 @@ home_carousel_title: "Give <strong><span>color</span></strong>"
 tuto_info_1: "Click on the visual that<br/> <span>does not</span> have a pair."
 tuto_info_2: "Complete all levels in time and get a chance to win one of this week’s featured products."
 
-game_over_text: "You've run out of tries!<br/><span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:"
+game_over_text: "You've run out of tries!<br/"
+game_over_text: "<span>Share</span> the game with your friends<br/>and get <span>a new chance</span>:"
 
 loose_text: "You have no more tries left"
 loose_sub_text: "Come back tomorrow for a new try"
@@ -49,7 +50,7 @@ footer_twitter: "https://twitter.com/UNIQLO_UK"
 footer_google: "https://plus.google.com/b/110396223365528310578/+uniqlouk/posts"
 footer_youtube: "https://www.youtube.com/user/uniqloukofficial
 
-
+twitter_account: '@UNIQLO_UK'
 
 # Product week 1
 

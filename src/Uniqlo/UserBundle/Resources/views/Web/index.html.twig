@@ -10,31 +10,31 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <title>Uniqlo</title>
-    <meta name="description" content="Uniqlo">
+    <title>Uniqlo Colors - {{home_title}}</title>
+    <meta name="description" content="{{home_subtitle}}">
 
     <link rel="stylesheet" type="text/css" href="/dev/css/style.css">
 
     <!-- SOCIAL DATAS -->
     <!-- GOOGLE PLUS -->
-    <meta itemprop="name" content="Uniqlo">
-    <meta itemprop="description" content="Uniqlo">
+    <meta itemprop="name" content="Uniqlo Colors - {{home_title}}">
+    <meta itemprop="description" content="{{home_subtitle}}">
 
     <!-- FACEBOOK -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Uniqlo Colors - {{trad.home.title}}">
+    <meta property="og:title" content="Uniqlo Colors - {{home_title}}">
     <meta property="og:url" content="http://uniqlocolors.eu/">
     <meta property="og:image" content="http://uniqlocolors.eu/dev/medias/share/share.png">
     <meta property="og:site_name" content="Uniqlo Colors">
-    <meta property="og:description" content="{{trad.sharingText}}">
+    <meta property="og:description" content="{{home_subtitle}}">
 
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Immersive_g">
-    <meta name="twitter:creator" content="@Immersive_g">
-    <meta name="twitter:title" content="Uniqlo">
-    <meta name="twitter:description" content="Uniqlo">
+    <meta name="twitter:site" content="{{twitter_account}}">
+    <meta name="twitter:creator" content="{{twitter_account}}">
+    <meta name="twitter:title" content="Uniqlo Colors - {{home_title}}">
+    <meta name="twitter:description" content="{{home_subtitle}}">
     <meta name="twitter:image" content="/dev/medias/share/share.png">
 
     <link rel="icon" type="image/gif" href="/dev/medias/favicons/favicon.png">
@@ -53,22 +53,33 @@
         <span class="uniqlo-logo main"></span>
 
         <style>
-        {{#each product.pictures}}
 
-            .state-{{@index}} h1,
-            .state-{{@index}} .sub-play-text {
-                color:{{color}};
+            .state-0 h1,
+            .state-0 .sub-play-text {
+                color:{{week_1_product_1_color}};
             }
 
-            .state-{{@index}} .play-button span {
-                background:{{color}};
+            .state-0 .play-button span {
+                background:{{week_1_product_1_color}};
             }
 
-            .state-{{@index}} .sub-play-text strong {
-                border-bottom-color:{{color}};
+            .state-0 .sub-play-text strong {
+                border-bottom-color:{{week_1_product_1_color}};
             }
 
-        {{/each}}
+            .state-1 h1,
+            .state-1 .sub-play-text {
+                color:{{week_1_product_1_color}};
+            }
+
+            .state-1 .play-button span {
+                background:{{week_1_product_1_color}};
+            }
+
+            .state-1 .sub-play-text strong {
+                border-bottom-color:{{week_1_product_1_color}};
+            }
+
         </style>
 
         <section class="home">
@@ -80,31 +91,51 @@
                 <div class="mask">
 
                     <header>
-                        <p>{{{product.carousel_top}}}</p>
+                        <p>{{{home_carousel_title}}}</p>
                     </header>
 
                     <ul class="slides">
-                        {{#each product.pictures}}
                         <li>
                             <span class="img background" data-src="{{back}}"></span>
                             <div class="front">
                                 <span class="img" data-src="{{front}}"></span>
                             </div>
-                        </li>
-                        {{/each}}
-                    </ul>
 
-                    <footer>
-                        <div class="left">
-                            <p class="name">{{{product.name}}}</p>
-                            <p class="description">{{{product.description}}}</p>
-                        </div>
-                        <div class="right">
-                            <p class="category">{{{product.category}}}</p>
-                            <p class="price">{{product.price}}</p>
-                            <p class="offer">{{product.offer}}</p>
-                        </div>
-                    </footer>
+                            <footer>
+                                <div class="left">
+                            
+                                    <p class="name">{{{product.name}}}</p>
+                                    <p class="description">{{{week_1_product_1_description}}}</p>
+                                </div>
+                                <div class="right">
+                                    <p class="category">{{{week_1_product_1_category}}}</p>
+                                    <p class="price">{{week_1_product_1_price}}</p>
+                                    <p class="offer">{{week_1_product_1_offer}}</p>
+                                </div>
+                            </footer>
+
+                        </li>
+                        <li>
+                            <span class="img background" data-src="{{back}}"></span>
+                            <div class="front">
+                                <span class="img" data-src="{{front}}"></span>
+                            </div>
+
+                            <footer>
+                                <div class="left">
+                            
+                                    <p class="name">{{{product.name}}}</p>
+                                    <p class="description">{{{week_1_product_2_description}}}</p>
+                                </div>
+                                <div class="right">
+                                    <p class="category">{{{week_1_product_2_category}}}</p>
+                                    <p class="price">{{week_1_product_2_price}}</p>
+                                    <p class="offer">{{week_1_product_2_offer}}</p>
+                                </div>
+                            </footer>
+
+                        </li>
+                    </ul>
 
                 </div>
 
@@ -113,16 +144,16 @@
             <div class="content">
                 <div class="mask">
                     <div class="inner">
-                        <h1>{{trad.home.title}}</h1>
-                        <h2>{{{trad.home.subtitle}}}</h2>
-                        <p>{{{trad.home.info_1}}}</p>
+                        <h1>{{home_title}}</h1>
+                        <h2>{{{home_subtitle}}}</h2>
+                        <p>{{{home_info_1}}}</p>
 
-                        <p class="button play-button"><span>{{trad.play}}</span></p>
+                        <p class="button play-button"><span>{{play}}</span></p>
 
-                        <div class="already-text"><p>Already played Already played Already played Already played</p></div>
+                        <div class="already-text"><p>{{home_already_played}}</p></div>
 
-                        <p class="sub-play-text">{{trad.home.sub_play_button}} <strong>{{product.other_name}}</strong></p>
-                        <p>{{{trad.home.info_2}}}</p>
+                        <p class="sub-play-text">{{home_sub_play_button}} <strong>{{week_1_product_1_other_name}}</strong></p>
+                        <p>{{{home_info_2}}}</p>
                     </div>
                 </div>
             </div>
@@ -134,22 +165,22 @@
 
             <canvas></canvas>
 
-            <p class="lives"><span>3</span><sub>{{trad.tries_left}}</sub></p>
-            <p class="level"><span>3</span><sup>/12</sup><sub>{{trad.levels}}</sub></p>
+            <p class="lives"><span>3</span><sub>{{tries_left}}</sub></p>
+            <p class="level"><span>3</span><sup>/12</sup><sub>{{levels}}</sub></p>
 
         </section>
 
         <section class="try-again screen">
 
             <div class="content">
-                <p class="title">{{{trad.try_again}}}</p>
+                <p class="title">{{{try_again}}}</p>
 
                 <div class="status">
-                    <p class="lives"><span>2</span><sub>{{trad.tries_left}}</sub></p>
-                    <p class="level"><span>10</span><sub>{{trad.levels}}</sub></p>
+                    <p class="lives"><span>2</span><sub>{{tries_left}}</sub></p>
+                    <p class="level"><span>10</span><sub>{{levels}}</sub></p>
                 </div>
 
-                <div class="button try-again"><span>{{trad.play}}</span></div>
+                <div class="button try-again"><span>{{try_again}}</span></div>
             </div>
 
         </section>
@@ -157,25 +188,22 @@
         <section class="game-over screen">
 
             <div class="content">
-                <p class="title">{{{trad.game_over}}}</p>
+                <p class="title">{{{game_over}}}</p>
 
                 <p class="text">
-                    {{{trad.game_over_text}}}
+                    {{{game_over_text}}}
+                    {{{game_over_sub}}}
                 </p>
 
                 <ul>
                     <li class="facebook"></li>
                     <li class="twitter"><a href="http://twitter.com/intent/tweet?url=http://uniqlocolors.eu&text={{trad.sharingText}}"></a></li>
-                    
 
-                    <!--<li class="facebook"><div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div></li>
-                    <li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a></li>
-                    <li class="google"></li>-->
                 </ul>
 
-                <p class="replay-button button"><span>Play again</span></p>
+                <p class="replay-button button"><span>{{try_again}}</span></p>
 
-                <div class="get-notified"><p>{{{trad.get_notified}}}</p></div>
+                <div class="get-notified"><p>{{{get_notified}}}</p></div>
             </div>
 
         </section>
@@ -187,56 +215,50 @@
                 <div class="letter">
                     <div class="enveloppe"></div>
                     <div class="push">
-                        <p>{{trad.form.get_a_chance}}<strong>Cashmere</strong></p>
+                        <p>{{win_info}}<strong>{{week_2_product_1_other_name}}</strong></p>
                         <img src="/temp/win.jpg" />
                         <span class="img" data-src="medias/temp/win.jpg"></span>
                     </div>
                 </div>
 
                 <form>
-                    <p class="info">{{{trad.win.info}}}</p>
+                    <p class="info">{{{form_info}}}</p>
 
                     <p class="input-text">
                         <input class="text" name="firstName" id="win-firstname" />
-                        <span>{{trad.form.firstname}}</span>
+                        <span>{{form_firstname}}</span>
                     </p>
 
                     <p class="input-text">
                         <input class="text" name="lastName" id="win-lastname" />
-                        <span>{{trad.form.lastname}}</span>
+                        <span>{{form_lastname}}</span>
                     </p>
 
                     <p class="input-text">
                         <input class="text" name="email" id="win-email" />
-                        <span>{{trad.form.email}}</span>
+                        <span>{{form_email}}</span>
                     </p>
 
                     <div class="radios">
                         <p class="radio">
                             <input type="radio" value="female" name="gender" />
                             <i></i>
-                            <span>{{trad.form.female}}</span>
+                            <span>{{form_female}}</span>
                         </p>
                         <p class="radio">
                             <input type="radio" value="male" name="gender" />
                             <i></i>
-                            <span>{{trad.form.male}}</span>
+                            <span>{{form_male}}</span>
                         </p>
                     </div>
 
                     <p class="checkbox">
-                        <input type="checkbox" name="remind-me" />
-                        <i></i>
-                        <span>{{trad.form.remind_me}}
-                    </p>
-
-                    <p class="checkbox">
                         <input type="checkbox" name="kep-me-poster" />
                         <i></i>
-                        <span>{{trad.form.keep_me_posted}}
+                        <span>{{form_newsletter}}
                     </p>
 
-                    <p class="button submit"><span>{{trad.form.submit}}</span></p>
+                    <p class="button submit"><span>{{form_submit}}</span></p>
 
                 </form>
             </div>
@@ -256,8 +278,8 @@
                     <span class="black"></span>
                     <span class="grey"></span>
                 </div>
-                <div class="no-try"><p>You have no more tries left</p></div>
-                <p>Come back tomorrow for a new try.</p>
+                <div class="no-try"><p>{{game_over_text}}</p></div>
+                <p>{{game_over_sub}}</p>
             </div>
         </section>
 
@@ -274,22 +296,22 @@
                     <span class="black"></span>
                     <span class="grey"></span>
                 </div>
-                <div class="text">{{{trad.tuto}}}</div>
-                <div class="loading"><span>{{trad.loading}}</span></div>
-                <div class="button start-button"><span>{{trad.start}}</span></div>
+                <div class="text">
+                    <p>{{{tuto_info_1}}}</p>
+                    <p>{{{tuto_info_2}}}</p>
+                </div>
+                <div class="loading"><span>{{loading}}</span></div>
+                <div class="button start-button"><span>{{start}}</span></div>
             </div>
         </section>
 
         <footer class="main-footer">
             <ul>
-                <li href="" target="_blank">{{trad.footer.rules.text}}</li>
-                <li href="" target="_blank">{{trad.footer.privacy_policy.text}}</li>
-                <li href="" target="_blank">{{trad.footer.terms_of_use.text}}</li>
-                <li href="" target="_blank">{{trad.footer.credits.text}}</li>
-                <li class="facebook-link"><a href="{{trad.footer.facebook}}" target="_blank"><i></i></a></li>
-                <li class="twitter-link"><a href="{{trad.footer.twitter}}" target="_blank"><i></i></a></li>
-                <li class="google-link"><a href="{{trad.footer.google}}" target="_blank"><i></i><a/></li>
-                <li class="instagram-link"><a href="{{trad.footer.instagram}}" target="_blank"><i></i></a></li>
+                <li href="" target="_blank">{{footer_rules_text}}</li>
+                <li class="facebook-link"><a href="{{footer_facebook}}" target="_blank"><i></i></a></li>
+                <li class="twitter-link"><a href="{{footer_twitter}}" target="_blank"><i></i></a></li>
+                <li class="google-link"><a href="{{footer_google}}" target="_blank"><i></i><a/></li>
+                <li class="instagram-link"><a href="{{footer_instagram}}" target="_blank"><i></i></a></li>
             </ul>
         </footer>
 

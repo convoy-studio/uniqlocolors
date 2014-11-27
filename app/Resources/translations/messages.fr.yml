@@ -4,9 +4,8 @@ try_again: "REJOUER"
 tries_left: "Essais restants"
 levels: "Niveaux"
 game_over: "Perdu"
-try_again: "Rejouer !"
 get_notified: "<span>Get notified</span><br/><span>of next week's giveaway</span>"
-
+loading: "Chargement"
 
 # Screens
 
@@ -21,7 +20,8 @@ home_carousel_title: "Offrez <strong><span>la couleur</span></strong>"
 tuto_info_1: "Cliquez sur l'image<br/> <span>qui n'a pas</span> son double."
 tuto_info_2: "Terminez tous les niveaux dans le temps imparti et participez à notre tirage au sort quotidien pour gagner un article à retirer en magasin."
 
-game_over_text: "Vous n'avez plus d'essais<br><span>Partagez</span> le jeu avec vos amis<br>pour pouvoir <span>jouer à nouveau</span>"
+game_over_text: "Vous n'avez plus d'essais"
+game_over_sub: "<span>Partagez</span> le jeu avec vos amis<br>pour pouvoir <span>jouer à nouveau</span>"
 
 loose_text: "Vous n'avez plus d'essais"
 loose_sub_text: "Revenez demain pour réessayer"
@@ -49,6 +49,7 @@ footer_twitter: "https://twitter.com/UNIQLO_France"
 footer_google: "https://plus.googleapis.com/wm/4/+uniqloparis/"
 footer_youtube: "https://www.youtube.com/channel/UCCWqHjQF91GWFf2s1doC8JQ
 
+twitter_account: '@UNIQLO_France'
 
 
 # Product week 1
