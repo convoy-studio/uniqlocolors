@@ -47,4 +47,31 @@
 	form {
 		float:left;
 	}
+
+	.confirm {
+		width:100%;
+		text-align:center;
+		position:relative;
+		display:none;
+
+		span {
+			background:$white;
+			color:$red;
+			width:100%;
+			@include box-sizing(border-box);
+			text-transform:uppercase;
+		}
+
+		a {
+			display:block;
+			position:absolute;
+			padding:0 20px;
+			bottom:-5px;
+			left:0;
+			width:100%;
+			@include box-sizing(border-box);
+			font:300 12px/12px $font-family;
+			color:$red;
+		}
+	}
 }

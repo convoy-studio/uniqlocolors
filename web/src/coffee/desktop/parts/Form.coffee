@@ -50,25 +50,33 @@ class Form
 				allFieldsField = false
 
 		if allFieldsField == false
-			@_displayError('empty-fields')
+			@container.find('.error').css('display','block')
 			return !1
 
 		@container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />')
 		@container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />')
 
-		$.ajax {
+		request = $.ajax ({
 			type: 'POST'
 			url: '/api/users.json'
-			dataType: 'json'
+			dataType: 'text'
 			data: @container.serialize()
-			success: (response) =>
 
-				console.log 'success', response
+		})
 
-			error: (response) =>
+		request.done((response) =>
+			@submitButton.css('display','none')
+			@submitButton.siblings('.confirm').css('display','block')
+			@container.find('.error').css('display','none')
+			#console.log 'success', response
 
-				console.log 'error', $.parseJSON(response.responseText)
-		}
+		)
+		request.fail((response) =>
+			@container.find('.error').css('display','block')
+			#console.log 'error', response
+
+		)
+
 
 
 
@@ -77,6 +85,7 @@ class Form
 
 		$this = $(e.currentTarget)
 
+		$this.find('input').focus()
 		$this.addClass('focus')
 
 

@@ -42,6 +42,9 @@ form_female: "Woman"
 form_male: "Man"
 form_newsletter: "Halten Sie mich über kommende Angebote informiert Uniqlo"
 form_submit: "Senden"
+form_error: "Une erreur est survenue."
+form_share: "Partagez"
+form_sent: "Envoyé."
 
 
 # Footer

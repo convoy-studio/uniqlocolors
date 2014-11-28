@@ -42,6 +42,9 @@ form_female: "Female"
 form_male: "Male"
 form_newsletter: "Keep me posted on future Uniqlo's offers"
 form_submit: "Submit"
+form_error: "An error occured."
+form_share: "Now share your win"
+form_sent: "Sent."
 
 
 # Footer

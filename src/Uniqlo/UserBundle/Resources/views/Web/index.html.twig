@@ -209,6 +209,8 @@
                 <form>
                     <p class="info">{{ 'form_info'|trans|raw }}</p>
 
+                    <p class="error">{{ 'form_error'|trans }}</p>
+
                     <p class="input-text">
                         <input class="text" name="firstName" id="win-firstname" />
                         <span>{{ 'form_firstname'|trans }}</span>
@@ -238,12 +240,15 @@
                     </div>
 
                     <p class="checkbox">
-                        <input type="checkbox" name="kep-me-poster" />
+                        <input type="checkbox" name="keep-me-posted" />
                         <i></i>
                         <span>{{ 'form_newsletter'|trans }}
                     </p>
 
                     <p class="button submit"><span>{{ 'form_submit'|trans }}</span></p>
+
+                    <div class="confirm button"><span>{{ 'form_sent'|trans }}</span><a href="http://twitter.com/intent/tweet?url=http://uniqlocolors.eu&text={{ 'twitter_share_text'|trans }}">{{ 'form_share'|trans }}</a></div>
+
 
                 </form>
             </div>

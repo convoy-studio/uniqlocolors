@@ -2235,7 +2235,7 @@ Form = (function() {
   };
 
   Form.prototype._onSubmit = function(e) {
-    var allFieldsField;
+    var allFieldsField, request;
     e.preventDefault();
     allFieldsField = true;
     this.container.find('input').each((function(_this) {
@@ -2246,32 +2246,42 @@ Form = (function() {
       };
     })(this));
     if (allFieldsField === false) {
-      this._displayError('empty-fields');
+      this.container.find('.error').css('display', 'block');
       return !1;
+    }
+    if (W.status === void 0) {
+      W.status = {
+        winner: false
+      };
     }
     this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
     this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
-    return $.ajax({
+    request = $.ajax({
       type: 'POST',
       url: '/api/users.json',
-      dataType: 'json',
-      data: this.container.serialize(),
-      success: (function(_this) {
-        return function(response) {
-          return console.log('success', response);
-        };
-      })(this),
-      error: (function(_this) {
-        return function(response) {
-          return console.log('error', $.parseJSON(response.responseText));
-        };
-      })(this)
+      dataType: 'text',
+      data: this.container.serialize()
     });
+    request.done((function(_this) {
+      return function(response) {
+        _this.submitButton.css('display', 'none');
+        _this.submitButton.siblings('.confirm').css('display', 'block');
+        _this.container.find('.error').css('display', 'none');
+        return console.log('success', response);
+      };
+    })(this));
+    return request.fail((function(_this) {
+      return function(response) {
+        _this.container.find('.error').css('display', 'block');
+        return console.log('error', response);
+      };
+    })(this));
   };
 
   Form.prototype._onInputFocus = function(e) {
     var $this;
     $this = $(e.currentTarget);
+    $this.find('input').focus();
     return $this.addClass('focus');
   };
 
