@@ -128,34 +128,6 @@ W = (function() {
 
 })();
 
-SocialSharing = (function() {
-  function SocialSharing() {
-    this._onLinkClick = __bind(this._onLinkClick, this);
-    this._initEvents = __bind(this._initEvents, this);
-    this.links = $('.social-link');
-    this._initEvents();
-  }
-
-  SocialSharing.prototype._initEvents = function() {
-    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
-  };
-
-  SocialSharing.prototype._onLinkClick = function(e) {
-    var height, leftPosition, link, options, topPosition, width, windowFeatures;
-    e.preventDefault();
-    link = $(e.currentTarget).attr('href');
-    width = 800;
-    height = 500;
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-    return window.open(link, 'Withings Activité', options);
-  };
-
-  return SocialSharing;
-
-})();
-
 Carousel = (function() {
   function Carousel(options) {
     this._onNavClick = __bind(this._onNavClick, this);
@@ -1501,6 +1473,34 @@ VideoPlayer_Templates = (function() {
 
 })();
 
+SocialSharing = (function() {
+  function SocialSharing() {
+    this._onLinkClick = __bind(this._onLinkClick, this);
+    this._initEvents = __bind(this._initEvents, this);
+    this.links = $('.social-link');
+    this._initEvents();
+  }
+
+  SocialSharing.prototype._initEvents = function() {
+    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
+  };
+
+  SocialSharing.prototype._onLinkClick = function(e) {
+    var height, leftPosition, link, options, topPosition, width, windowFeatures;
+    e.preventDefault();
+    link = $(e.currentTarget).attr('href');
+    width = 800;
+    height = 500;
+    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+    return window.open(link, 'Withings Activité', options);
+  };
+
+  return SocialSharing;
+
+})();
+
 App = (function() {
   function App() {
     this.update = __bind(this.update, this);
@@ -2484,10 +2484,13 @@ Screens = (function() {
   Screens.prototype._onFacebookButtonClick = function() {
     return FB.ui({
       method: 'share',
-      href: 'http://uniqlocolors.eu'
+      href: 'http://uniqlocolor.eu'
     }, (function(_this) {
-      return function() {
-        return _this._pageShared('facebook');
+      return function(response) {
+        console.log(response);
+        if (response && !response.error_code) {
+          return _this._pageShared('facebook');
+        }
       };
     })(this));
   };

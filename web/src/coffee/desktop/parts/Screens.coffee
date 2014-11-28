@@ -108,10 +108,12 @@ class Screens
 		FB.ui(
 			{
 				method: 'share'
-				href: 'http://uniqlocolors.eu'
+				href: 'http://uniqlocolor.eu'
 			},
-			() =>
-				@_pageShared('facebook')
+			(response) =>
+				console.log response
+				if response && !response.error_code
+					@_pageShared('facebook')
 		)
 
 	_onGetNotifiedButtonClick: () =>
