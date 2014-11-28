@@ -23,6 +23,7 @@ class Form
 		@container.find('.input-text')
 			.on(Event.CLICK, @_onInputFocus)
 			.find('input')
+				.on('focus', @_onInputFieldFocus)
 				.on('blur', @_onInputBlur)
 
 		@container.find('.radio')
@@ -87,6 +88,12 @@ class Form
 
 		$this.find('input').focus()
 		$this.addClass('focus')
+
+	_onInputFieldFocus: (e) =>
+
+		$this = $(e.currentTarget)
+
+		$this.parents('.input-text').addClass('focus')
 
 
 	_onInputBlur: (e) =>

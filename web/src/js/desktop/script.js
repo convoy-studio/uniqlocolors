@@ -2213,6 +2213,7 @@ Form = (function() {
     this._onCheckboxClick = __bind(this._onCheckboxClick, this);
     this._onRadioClick = __bind(this._onRadioClick, this);
     this._onInputBlur = __bind(this._onInputBlur, this);
+    this._onInputFieldFocus = __bind(this._onInputFieldFocus, this);
     this._onInputFocus = __bind(this._onInputFocus, this);
     this._onSubmit = __bind(this._onSubmit, this);
     this._displayError = __bind(this._displayError, this);
@@ -2225,7 +2226,7 @@ Form = (function() {
   Form.prototype._initEvents = function() {
     this.container.on('submit', this._onSubmit);
     this.submitButton.on(Event.CLICK, this._onSubmit);
-    this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('blur', this._onInputBlur);
+    this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('focus', this._onInputFieldFocus).on('blur', this._onInputBlur);
     this.container.find('.radio').on(Event.CLICK, this._onRadioClick);
     return this.container.find('.checkbox').on(Event.CLICK, this._onCheckboxClick);
   };
@@ -2249,11 +2250,6 @@ Form = (function() {
       this.container.find('.error').css('display', 'block');
       return !1;
     }
-    if (W.status === void 0) {
-      W.status = {
-        winner: false
-      };
-    }
     this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
     this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
     request = $.ajax({
@@ -2266,14 +2262,12 @@ Form = (function() {
       return function(response) {
         _this.submitButton.css('display', 'none');
         _this.submitButton.siblings('.confirm').css('display', 'block');
-        _this.container.find('.error').css('display', 'none');
-        return console.log('success', response);
+        return _this.container.find('.error').css('display', 'none');
       };
     })(this));
     return request.fail((function(_this) {
       return function(response) {
-        _this.container.find('.error').css('display', 'block');
-        return console.log('error', response);
+        return _this.container.find('.error').css('display', 'block');
       };
     })(this));
   };
@@ -2283,6 +2277,12 @@ Form = (function() {
     $this = $(e.currentTarget);
     $this.find('input').focus();
     return $this.addClass('focus');
+  };
+
+  Form.prototype._onInputFieldFocus = function(e) {
+    var $this;
+    $this = $(e.currentTarget);
+    return $this.parents('.input-text').addClass('focus');
   };
 
   Form.prototype._onInputBlur = function(e) {
