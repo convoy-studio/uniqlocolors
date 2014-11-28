@@ -38,6 +38,17 @@ class Screens
 				@_pageShared('twitter')
 			)
 
+		# ----o Win picture
+
+		pic = @winScreen.find('.img')
+		img = new Image()
+		
+		img.onload = () =>
+			pic.replaceWith('<img src="' + img.src + '" />')
+
+		img.src = pic.attr('data-src')
+
+
 		# ---o Init sharing
 		#FB.init({
 		#	appId: YOUR_API_KEY,

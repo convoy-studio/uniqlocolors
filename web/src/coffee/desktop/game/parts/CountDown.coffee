@@ -65,23 +65,24 @@ class CountDown
 
 		# ---------------o Draw level line
 
-		@ctx.lineWidth = 2
+		if W.ww > 640
+			@ctx.lineWidth = 2
 
-		pos = @arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2
+			pos = @arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2
 
-		@ctx.beginPath()
-		if pos < @arcZero + Math.PI * (1 - W.grid.bottomSpace)
-			@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero, pos, false)
-		else
-			@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero, @arcZero + Math.PI * (1 - W.grid.bottomSpace), false)
-		@ctx.stroke()
+			@ctx.beginPath()
+			if pos < @arcZero + Math.PI * (1 - W.grid.bottomSpace)
+				@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero, pos, false)
+			else
+				@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero, @arcZero + Math.PI * (1 - W.grid.bottomSpace), false)
+			@ctx.stroke()
 
-		@ctx.beginPath()
-		if pos > @arcZero + Math.PI * (1 + W.grid.bottomSpace)
-			@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false)
-		else if pos == Math.PI * 2
-			@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero + Math.PI * (1 + W.grid.bottomSpace), @arcZero + Math.PI * 2, false)
-		@ctx.stroke()
+			@ctx.beginPath()
+			if pos > @arcZero + Math.PI * (1 + W.grid.bottomSpace)
+				@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false)
+			else if pos == Math.PI * 2
+				@ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, @arcZero + Math.PI * (1 + W.grid.bottomSpace), @arcZero + Math.PI * 2, false)
+			@ctx.stroke()
 
 
 

@@ -45,49 +45,45 @@
 
     <section class="body">
 
-        <span class="uniqlo-logo main"></span>
+        <a href="/" class="uniqlo-logo main"></a>
 
         <style>
 
             .state-0 h1,
             .state-0 .sub-play-text {
-                color:{{ ('week_'~week~'_product_1_color')|trans }};
+                color:#{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-0 .play-button span {
-                background:{{ ('week_'~week~'_product_1_color')|trans }};
+                background:#{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-0 .sub-play-text strong {
-                border-bottom-color:{{ ('week_'~week~'_product_1_color')|trans }};
+                border-bottom-color:#{{ ('week_'~week~'_product_1_color')|trans }};
             }
 
             .state-1 h1,
             .state-1 .sub-play-text {
-                color:{{ ('week_'~week~'_product_1_color')|trans }};
+                color:#{{ ('week_'~week~'_product_2_color')|trans }};
             }
 
             .state-1 .play-button span {
-                background:{{ ('week_'~week~'_product_1_color')|trans }};
+                background:#{{ ('week_'~week~'_product_2_color')|trans }};
             }
 
             .state-1 .sub-play-text strong {
-                border-bottom-color:{{ ('week_'~week~'_product_1_color')|trans }};
+                border-bottom-color:#{{ ('week_'~week~'_product_2_color')|trans }};
             }
 
         </style>
 
         <section class="home">
 
-            <span class="uniqlo-logo"></span>
+            <a href="/" class="uniqlo-logo"></a>
 
-            <div class="carousel">
+            <div class="carousel week-{{week}}">
 
                 <div class="mask">
-
-                    <header>
-                        <p>{{ 'home_carousel_title'|trans|raw }}</p>
-                    </header>
 
                     <ul class="slides">
                         <li>
@@ -178,12 +174,12 @@
         <section class="game-over screen">
 
             <div class="content">
-                <p class="title">{{ 'game_over'|trans }}</p>
+                <p class="title">{{ 'game_over'|raw }}</p>
 
-                <p class="text">
-                    {{ 'game_over_text'|trans|raw }}
-                    {{ 'game_over_sub'|trans|raw }}
-                </p>
+                <div class="text">
+                    <p>{{ 'game_over_text'|trans|raw }}</p>
+                    <p>{{ 'game_over_sub'|trans|raw }}</p>
+                </div>
 
                 <ul>
                     <li class="facebook"></li>
@@ -206,7 +202,7 @@
                     <div class="enveloppe"></div>
                     <div class="push">
                         <p>{{ 'win_info'|trans }}<strong>{{ 'week_2_product_1_other_name'|trans }}</strong></p>
-                        <span class="img" data-src="{{ ('win_week_'~week~'_picture')|trans }}"></span>
+                        <span class="img" data-src="/dev/medias/win/{{ ('win_week_'~week~'_picture')|trans }}"></span>
                     </div>
                 </div>
 
@@ -295,6 +291,7 @@
 
         <footer class="main-footer">
             <ul>
+                <li><a href="/?locale=fr">FR</a> / <a href="/?locale=en">EN</a> / <a href="/?locale=de">DE</a></li>
                 <li href="" target="_blank">{{ 'footer_rules_text'|trans }}</li>
                 <li class="facebook-link"><a href="{{ 'footer_facebook'|trans }}" target="_blank"><i></i></a></li>
                 <li class="twitter-link"><a href="{{ 'footer_twitter'|trans }}" target="_blank"><i></i></a></li>

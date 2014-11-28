@@ -14,7 +14,7 @@ class Game
 
 		W.status = {
 			level: -1 			
-			lives: Parameters.lives
+			lives: Parameters.lives - 1
 			paused: true
 			stopped: false
 			loading: true
@@ -267,7 +267,7 @@ class Game
 			W.grid.size = W.ww - 40
 			W.grid.clockRadius = 40
 			@container.css('height', W.grid.size + 200 + 20)
-			@canvas.width = W.grid.size
+			@canvas.width = W.ww
 			@canvas.height = W.grid.size + 200
 		else
 			@container.css('height', 'auto')

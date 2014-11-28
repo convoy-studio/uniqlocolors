@@ -190,6 +190,21 @@
 				}
 			}
 		}
+
+		&.week-4 {
+			.slides {
+				.front {
+					img {
+						max-height:80%;
+						max-width:80%;
+						bottom:auto;
+						top:50%;
+						@include translate(-50%, -50%);
+					}
+				}
+			}
+		}
+
 	}
 
 	.already-text {

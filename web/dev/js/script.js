@@ -3407,7 +3407,7 @@ Game = (function() {
   Game.prototype._initContent = function() {
     W.status = {
       level: -1,
-      lives: Parameters.lives,
+      lives: Parameters.lives - 1,
       paused: true,
       stopped: false,
       loading: true,
@@ -3587,7 +3587,7 @@ Game = (function() {
       W.grid.size = W.ww - 40;
       W.grid.clockRadius = 40;
       this.container.css('height', W.grid.size + 200 + 20);
-      this.canvas.width = W.grid.size;
+      this.canvas.width = W.ww;
       this.canvas.height = W.grid.size + 200;
     } else {
       this.container.css('height', 'auto');
@@ -3997,7 +3997,7 @@ Form = (function() {
     this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
     return $.ajax({
       type: 'POST',
-      url: '/app_dev.php/api/users.json',
+      url: '/api/users.json',
       dataType: 'json',
       data: this.container.serialize(),
       success: (function(_this) {
@@ -4165,6 +4165,7 @@ Screens = (function() {
   }
 
   Screens.prototype._initContent = function() {
+    var img, pic;
     this.gameOverScreen = this.container.filter('.game-over');
     this.tutoScreen = this.container.filter('.tuto');
     this.tryAgainScreen = this.container.filter('.try-again');
@@ -4181,6 +4182,14 @@ Screens = (function() {
         });
       };
     })(this));
+    pic = this.winScreen.find('.img');
+    img = new Image();
+    img.onload = (function(_this) {
+      return function() {
+        return pic.replaceWith('<img src="' + img.src + '" />');
+      };
+    })(this);
+    img.src = pic.attr('data-src');
     return this.displayTuto();
   };
 
@@ -4356,22 +4365,24 @@ CountDown = (function() {
       this.ctx.fill();
       this.ctx.globalAlpha = 1;
     }
-    this.ctx.lineWidth = 2;
-    pos = this.arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2;
-    this.ctx.beginPath();
-    if (pos < this.arcZero + Math.PI * (1 - W.grid.bottomSpace)) {
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, pos, false);
-    } else {
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace), false);
+    if (W.ww > 640) {
+      this.ctx.lineWidth = 2;
+      pos = this.arcZero + (W.status.level / Parameters.levels.length) * Math.PI * 2;
+      this.ctx.beginPath();
+      if (pos < this.arcZero + Math.PI * (1 - W.grid.bottomSpace)) {
+        this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, pos, false);
+      } else {
+        this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero, this.arcZero + Math.PI * (1 - W.grid.bottomSpace), false);
+      }
+      this.ctx.stroke();
+      this.ctx.beginPath();
+      if (pos > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
+        this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false);
+      } else if (pos === Math.PI * 2) {
+        this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), this.arcZero + Math.PI * 2, false);
+      }
+      return this.ctx.stroke();
     }
-    this.ctx.stroke();
-    this.ctx.beginPath();
-    if (pos > this.arcZero + Math.PI * (1 + W.grid.bottomSpace)) {
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), pos, false);
-    } else if (pos === Math.PI * 2) {
-      this.ctx.arc(W.ww * 0.5, top, W.grid.radius + 40, this.arcZero + Math.PI * (1 + W.grid.bottomSpace), this.arcZero + Math.PI * 2, false);
-    }
-    return this.ctx.stroke();
   };
 
   CountDown.prototype._drawClock = function() {
@@ -4600,112 +4611,6 @@ Grid = (function() {
       _results3.push(this.randomPics.push(pic));
     }
     return _results3;
-
-    /*for i in [0...diff.colors]
-    			colorsKey = Math.random() * colorsIds.length | 0
-    			colorsId = colorsIds[colorsKey]
-    
-    			colorsIds.splice(colorsKey, 1)
-    			selectedColorsPics.push(pics[colorsId])
-    
-    			subColorsIds = [0...pics[colorsId].length]
-    
-    
-    		for j in [0...diff.subColors]
-    			subColorsKey = Math.random() * subColorsIds.length | 0
-    			subColorsId = subColorsIds[subColorsKey]
-    
-    			subColorsIds.splice(subColorsKey, 1)
-    			selectedSubColorsPics.push(selectedColorsPics[subColorsId])
-    
-    			picsIds = [0...pics[colorsId][subColorsId].length]
-    
-    
-    		for k in [0...diff.pics]
-    			picsKey = Math.random() * picsIds.length | 0
-    			picsId = picsIds[picsKey]
-    
-    			picsIds.splice(picsKey, 1)
-    			selectedPics.push(selectedSubColorsPics[picsId])
-     */
-
-    /*colorsKey = Math.random() * picsKeys.length | 0
-    			subDivKeys = [0...pics[colorsKey].length]
-    
-    			for j in [0...subDivNb]
-    				picKey = Math.random() * pics[i].length | 0
-    
-    				console.log picKey
-     */
-
-    /*
-    
-    		pics = []
-    		randomPics = []
-    		catsId = [0...Pics.length]
-    
-    		 * on récupère n tableaux de photos par couleur (défini par le nombre de couleurs du niveau)
-    		for i in [0...levelParams.colorsNb]
-    			 *console.log catsId
-    			id = Math.random() * catsId.length | 0
-    			pics.push(Pics[catsId[id]].slice(0))
-    			catsId.splice(id, 1)
-    
-    		 * on récupère une couleur de tableau puis une image dans ce tableau (celle qui sera à cliquer du coup)
-    		randomColorArrayId = Math.random() * levelParams.colorsNb | 0
-    		randomColorArray = pics[randomColorArrayId]
-    		randomColorPicId = Math.random() * randomColorArray | 0
-    		randomColorPic = randomColorArray[randomColorPicId]
-    		randomColorPic.neo = true 								# neo parce que l'élu dans Matrix
-    		randomPics.push(randomColorPic)
-    
-    		pics.splice(randomColorArrayId, 1)
-    
-    		 * on récupère n photos dans p tableaux de couleurs
-    		randomPicsNb = levelParams.picsLength - 1
-    		 *maxSamePic = randomPicsNb / 2 - 1
-    		maxSamePic = randomPicsNb - 1
-    		incSamePic = 0
-    
-    		while incSamePic < randomPicsNb
-    
-    			if randomPicsNb - incSamePic <= 3
-    				nbSamePic = randomPicsNb - incSamePic
-    				incSamePic = randomPicsNb
-    			else
-    				nbSamePic = 2 + Math.random() * (maxSamePic - incSamePic) | 0
-    				incSamePic += nbSamePic
-    
-    			if randomPicsNb - incSamePic == 1
-    				incSamePic = randomPicsNb
-    				nbSamePic++
-    
-    			randomPackId = Math.random() * pics.length | 0
-    			randomPicId = Math.random() * pics[randomPackId].length | 0
-    			randomPic = pics[randomPackId][randomPicId]
-    			randomPic.neo = false
-    
-    			for i in [0...nbSamePic]
-    				randomPics.push(randomPic)
-    			
-    			pics[0].splice(randomPicId, 1)
-    			
-    
-    		 * tri aléatoire de l'ordre des images
-    		for i in [randomPics.length-1..1]
-    			j = Math.floor Math.random() * (i + 1)
-    			[randomPics[i], randomPics[j]] = [randomPics[j], randomPics[i]]
-    
-    
-    		 * ajouter les images ds un autre tableau car pb de clone... je sais :(
-    		@randomPics = []
-    		for i in [0...randomPics.length]
-    			pic = {}
-    			pic.color = randomPics[i].color
-    			pic.img = randomPics[i].img
-    			pic.neo = randomPics[i].neo
-    			@randomPics.push pic
-     */
   };
 
   Grid.prototype.reset = function() {
@@ -4716,7 +4621,7 @@ Grid = (function() {
     var i, pic, _i, _ref, _ref1, _ref2;
     for (i = _i = 0, _ref = this.randomPics.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
       pic = this.randomPics[i];
-      if ((pic.x < (_ref1 = e.pageX) && _ref1 < pic.x + this.picSize) && (pic.y < (_ref2 = e.pageY) && _ref2 < pic.y + this.picSize)) {
+      if ((pic.x < (_ref1 = e.pageX) && _ref1 < pic.x + this.picSize) && (pic.y < (_ref2 = e.pageY - $(document).scrollTop()) && _ref2 < pic.y + this.picSize)) {
         if (pic.neo === true) {
           $(this).trigger(Grid.GOOD_ANSWER);
         } else {
