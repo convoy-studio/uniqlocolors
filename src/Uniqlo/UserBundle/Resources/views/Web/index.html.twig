@@ -226,6 +226,39 @@
                         <span>{{ 'form_email'|trans }}</span>
                     </p>
 
+                    <div class="input-list">
+                        <ul>
+                            {% if (locale == 'en') or (locale == 'ru') %}
+                            <li>311 Oxford Street - London Flagship Store</li>
+                            <li>170 Oxford Street</li>
+                            <li>Regent street</li>
+                            <li>Westfield Stratford city</li>
+                            <li>Westfield London White city</li>
+                            <li>High street Kensington</li>
+                            <li>Wimbledon</li>
+                            <li>Wandsworth</li>
+                            <li>Kingston</li>
+                            <li>Bluewater Shopping Centre Kent</li>
+                            {% endif %}
+
+                            {% if locale == 'fr' %}
+                            <li>UNIQLO STRASBOURG</li>
+                            <li>UNIQLO BELLE-ÉPINE</li>
+                            <li>UNIQLO SO OUEST</li>
+                            <li>UNIQLO MARSEILLE LES TERRASSES DU PORT</li>
+                            <li>UNIQLO LE MARAIS</li>
+                            <li>UNIQLO BEAUGRENELLE</li>
+                            <li>UNIQLO PARIS OPÉRA</li>
+                            <li>UNIQLO LA DEFENSE</li>
+                            {% endif %}
+
+                            {% if locale == 'de' %}
+                            <li>UNIQLO TAUENTZIENSTRASSE</li>
+                            {% endif %}
+                        </ul>
+                         <span>{{ 'form_choose'|trans }}</span>
+                    </div>
+
                     <div class="radios">
                         <p class="radio">
                             <input type="radio" value="female" name="gender" />
@@ -316,7 +349,7 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-1566247-5', 'auto');
+        ga('create', 'UA-1566247-8', 'auto');
         ga('send', 'pageview');
 
         // Facebook init

@@ -2210,6 +2210,9 @@ mediasPath = '/dev/medias/products/';
 
 Form = (function() {
   function Form(options) {
+    this._onListClick = __bind(this._onListClick, this);
+    this._onListLeave = __bind(this._onListLeave, this);
+    this._onListEnter = __bind(this._onListEnter, this);
     this._onCheckboxClick = __bind(this._onCheckboxClick, this);
     this._onRadioClick = __bind(this._onRadioClick, this);
     this._onInputBlur = __bind(this._onInputBlur, this);
@@ -2228,7 +2231,8 @@ Form = (function() {
     this.submitButton.on(Event.CLICK, this._onSubmit);
     this.container.find('.input-text').on(Event.CLICK, this._onInputFocus).find('input').on('focus', this._onInputFieldFocus).on('blur', this._onInputBlur);
     this.container.find('.radio').on(Event.CLICK, this._onRadioClick);
-    return this.container.find('.checkbox').on(Event.CLICK, this._onCheckboxClick);
+    this.container.find('.checkbox').on(Event.CLICK, this._onCheckboxClick);
+    return this.container.find('.input-list').on('mouseenter', this._onListEnter).on('mouseleave', this._onListLeave).on(Event.CLICK, this._onListClick);
   };
 
   Form.prototype._displayError = function(error) {
@@ -2251,7 +2255,8 @@ Form = (function() {
       return !1;
     }
     this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
-    this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />');
+    this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '-' + this.container.find('.input-list').find('span').text() + '" />');
+    console.log(this.container.serialize());
     request = $.ajax({
       type: 'POST',
       url: '/api/users.json',
@@ -2313,6 +2318,27 @@ Form = (function() {
       $this.addClass('active');
       return $this.find('input').prop('checked', true);
     }
+  };
+
+  Form.prototype._onListEnter = function(e) {
+    var $this;
+    $this = $(e.currentTarget);
+    return $this.find('ul').css('display', 'block');
+  };
+
+  Form.prototype._onListLeave = function(e) {
+    var $this;
+    $this = $(e.currentTarget);
+    return $this.find('ul').css('display', 'none');
+  };
+
+  Form.prototype._onListClick = function(e) {
+    var $this, display, elm;
+    $this = $(e.currentTarget);
+    elm = $(e.target);
+    display = $this.find('span');
+    display.text(elm.text());
+    return $this.find('ul').css('display', 'none');
   };
 
   return Form;

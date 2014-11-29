@@ -32,6 +32,11 @@ class Form
 		@container.find('.checkbox')
 			.on(Event.CLICK, @_onCheckboxClick)
 
+		@container.find('.input-list')
+			.on('mouseenter', @_onListEnter)
+			.on('mouseleave', @_onListLeave)
+			.on(Event.CLICK, @_onListClick)
+
 
 	_displayError: (error) =>
 
@@ -55,7 +60,9 @@ class Form
 			return !1
 
 		@container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />')
-		@container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '" />')
+		@container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '-' + @container.find('.input-list').find('span').text() + '" />')
+
+		console.log @container.serialize()
 
 		request = $.ajax ({
 			type: 'POST'
@@ -114,6 +121,7 @@ class Form
 		$this.find('input').prop('checked', true)
 		$this.siblings().find('input').prop('checked', false)
 
+
 	_onCheckboxClick: (e) =>
 
 		$this = $(e.currentTarget)
@@ -125,6 +133,36 @@ class Form
 		else
 			$this.addClass('active')
 			$this.find('input').prop('checked', true)
+
+
+	_onListEnter: (e) =>
+
+		$this = $(e.currentTarget)
+
+		$this.find('ul').css('display','block')
+
+
+	_onListLeave: (e) =>
+
+		$this = $(e.currentTarget)
+
+		$this.find('ul').css('display','none')
+
+
+	_onListClick: (e) =>
+
+		$this = $(e.currentTarget)
+		elm = $(e.target)
+		display = $this.find('span')
+
+		display.text(elm.text())
+		#$this.find('input').val(elm.text())
+
+		$this.find('ul').css('display','none')
+
+
+
+
 
 
 
