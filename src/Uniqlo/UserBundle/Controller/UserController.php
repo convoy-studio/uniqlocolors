@@ -19,10 +19,10 @@ use Uniqlo\UserBundle\Entity\User;
  */
 class UserController extends FOSRestController
 {
-    public function getAction(User $user)
-    {
-        return $user;
-    }
+    // public function getAction(User $user)
+    // {
+    //     return $user;
+    // }
 
     /**
      * @Annotations\View(
