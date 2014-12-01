@@ -19,10 +19,12 @@ use Uniqlo\UserBundle\Entity\User;
  */
 class UserController extends FOSRestController
 {
-    // public function getAction(User $user)
-    // {
-    //     return $user;
-    // }
+    public function getAction(User $user)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        return $em->getRepository('UniqloUserBundle:User')->find(1);
+    }
 
     /**
      * @Annotations\View(
