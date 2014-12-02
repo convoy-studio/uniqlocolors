@@ -1907,118 +1907,6 @@ Parameters = {
       },
       picsLength: 9,
       moving: false
-    }, {
-      difficulty: {
-        colors: 3,
-        subColors: 1,
-        pics: 1
-      },
-      picsLength: 9,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 4,
-        subColors: 1,
-        pics: 1
-      },
-      picsLength: 9,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: false
-    }, {
-      difficulty: {
-        colors: 1,
-        subColors: 2,
-        pics: 1
-      },
-      picsLength: 9,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 1
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 1,
-        subColors: 2,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 3,
-        pics: 1
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 1,
-        subColors: 2,
-        pics: 2
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 1,
-        pics: 1
-      },
-      picsLength: 16,
-      moving: true
-    }, {
-      difficulty: {
-        colors: 2,
-        subColors: 2,
-        pics: 1
-      },
-      picsLength: 16,
-      moving: true
     }
   ]
 };
@@ -2254,8 +2142,9 @@ Form = (function() {
       this.container.find('.error').css('display', 'block');
       return !1;
     }
+    console.log(locale);
     this.container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />');
-    this.container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '-' + this.container.find('.input-list').find('span').text() + '" />');
+    this.container.append('<input type="hidden" name="locale" id="locale" value="' + locale + '-' + this.container.find('.input-list').find('span').text() + '" />');
     console.log(this.container.serialize());
     request = $.ajax({
       type: 'POST',

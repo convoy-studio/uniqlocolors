@@ -59,8 +59,9 @@ class Form
 			@container.find('.error').css('display','block')
 			return !1
 
+		console.log locale
 		@container.append('<input type="hidden" name="winner" id="winner" value="' + W.status.winner + '" />')
-		@container.append('<input type="hidden" name="locale" id="locale" value="' + W.lang + '-' + @container.find('.input-list').find('span').text() + '" />')
+		@container.append('<input type="hidden" name="locale" id="locale" value="' + locale + '-' + @container.find('.input-list').find('span').text() + '" />')
 
 		console.log @container.serialize()
 
