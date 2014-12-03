@@ -12,6 +12,146 @@ Parameters = {
 			},
 			picsLength: 9,
 			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 3,
+				subColors: 1,
+				pics: 1,
+			},
+			picsLength: 9,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 4,
+				subColors: 1,
+				pics: 1
+			},
+			picsLength: 9,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: false
+		},
+
+		{
+			difficulty: {
+				colors: 1,
+				subColors: 2,
+				pics: 1
+			},
+			picsLength: 9,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 1
+			},
+			picsLength: 16,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 1,
+				subColors: 2,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 3,
+				pics: 1
+			},
+			picsLength: 16,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 1,
+				subColors: 2,
+				pics: 2
+			},
+			picsLength: 16,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 1,
+				pics: 1
+			},
+			picsLength: 16,
+			moving: true
+		},
+
+		{
+			difficulty: {
+				colors: 2,
+				subColors: 2,
+				pics: 1
+			},
+			picsLength: 16,
+			moving: true
 		}	
 	]
 }

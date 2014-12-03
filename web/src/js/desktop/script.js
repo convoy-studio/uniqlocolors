@@ -128,6 +128,34 @@ W = (function() {
 
 })();
 
+SocialSharing = (function() {
+  function SocialSharing() {
+    this._onLinkClick = __bind(this._onLinkClick, this);
+    this._initEvents = __bind(this._initEvents, this);
+    this.links = $('.social-link');
+    this._initEvents();
+  }
+
+  SocialSharing.prototype._initEvents = function() {
+    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
+  };
+
+  SocialSharing.prototype._onLinkClick = function(e) {
+    var height, leftPosition, link, options, topPosition, width, windowFeatures;
+    e.preventDefault();
+    link = $(e.currentTarget).attr('href');
+    width = 800;
+    height = 500;
+    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+    return window.open(link, 'Withings Activité', options);
+  };
+
+  return SocialSharing;
+
+})();
+
 Carousel = (function() {
   function Carousel(options) {
     this._onNavClick = __bind(this._onNavClick, this);
@@ -1473,34 +1501,6 @@ VideoPlayer_Templates = (function() {
 
 })();
 
-SocialSharing = (function() {
-  function SocialSharing() {
-    this._onLinkClick = __bind(this._onLinkClick, this);
-    this._initEvents = __bind(this._initEvents, this);
-    this.links = $('.social-link');
-    this._initEvents();
-  }
-
-  SocialSharing.prototype._initEvents = function() {
-    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
-  };
-
-  SocialSharing.prototype._onLinkClick = function(e) {
-    var height, leftPosition, link, options, topPosition, width, windowFeatures;
-    e.preventDefault();
-    link = $(e.currentTarget).attr('href');
-    width = 800;
-    height = 500;
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-    return window.open(link, 'Withings Activité', options);
-  };
-
-  return SocialSharing;
-
-})();
-
 App = (function() {
   function App() {
     this.update = __bind(this.update, this);
@@ -1907,6 +1907,118 @@ Parameters = {
       },
       picsLength: 9,
       moving: false
+    }, {
+      difficulty: {
+        colors: 3,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 9,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 4,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 9,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: false
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 1
+      },
+      picsLength: 9,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 3,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 1,
+        subColors: 2,
+        pics: 2
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 1,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
+    }, {
+      difficulty: {
+        colors: 2,
+        subColors: 2,
+        pics: 1
+      },
+      picsLength: 16,
+      moving: true
     }
   ]
 };
