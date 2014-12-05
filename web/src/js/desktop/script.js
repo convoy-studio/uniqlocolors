@@ -128,34 +128,6 @@ W = (function() {
 
 })();
 
-SocialSharing = (function() {
-  function SocialSharing() {
-    this._onLinkClick = __bind(this._onLinkClick, this);
-    this._initEvents = __bind(this._initEvents, this);
-    this.links = $('.social-link');
-    this._initEvents();
-  }
-
-  SocialSharing.prototype._initEvents = function() {
-    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
-  };
-
-  SocialSharing.prototype._onLinkClick = function(e) {
-    var height, leftPosition, link, options, topPosition, width, windowFeatures;
-    e.preventDefault();
-    link = $(e.currentTarget).attr('href');
-    width = 800;
-    height = 500;
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
-    return window.open(link, 'Withings Activité', options);
-  };
-
-  return SocialSharing;
-
-})();
-
 Carousel = (function() {
   function Carousel(options) {
     this._onNavClick = __bind(this._onNavClick, this);
@@ -1501,6 +1473,34 @@ VideoPlayer_Templates = (function() {
 
 })();
 
+SocialSharing = (function() {
+  function SocialSharing() {
+    this._onLinkClick = __bind(this._onLinkClick, this);
+    this._initEvents = __bind(this._initEvents, this);
+    this.links = $('.social-link');
+    this._initEvents();
+  }
+
+  SocialSharing.prototype._initEvents = function() {
+    return $(document).on(Event.CLICK, '.social-link', this._onLinkClick);
+  };
+
+  SocialSharing.prototype._onLinkClick = function(e) {
+    var height, leftPosition, link, options, topPosition, width, windowFeatures;
+    e.preventDefault();
+    link = $(e.currentTarget).attr('href');
+    width = 800;
+    height = 500;
+    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+    options = windowFeatures = "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no";
+    return window.open(link, 'Withings Activité', options);
+  };
+
+  return SocialSharing;
+
+})();
+
 App = (function() {
   function App() {
     this.update = __bind(this.update, this);
@@ -2397,7 +2397,11 @@ Home = (function() {
     oneday = 1000 * 60 * 60 * 24;
     if (oneday - diff < 0) {
       W.basil.set('played', false);
-      return W.basil.set('shared', false);
+      W.basil.set('shared', false);
+    }
+    if (W.basil.get('played') === true) {
+      this.container.addClass('already-played');
+      return this.container.find('.play-button').remove();
     }
   };
 

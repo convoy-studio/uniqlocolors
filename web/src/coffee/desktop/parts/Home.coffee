@@ -54,9 +54,9 @@ class Home
 			W.basil.set('shared', false)
 
 		# get if the player has already played
-		#if W.basil.get('played') == true
-		#	@container.addClass('already-played')
-		#	@container.find('.play-button').remove()
+		if W.basil.get('played') == true
+			@container.addClass('already-played')
+			@container.find('.play-button').remove()
 
 
 	_initEvents: () =>
