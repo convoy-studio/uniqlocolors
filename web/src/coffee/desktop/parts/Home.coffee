@@ -54,7 +54,6 @@ class Home
 			W.basil.set('played', false)
 			W.basil.set('shared', false)
 
-		console.log W.basil.get('played')
 		# get if the player has already played
 		if W.basil.get('played') == true
 			@container.addClass('already-played')
