@@ -2361,7 +2361,7 @@ Home = (function() {
   }
 
   Home.prototype._initContent = function() {
-    var diff, midnight, now, oneday;
+    var midnight, now, oneday;
     this.pics = [];
     this.loader = new Loader({
       container: this.carousel,
@@ -2393,12 +2393,13 @@ Home = (function() {
     this.container.addClass('state-0');
     now = new Date();
     midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
-    diff = now.getTime() - midnight.getTime();
     oneday = 1000 * 60 * 60 * 24;
-    if (oneday - diff < 0) {
+    W.basil.set('time', midnight.getTime() + oneday);
+    if (W.basil.get('time') - now.getTime() < 0) {
       W.basil.set('played', false);
       W.basil.set('shared', false);
     }
+    console.log(W.basil.get('played'));
     if (W.basil.get('played') === true) {
       this.container.addClass('already-played');
       return this.container.find('.play-button').remove();

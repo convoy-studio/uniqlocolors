@@ -45,14 +45,16 @@ class Home
 		# get the difference between now and midnight
 		now = new Date()
 		midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0)
-
-		diff = now.getTime() - midnight.getTime()
 		oneday = 1000 * 60 * 60 * 24
 
-		if oneday - diff < 0
+		#if W.basil.get('time') == null
+		W.basil.set('time', midnight.getTime() + oneday)
+
+		if W.basil.get('time') - now.getTime() < 0
 			W.basil.set('played', false)
 			W.basil.set('shared', false)
 
+		console.log W.basil.get('played')
 		# get if the player has already played
 		if W.basil.get('played') == true
 			@container.addClass('already-played')
