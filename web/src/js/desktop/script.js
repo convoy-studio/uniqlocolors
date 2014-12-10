@@ -2394,12 +2394,15 @@ Home = (function() {
     now = new Date();
     midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
     oneday = 1000 * 60 * 60 * 24;
-    W.basil.set('time', midnight.getTime() + oneday);
-    if (W.basil.get('time') - now.getTime() < 0) {
+    if (W.basil.get('ztime') === null) {
+      W.basil.set('ztime', midnight.getTime() + oneday);
       W.basil.set('played', false);
       W.basil.set('shared', false);
     }
-    console.log(W.basil.get('played'));
+    if (W.basil.get('ztime') - now.getTime() < 0) {
+      W.basil.set('played', false);
+      W.basil.set('shared', false);
+    }
     if (W.basil.get('played') === true) {
       this.container.addClass('already-played');
       return this.container.find('.play-button').remove();

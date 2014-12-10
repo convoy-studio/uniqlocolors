@@ -47,10 +47,12 @@ class Home
 		midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0)
 		oneday = 1000 * 60 * 60 * 24
 
-		#if W.basil.get('time') == null
-		W.basil.set('time', midnight.getTime() + oneday)
+		if W.basil.get('ztime') == null
+			W.basil.set('ztime', midnight.getTime() + oneday)
+			W.basil.set('played', false)
+			W.basil.set('shared', false)
 
-		if W.basil.get('time') - now.getTime() < 0
+		if W.basil.get('ztime') - now.getTime() < 0
 			W.basil.set('played', false)
 			W.basil.set('shared', false)
 
