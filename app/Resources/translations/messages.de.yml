@@ -108,8 +108,8 @@ week_3_product_1_description: "Heattech-Stoffe von UNIQLO wärmen ohne aufzutrag
 week_3_product_1_price: "14,90€"
 week_3_product_1_offer: "Ab 5,90€"
 week_3_product_1_color: "e8d9ba"
-week_3_product_1_back: "week_3_A_bg.jpg"
-week_3_product_1_front: "week_3_A.png"
+week_3_product_1_back: "week_3_B_bg.jpg"
+week_3_product_1_front: "week_3_B.png"
 
 week_3_product_2_category: "HEATTECH"
 week_3_product_2_name: "HEATTECH Produkte für Damen"
@@ -118,8 +118,8 @@ week_3_product_2_description: "Heattech-Stoffe von UNIQLO wärmen ohne aufzutrag
 week_3_product_2_price: "14,90€"
 week_3_product_2_offer: "Ab 5,90€"
 week_3_product_2_color: "28a4d7"
-week_3_product_2_back: "week_3_B_bg.jpg"
-week_3_product_2_front: "week_3_B.png"
+week_3_product_2_back: "week_3_A_bg.jpg"
+week_3_product_2_front: "week_3_A.png"
 
 week_4_product_1_category: "Zubehör"
 week_4_product_1_name: "Accessories aus 100% Kaschmir ab"

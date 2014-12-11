@@ -108,8 +108,8 @@ week_3_product_1_description: "Si chaud et si léger. Le nouveau remède contre 
 week_3_product_1_price: "9,90€"
 week_3_product_1_offer: "À partir de 5,90€"
 week_3_product_1_color: "e8d9ba"
-week_3_product_1_back: "week_3_A_bg.jpg"
-week_3_product_1_front: "week_3_A.png"
+week_3_product_1_back: "week_3_B_bg.jpg"
+week_3_product_1_front: "week_3_B.png"
 
 week_3_product_2_category: "HEATTECH"
 week_3_product_2_name: "T-shirts Heattech femme"
@@ -118,8 +118,8 @@ week_3_product_2_description: "Si chaud et si léger. Le nouveau remède contre 
 week_3_product_2_price: "9,90€"
 week_3_product_2_offer: "À partir de 5,90€"
 week_3_product_2_color: "28a4d7"
-week_3_product_2_back: "week_3_B_bg.jpg"
-week_3_product_2_front: "week_3_B.png"
+week_3_product_2_back: "week_3_A_bg.jpg"
+week_3_product_2_front: "week_3_A.png"
 
 week_4_product_1_category: "ACCESSOIRES"
 week_4_product_1_name: "Gants et bonnets en cachemire"
