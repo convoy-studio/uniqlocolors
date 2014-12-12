@@ -127,6 +127,68 @@ W = (function() {
 
 })();
 
+Loader = (function() {
+  function Loader(options) {
+    var imgInc, imgLength, pics;
+    this.container = options.container, this.elm = options.elm, this.custom = options.custom, this.each = options.each, this.complete = options.complete;
+    if (this.elm) {
+      pics = this.container.find(this.elm);
+    } else {
+      pics = this.container.find('.img');
+    }
+    imgLength = pics.length;
+    imgInc = 0;
+    this.steps = 0;
+    this.empty = false;
+    if (!pics.length) {
+      this.empty = true;
+      if (this.complete) {
+        this.complete();
+      }
+    }
+    pics.each((function(_this) {
+      return function(key, item) {
+        var $this, attrs, img, klass, src;
+        $this = $(item);
+        klass = $this.attr('class').replace('img ', '');
+        src = $this.attr('data-src');
+        img = new Image();
+        attrs = '';
+        $.each(item.attributes, function(key, att) {
+          if (att.name === 'class') {
+            att.value = att.value.replace('img', '');
+          }
+          if (att.name !== 'data-src') {
+            return attrs += att.name + '="' + att.value + '" ';
+          }
+        });
+        img.src = src;
+        return img.onload = function() {
+          var _ref;
+          imgInc++;
+          _this.steps = imgInc / imgLength * 100;
+          if (_this.each) {
+            _this.each($this, '<img src="' + src + '" ' + attrs + '/>', key);
+          }
+          if ((_ref = _this.custom) === false || _ref === (void 0)) {
+            $this.replaceWith('<img src="' + src + '" ' + attrs + '/>');
+          }
+          $(_this).trigger(Event.STEPS);
+          if (imgInc === imgLength) {
+            if (_this.complete) {
+              _this.complete();
+            }
+            return $(_this).trigger(Event.LOADED);
+          }
+        };
+      };
+    })(this));
+  }
+
+  return Loader;
+
+})();
+
 Carousel = (function() {
   function Carousel(options) {
     this._onNavClick = __bind(this._onNavClick, this);
@@ -205,68 +267,6 @@ Carousel = (function() {
   };
 
   return Carousel;
-
-})();
-
-Loader = (function() {
-  function Loader(options) {
-    var imgInc, imgLength, pics;
-    this.container = options.container, this.elm = options.elm, this.custom = options.custom, this.each = options.each, this.complete = options.complete;
-    if (this.elm) {
-      pics = this.container.find(this.elm);
-    } else {
-      pics = this.container.find('.img');
-    }
-    imgLength = pics.length;
-    imgInc = 0;
-    this.steps = 0;
-    this.empty = false;
-    if (!pics.length) {
-      this.empty = true;
-      if (this.complete) {
-        this.complete();
-      }
-    }
-    pics.each((function(_this) {
-      return function(key, item) {
-        var $this, attrs, img, klass, src;
-        $this = $(item);
-        klass = $this.attr('class').replace('img ', '');
-        src = $this.attr('data-src');
-        img = new Image();
-        attrs = '';
-        $.each(item.attributes, function(key, att) {
-          if (att.name === 'class') {
-            att.value = att.value.replace('img', '');
-          }
-          if (att.name !== 'data-src') {
-            return attrs += att.name + '="' + att.value + '" ';
-          }
-        });
-        img.src = src;
-        return img.onload = function() {
-          var _ref;
-          imgInc++;
-          _this.steps = imgInc / imgLength * 100;
-          if (_this.each) {
-            _this.each($this, '<img src="' + src + '" ' + attrs + '/>', key);
-          }
-          if ((_ref = _this.custom) === false || _ref === (void 0)) {
-            $this.replaceWith('<img src="' + src + '" ' + attrs + '/>');
-          }
-          $(_this).trigger(Event.STEPS);
-          if (imgInc === imgLength) {
-            if (_this.complete) {
-              _this.complete();
-            }
-            return $(_this).trigger(Event.LOADED);
-          }
-        };
-      };
-    })(this));
-  }
-
-  return Loader;
 
 })();
 

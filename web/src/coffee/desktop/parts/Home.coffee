@@ -55,6 +55,7 @@ class Home
 		if W.basil.get('ztime') - now.getTime() < 0
 			W.basil.set('played', false)
 			W.basil.set('shared', false)
+			W.basil.set('ztime', midnight.getTime() + oneday)
 
 		# get if the player has already played
 		if W.basil.get('played') == true

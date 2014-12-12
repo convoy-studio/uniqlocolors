@@ -2402,6 +2402,7 @@ Home = (function() {
     if (W.basil.get('ztime') - now.getTime() < 0) {
       W.basil.set('played', false);
       W.basil.set('shared', false);
+      W.basil.set('ztime', midnight.getTime() + oneday);
     }
     if (W.basil.get('played') === true) {
       this.container.addClass('already-played');
